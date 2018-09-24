@@ -1,6 +1,5 @@
 .navbarToggler {
-  position: fixed;
-  top: 20px;
+  position: relative;
   right: 20px;
   width: 40px;
   height: 25px;
