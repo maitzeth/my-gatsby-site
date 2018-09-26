@@ -12,7 +12,7 @@ const Link = ({ children, to, ...other }) => {
     )
   }
   return (
-    <a href={to} {...other}>
+    <a href={`/#${to}`} {...other}>
       {children}
     </a>
   )

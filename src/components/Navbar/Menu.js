@@ -7,7 +7,7 @@ import myLogo from '../../assets/img/logo-black.png';
 
 class Menu extends Component {
   state = {
-    isOpen: false,
+    isOpen: false
   };
 
   handleToggler = () => {
@@ -29,8 +29,8 @@ class Menu extends Component {
         </Nav>
         <NavbarPanel 
           handleToggler={this.handleToggler} 
-          isOpen={isOpen}
-          menuItems={items} />
+          isOpen={isOpen} 
+          items={items} />
       </Navbar>
     )
   }

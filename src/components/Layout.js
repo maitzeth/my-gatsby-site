@@ -8,13 +8,9 @@ import { StaticQuery, graphql } from "gatsby"
 const Layout = ({ children, data }) => (
 	<StaticQuery
     query={graphql`
-      query HeadingQueries {
-        wordpressWpApiMenusMenusItems {
-          items {
-            url
-            title
-            object_id
-          }
+      query HeadingQueries {    
+        menusJson {
+          items
         }
         
         site {
@@ -27,7 +23,7 @@ const Layout = ({ children, data }) => (
     render={data => (
       <main>
 		    <Meta title={data.site.siteMetadata.title} />
-		    <Menu {...data.wordpressWpApiMenusMenusItems} />
+		    <Menu {...data.menusJson} />
 		    { children }
 		  </main>
     )}
