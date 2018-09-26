@@ -15,14 +15,15 @@ const Layout = ({ children, data }) => (
         
         site {
           siteMetadata {
-            title
+            title,
+            subtitle
           }
         }
       }
     `}
     render={data => (
       <main>
-		    <Meta title={data.site.siteMetadata.title} />
+		    <Meta title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
 		    <Menu {...data.menusJson} />
 		    { children }
 		  </main>

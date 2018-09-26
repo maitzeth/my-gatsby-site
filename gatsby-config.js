@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `A sample site using gatsby-source-wordpress`,
-    subtitle: `Data fetched from a site hosted on wordpress.com`,
+    title: `André Iván`,
+    subtitle: `Web Developer`,
+    about: `I'm Andre Ivan, a Web Developer from Venezuela, currently living in Argentina. I love to share what I learn and I've been working in the Web since 3 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and Paradigms, like OOP and Functional Programming. Always working with Web Technologies like HTML, CSS and Javascript.`
   },
   plugins: [
     `gatsby-transformer-json`,
