@@ -1,0 +1,49 @@
+.HeroWrapper {
+  padding: 65px;
+  height: 100vh;
+}
+
+.HeroImageOverlay::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.9;
+}
+
+.HeroImage {
+	background-color: #181818;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: cover;
+	position: relative;
+	composes: HeroImageOverlay;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+}
+
+.HeroInner {
+	position: relative;
+	z-index: 2;
+}
+
+.HeroTitle {
+	color: #e74c3c;
+	font-size: 4em;
+	font-weight: 900;
+}
+
+.HeroTitle span {
+	color: #fff;
+}
+
+.HeroSubtitle {
+	color: #fff;
+	text-align: center;
+	font-weight: 300;
+}

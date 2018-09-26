@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #000;
+  background-color: #fff;
   z-index: 3;
   transform: translateY(-100%);
   transition: all 300ms ease-in-out;
@@ -26,20 +26,21 @@
 }
 
 .panelListAnchor-hover:hover {
-  color: #e74c3c;
+  color: #232323;
+  opacity: .7;
   text-decoration: none;
 }
 
 .panelListAnchor {
-  font-family: 'Oswald', sans-serif;
+  color: #232323;
   padding: 0.1em 0;
   margin: 0.2em 0;
   display: block;
-  font-size: 2em;
-  color: whitesmoke;
   text-decoration: none;
-  letter-spacing: 10px;
+  font-weight: 700;
   transition: all 200ms ease;
+  font-size: 3em;
+  line-height: 70px;
   composes: panelListAnchor-hover;
 }
 

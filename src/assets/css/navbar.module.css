@@ -1,8 +1,8 @@
 .navbarToggler {
   position: relative;
   right: 20px;
-  width: 40px;
-  height: 25px;
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 4;
   background-color: transparent;
@@ -13,10 +13,14 @@
   outline: none;
 }
 
+.navbarToggler:hover > .navbarTogglerItem {
+  margin: 0 !important;
+}
+
 .navbarTogglerItem {
   width: 100%;
   height: 2px;
-  background-color: whitesmoke;
+  background-color: #181818;
   position: absolute;
   -webkit-transition: all 150ms ease;
   -o-transition: all 150ms ease;
@@ -28,14 +32,18 @@
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   top: 0;
+  margin-left: -4px;
 }
 
 .navbarTogglerItem:nth-child(2) {
   top: 50%;
+  transform: translateY(-50%);
 }
 
 .navbarTogglerItem:nth-child(3) {
   top: 100%;
+  margin-left: -4px;
+  transform: translateY(-50%);
 }
 
 .navbarTogglerItemOpen {
@@ -46,6 +54,8 @@
   -webkit-transform: translateY(10px) rotate(45deg);
   -ms-transform: translateY(10px) rotate(45deg);
   transform: translateY(10px) rotate(45deg);
+  background-color: #232323;
+  margin: 0;
 }
 
 .navbarTogglerItemOpen:nth-child(2) {
@@ -53,7 +63,9 @@
 }
 
 .navbarTogglerItemOpen:nth-child(3) {
-  -webkit-transform: translateY(-15px) rotate(-45deg);
-  -ms-transform: translateY(-15px) rotate(-45deg);
-  transform: translateY(-15px) rotate(-45deg);
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: #232323;
+  margin: 0;
 }

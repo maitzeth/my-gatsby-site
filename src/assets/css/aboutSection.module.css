@@ -1,0 +1,46 @@
+.AboutWrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.AboutTitle {
+	text-align: center;
+	font-weight: 900;
+}
+
+.AboutText {
+	text-align: center;
+}
+
+.AboutImageHover:hover {
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+.AboutImage {
+	transition: all 150ms ease;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 1em auto;
+	width: 150px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+	composes: AboutImageHover;
+}
+
+.Social {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.SocialElement {
+	display: inline-block;
+	margin: 0 0.5em;
+}
+
+.SocialIcon {
+	color: #000;
+	font-size: 1.8em !important;
+}
