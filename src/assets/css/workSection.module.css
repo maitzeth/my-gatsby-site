@@ -1,0 +1,28 @@
+.WorkWrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.WorkTitle {
+	text-align: center;
+	font-weight: 900;
+}
+
+.CardWrapper {
+	border: none;
+}
+
+.CardImage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.CardTitle {
+	margin: 0;
+}
+

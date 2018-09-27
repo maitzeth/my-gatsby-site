@@ -20,6 +20,8 @@ module.exports = {
       options: {
         path: `./src/data/`,
       },
-    }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ],
 }

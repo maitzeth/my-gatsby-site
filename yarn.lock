@@ -3995,6 +3995,13 @@ gatsby-source-wordpress@^3.0.1:
     minimatch "^3.0.4"
     qs "^6.4.0"
 
+gatsby-transformer-json@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.1.1.tgz#947c4c3f4f73add7b7915b3ad083a7b0d4764411"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    bluebird "^3.5.0"
+
 gatsby@^2.0.0:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.8.tgz#3cfe58c3f1870c8f9383fbdd90a32b2b00dd1eb5"
