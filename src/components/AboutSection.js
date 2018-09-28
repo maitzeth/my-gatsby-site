@@ -10,7 +10,7 @@ const AboutSection = ({ title, text, aboutImg, social }) => {
         <Row>
           <Col sm={{ size: '8', offset: 2 }}>
             <h2 className={css.AboutTitle}>{title.toUpperCase()}</h2>
-            <img src={aboutImg} alt="About Section" className={css.AboutImage} />
+            <img src={aboutImg} alt="About Section" className={`${css.AboutImage} mt-5`} />
             <p className={`lead ${css.AboutText}`}>{ text }</p>
           </Col>
         </Row>

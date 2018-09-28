@@ -1,6 +1,10 @@
 .WorkWrapper {
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.WorkWrapper a {
+	text-decoration: none;
 }
 
 .WorkTitle {
@@ -8,21 +12,53 @@
 	font-weight: 900;
 }
 
+.CardWrapperBefore::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.7;
+	z-index: 1;
+}
+
 .CardWrapper {
+	composes: CardWrapperBefore;
 	border: none;
+}
+
+.CardWrapper:hover .CardTitle {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.CardWrapper:hover::before {
+	opacity: 0.4;
 }
 
 .CardImage {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 200px;
+	height: 300px;
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
 
 .CardTitle {
+	transition: all 200ms ease;
 	margin: 0;
+	position: relative;
+	z-index: 2;
+	color: #fff;
+  transform: translateY(25px);
+  opacity: 0;
 }
+
+
+
+
 
