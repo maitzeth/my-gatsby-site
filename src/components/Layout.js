@@ -8,11 +8,11 @@ import { StaticQuery, graphql } from "gatsby"
 const Layout = ({ children, data }) => (
 	<StaticQuery
     query={graphql`
-      query HeadingQueries {    
+      query HeadingQueries { 
         menusJson {
           items
         }
-        
+
         site {
           siteMetadata {
             title,

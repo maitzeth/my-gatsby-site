@@ -21,6 +21,13 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: `@dan_abramov`,
+        limit: 200,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`
   ],

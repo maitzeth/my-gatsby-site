@@ -3,10 +3,10 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import AboutSection from '../components/AboutSection';
 import WorkSection from '../components/WorkSection';
+import BlogSection from '../components/BlogSection';
 import HeaderImage from '../assets/img/header.jpg';
 import aboutImg from '../assets/img/about.jpg';
 import { graphql } from 'gatsby';
-import { Link } from "gatsby"
 
 
 class Index extends Component {
@@ -19,7 +19,7 @@ class Index extends Component {
   componentDidMount() {
     const { social } = this.props.data.socialJson;
     const works = this.props.data.allWordpressWpPortfolio.edges;
-    const { edges } = this.props.data.allWordpressPage;
+    const { edges } = this.props.data.allMediumPost;
 
     this.setState({ 
       social,
@@ -37,15 +37,7 @@ class Index extends Component {
         <Header title={title} subtitle={subtitle} headerImage={HeaderImage} />
         <AboutSection title="About me" text={about} aboutImg={aboutImg} social={social} />
         <WorkSection title="My Work" data={works} />
-        { 
-          posts.map(({ node }) => (
-            <div key={node.slug}>
-              <Link to={node.slug} css={{ textDecoration: `none` }}>
-                <h1>{ node.slug }</h1>
-              </Link>
-            </div>
-          )) 
-        }
+        <BlogSection title="Últimos artículos publicados" data={posts} />
       </Layout>
     )
   }
@@ -67,14 +59,22 @@ export const query = graphql`
       }
     }
 
-    allWordpressPage {
+    allMediumPost(sort: {fields: [createdAt], order: DESC}, limit: 2) {
       edges {
         node {
           id
           title
-          excerpt
           slug
-          date(formatString: "MMMM DD, YYYY")
+          medium_id
+          createdAt(formatString: "MMMM DD, YYYY")
+          previewContent {
+            subtitle
+          }
+          author {
+            imageId
+            name
+            username
+          }
         }
       }
     }
@@ -87,7 +87,7 @@ export const query = graphql`
           featured_media {
             localFile {
               childImageSharp {
-                resolutions (width: 300, height: 300) {
+                fixed (width: 300, height: 300) {
                   src
                 }
               }

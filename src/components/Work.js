@@ -4,7 +4,7 @@ import { Card, CardBody, CardTitle, Col } from 'reactstrap';
 import { Link } from "gatsby"
 
 const Work = ({title, localFile }) => {
-	const image = localFile ? localFile.childImageSharp.resolutions.src : 'https://via.placeholder.com/500x500';
+	const image = localFile ? localFile.childImageSharp.fixed.src : 'https://via.placeholder.com/500x500';
 	return (
 		<Col sm="4">
 			<Link to="/home/">
