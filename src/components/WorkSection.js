@@ -34,7 +34,8 @@ class WorkSection extends React.Component {
 										id={index} 
 										title={node.title} 
 										activeWork={activeWork}
-										handleActive={this.handleActive} />
+										handleActive={this.handleActive}
+										{...node.acf} />
 								)
 							})
 						}
@@ -51,6 +52,7 @@ class WorkSection extends React.Component {
 											activeWork={activeWork}
 											handleActive={this.handleActive}
 											{...node.featured_media}
+											url={node.acf.url}
 										/>
 									)
 								})

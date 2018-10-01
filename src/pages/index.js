@@ -80,13 +80,19 @@ export const query = graphql`
       }
     }
 
-    allWordpressWpPortfolio {
+    allWordpressWpPortfolio(sort: {fields: [date], order: DESC}, limit: 4) {
       edges {
         node {
+          date
           title
           id
           featured_media {
             source_url
+          }
+          acf {
+            url
+            agency
+            year
           }
         }
       }
