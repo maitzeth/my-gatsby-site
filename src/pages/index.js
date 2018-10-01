@@ -37,7 +37,7 @@ class Index extends Component {
         <Header title={title} subtitle={subtitle} headerImage={HeaderImage} />
         <AboutSection title="About me" text={about} aboutImg={aboutImg} social={social} />
         <WorkSection title="My Work" data={works} />
-        <BlogSection title="Últimos artículos publicados" data={posts} />
+        <BlogSection title="Latest News!" data={posts} />
       </Layout>
     )
   }
@@ -48,7 +48,8 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        about      
+        about
+        subtitle      
       }
     }
 
@@ -85,13 +86,7 @@ export const query = graphql`
           title
           id
           featured_media {
-            localFile {
-              childImageSharp {
-                fixed (width: 300, height: 300) {
-                  src
-                }
-              }
-            }
+            source_url
           }
         }
       }

@@ -10,7 +10,7 @@ const Header = ({title, subtitle, headerImage}) => (
 					{ title.toUpperCase() }
 				</h1>
 				<h4 className={css.HeroSubtitle}>
-					{ subtitle}
+					{ subtitle }
 				</h4>
 			</div>
 		</figure>
