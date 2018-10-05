@@ -86,13 +86,11 @@ export const query = graphql`
           date
           title
           id
-          featured_media {
-            source_url
-          }
           acf {
             url
             agency
             year
+            image
           }
         }
       }

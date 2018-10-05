@@ -51,7 +51,7 @@ class WorkSection extends React.Component {
 											title={node.title}
 											activeWork={activeWork}
 											handleActive={this.handleActive}
-											{...node.featured_media}
+											image={node.acf.image}
 											url={node.acf.url}
 										/>
 									)

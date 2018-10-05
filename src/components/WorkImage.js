@@ -3,9 +3,8 @@ import css from '../assets/css/workSection.module.css';
 
 class WorkImage extends React.Component {
 	render() {
-		const { source_url, url } = this.props;
 
-		const { title, id, activeWork } = this.props;
+		const { title, id, activeWork, image, url } = this.props;
 		let isActive = false;
 
 		if ( id === activeWork ) {
@@ -13,15 +12,15 @@ class WorkImage extends React.Component {
 		}
 
 
-		if (!source_url) {
+		if (!image) {
 			return (
-				<h1>No Image...</h1>
+				<img src="https://picsum.photos/800/600/?random" alt={title} className={isActive ? css.WorkImgActive : css.WorkImg} />
 			)
 		}
 
 		return (
 			<a href={url} target="_blank" rel="noreferrer noopener">
-				<img src={ source_url } alt={title} className={isActive ? css.WorkImgActive : css.WorkImg} />
+				<img src={ image } alt={title} className={isActive ? css.WorkImgActive : css.WorkImg} />
 			</a>
 		)
 	}
