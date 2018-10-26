@@ -20,7 +20,7 @@ module.exports = {
     'gatsby-plugin-lodash',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-netlify'
+    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

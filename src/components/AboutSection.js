@@ -29,7 +29,7 @@ class AboutSection extends Component {
 	}
 
 	render() {
-		const { sections, sectionActive, } = this.state;
+		const { sections } = this.state;
 
 		return (
 			<Container fluid className="m-0 p-0">

@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Container, Row, Col } from 'reactstrap'
 
 class Projects extends Component {
 	render() {
 		return (
-			<Container fluid className={css.projectSection}>
+			<Container fluid>
 				<Container>
 					<Row>
-						
+						<Col />
 					</Row>
 				</Container>
 			</Container>
@@ -14,4 +15,4 @@ class Projects extends Component {
 	}
 }
 
-export default Projects;
+export default Projects
