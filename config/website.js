@@ -7,7 +7,6 @@ module.exports = {
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
   siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
   author: 'LekoArts', // Author for schemaORGJSONLD
-  // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@emma', // Twitter Username
   ogSiteName: 'emma', // Facebook Site Name
   ogLanguage: 'en_US',

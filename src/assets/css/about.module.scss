@@ -19,7 +19,7 @@
 
 .aboutListItem {
 	color: $white-color;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 300;
   letter-spacing: 5px;
   position: relative;
@@ -94,4 +94,35 @@
       transform: scale(1.15);
     }
   }
+}
+
+.aboutAnchor {
+  color: #000;
+  
+  &:hover {
+    color: #000;
+  }
+}
+
+.timeLineWrapper {
+  background-color: whitesmoke;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 25px -10px rgba(72, 29, 99, .3);
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    border: 2px solid $primary-color;
+    background-color: #fff;
+    -webkit-transform: translate(0px, -3px);
+    -ms-transform: translate(0px, -3px);
+    transform: translate(0px, -3px);
+  }
+}
+
+.aboutImage {
+  margin: 1em auto;
+  border-radius: 50%;
+  display: block;
+  height: 100%;
 }
