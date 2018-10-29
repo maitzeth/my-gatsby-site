@@ -3,3 +3,47 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 }
+
+.btn-secondary {
+  background-color: transparent;
+  border: none;
+  border: 2px solid #fff;
+  border-radius: 0;
+  padding: 0.5em 3em;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+  	background-color: transparent;
+  	border-color: #fff;
+		
+		span {
+			color: #000;
+			transition: all 100ms ease;
+		}
+
+  	&:after {
+  		width: 110%;
+  	}
+  }
+
+  span {
+  	position: relative;
+  	z-index: 2;
+  }
+
+  &:after {
+  	content: "";
+  	position: absolute;
+  	left: -5%;
+  	top: 0;
+  	height: 100%;
+  	width: 0%;
+  	z-index: 1;
+  	background-color: #fff;
+  	transition: all 200ms ease;
+    transform: skew(160deg);
+  }
+
+
+}

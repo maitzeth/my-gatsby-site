@@ -1,128 +1,46 @@
 @import 'mixins/colors';
 @import 'mixins/flexbox';
 
-.aboutItemsWrapper {
+.aboutWrapper {
+	display: flex;
+	align-items: center;
 	height: 100vh;
-	background-color: $primary-color;
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(center);
-  @include flex-direction(column);
-}
-
-.aboutList {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-align: center;
-}
-
-.aboutListItem {
-	color: $white-color;
-  font-size: 1em;
-  font-weight: 300;
-  letter-spacing: 5px;
-  position: relative;
-  margin: 0.5em 0;
-  cursor: pointer;
-
-  span {
-  	position: relative;
-  	z-index: 2;
-  }
-
-  &:after {
-  	content: "";
-  	position: absolute;
-  	bottom: 0;
-  	left: 0;
-  	height: 100%;
-  	width: 0%;
-  	background-color: $white-color;
-  	z-index: 1;
-  	transition: all 200ms ease;
-  }
-
-  &:hover {
-		color: $black-primary-color;
-
-		&:after {
-			width: 100%;
-		}
-	}
-}
-
-.aboutListItemActive {
-  composes: aboutListItem;
-  color: $black-primary-color;
-
-  &:after {
-    width: 100%;
-    z-index: 1;
-  }
-}
-
-.aboutContent {
-	padding: 5em;
-}
-
-.sectionTitle {
-  color: $white-color;
-}
-
-.socialAnchor {
-  color: #000;
-  position: relative;
-  display: block;
-  margin: 2em 0;
-  
-  p {
-    font-weight: bold;
-  }
-
-  i {
-    font-size: 2em;
-    padding: 0.5em;
-    transition: all 100ms ease;
-  }
-
-  &:hover {
-    color: #000;
-    text-decoration: none;
-
-    i {
-      transform: scale(1.15);
-    }
-  }
-}
-
-.aboutAnchor {
-  color: #000;
-  
-  &:hover {
-    color: #000;
-  }
-}
-
-.timeLineWrapper {
-  background-color: whitesmoke;
-  border: 2px solid transparent;
-  box-shadow: 0 10px 25px -10px rgba(72, 29, 99, .3);
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
-
-  &:hover {
-    border: 2px solid $primary-color;
-    background-color: #fff;
-    -webkit-transform: translate(0px, -3px);
-    -ms-transform: translate(0px, -3px);
-    transform: translate(0px, -3px);
-  }
 }
 
 .aboutImage {
   margin: 1em auto;
   border-radius: 50%;
   display: block;
-  height: 100%;
+  height: auto;
+  width: 150px;
+}
+
+.socialWrapper {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	margin-top: 2em;
+}
+
+.socialElement {
+	display: inline-block;
+	margin: 0 0.2em;
+
+	a {
+    padding: 0.5em;
+	}
+
+	i {
+		font-size: 1.5em;
+		color: $primary-color;
+	}
+}
+
+@media (max-width: 567px) {
+	.aboutWrapper {
+		height: auto;
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
 }

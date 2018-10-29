@@ -1,0 +1,48 @@
+@import 'mixins/colors';
+@import 'mixins/flexbox';
+
+.projectsContainer {
+	background-color: $primary-color;
+	height: 100vh;
+	padding: 5em 0;
+	@include flexbox();
+	@include align-items(center);
+}
+
+.sectionTitle {
+	color: $white-color;
+	text-align: center;
+}
+
+.ProjectImage {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 250px;
+}
+
+.overlayActive {
+	-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+	opacity: 0.5;
+	transition: all 200ms ease;
+
+	&:hover {
+		opacity: 1 !important;
+		-webkit-filter: grayscale(0%);
+  	filter: grayscale(0%);
+	}
+}
+
+.overlayDefault {
+	transition: all 200ms ease;
+	opacity: 1;
+}
+
+@media (max-width: 567px) {
+	.projectsContainer {
+		height: auto;
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+}

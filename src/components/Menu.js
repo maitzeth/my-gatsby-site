@@ -1,63 +1,56 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Navbar, Nav, NavItem, Container } from 'reactstrap'
 import { Link } from 'gatsby'
 import css from '../assets/css/menu.module.scss'
+import NavbarToggler from './NavbarToggler';
 
 class Menu extends Component {
   state = {
-    isBlack: false,
+    isActive: false,
   }
 
-  handleScroll = event => {
-    let scrollPosition = window.scrollY
-
-    if (scrollPosition > 100) {
-      this.setState({ isBlack: true })
-    } else {
-      this.setState({ isBlack: false })
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+  handleToggler = () => {
+    const { isActive } = this.state;
+    this.setState({
+      isActive: !isActive
+    })
   }
 
   render() {
-    const { isBlack } = this.state
+    const { isActive } = this.state
 
     return (
-      <Navbar
-        expand="sm"
-        fixed="top"
-        className={isBlack ? css.menuScrolled : css.menuDefault}
-      >
-        <Container>
-          <Nav className="mx-auto" navbar>
-            <NavItem>
-              <Link to="/" className={css.menuLink}>
-                <span>Home</span>
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link to="/about" className={css.menuLink}>
-                <span>About</span>
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link
-                to="https://github.com/reactstrap/reactstrap"
-                className={css.menuLink}
-              >
-                <span>Work</span>
-              </Link>
-            </NavItem>
-          </Nav>
-        </Container>
-      </Navbar>
+      <Fragment>
+        <Navbar
+          expand="sm"
+          fixed="top"
+          className={isActive  ? css.menuActive : css.menuDefault}
+        >
+          <Container>
+            <Nav className="mx-auto text-center" navbar>
+              <NavItem>
+                <Link to="/" className={css.menuLink}>
+                  <span>Home</span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/about" className={css.menuLink}>
+                  <span>About</span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link
+                  to="/works"
+                  className={css.menuLink}
+                >
+                  <span>Works</span>
+                </Link>
+              </NavItem>
+            </Nav>
+          </Container>
+        </Navbar>
+        <NavbarToggler isActive={isActive} handleToggler={this.handleToggler} />
+      </Fragment>
     )
   }
 }

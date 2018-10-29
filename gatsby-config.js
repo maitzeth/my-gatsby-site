@@ -7,56 +7,7 @@ module.exports = {
   siteMetadata: {
     title: `André Iván`,
     subtitle: `Web Developer`,
-    about: `I'm Andre Ivan, a Web Developer from Venezuela, currently living in Argentina. I love to share what I learn and I've been working in the Web since 3 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and Paradigms, like OOP and Functional Programming. Always working with Web Technologies like HTML, CSS and Javascript.`,
     siteUrl: config.siteUrl + pathPrefix,
-    sections: [
-      {
-        id: 0,
-        name: 'Bio',
-        content1:
-          "I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in Venezuela, currently living in Argentina. I love to share what I learn and I've been working on web development in almost 4 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and Paradigms. I primarily works with Javascript, HTML, CSS and all the technologies behind that. But im proficient in other languages too, like PHP and Ruby. ❤️ Elementary 5.0 (Juno)",
-        active: true,
-      },
-      {
-        id: 1,
-        name: 'Skills',
-        content2: ['HTML', 'CSS', 'Javascript', 'Webpack', 'React', 'Gatsby'],
-        active: false,
-      },
-      {
-        id: 3,
-        name: 'Experience',
-        content4: [
-          {
-            time: 'Jun 2018 - Now',
-            job: 'Front-End Developer',
-            place: 'Ego Agency at ISBAN Santader Rio.',
-            url: 'http://www.agenciaego.com.ar/',
-          },
-          {
-            time: 'Jan 2015 - Dec 2017',
-            job: 'Web Development Instructor',
-            place: 'Escuela Web LLC',
-            url: 'http://escuelaweb.net',
-          },
-        ],
-        active: false
-      },
-      {
-        id: 2,
-        name: 'Social',
-        content3: [
-          {
-            icon: 'instagram',
-            url: 'https://www.instagram.com/maitzethdrummer/',
-          },
-          { icon: 'github', url: 'https://github.com/maitzeth/' },
-          { icon: 'linkedin', url: 'https://www.linkedin.com' },
-          { icon: 'twitter', url: 'https://www.twitter.com/maitzeth' },
-        ],
-        active: false,
-      },
-    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -69,6 +20,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify',
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -92,8 +44,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'projects',
-        path: `${__dirname}/content/projects`,
+        path: `${__dirname}/content/`,
       },
     },
     {

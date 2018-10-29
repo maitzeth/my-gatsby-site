@@ -8,14 +8,16 @@ import Projects from '../components/Projects';
 
 class IndexPage extends Component {
 	render() {
-    const { title, } = this.props.data.site.siteMetadata;
+    const { title } = this.props.data.site.siteMetadata;
+    const { social } = this.props.data.socialJson;
+    const projectEdges = this.props.data.allMarkdownRemark.edges;
 
 		return (
       <PageTransition>
   		  <Layout>
   		    <Header title={title} />
-          <AboutSection />
-          <Projects />
+          <AboutSection social={social} />
+          <Projects projectEdges={projectEdges} />
   		  </Layout>
       </PageTransition>
 		)
@@ -24,11 +26,38 @@ class IndexPage extends Component {
 
 
 export const query = graphql`
-  query {
+  query HomePageQueries {
     site {
       siteMetadata {
-        title,
-        about
+        title
+      }
+    }
+
+    socialJson {
+      social {
+        url
+        name
+      }
+    }
+
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            service
+            client
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 850, quality: 90) {
+                  src
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

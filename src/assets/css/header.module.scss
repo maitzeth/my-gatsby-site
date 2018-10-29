@@ -94,3 +94,9 @@
   0% {transform: translateY(3px);}
   100% {transform: translateY(10px);} 
 }
+
+@media (max-width: 567px) {
+  .headerTitle {
+    font-size: 5em;
+  }
+}

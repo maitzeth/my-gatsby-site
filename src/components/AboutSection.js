@@ -1,37 +1,34 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import AboutSectionItem from './AboutSectionItem'
 import css from '../assets/css/about.module.scss'
-import AboutItemContent from './AboutItemContent'
+import aboutImage from '../assets/images/about.jpg'
+import SocialItem from './SocialItem.js';
+import Fade from 'react-reveal/Fade';
 
-class AboutSection extends Component {
 
-
-	render() {
-		const { sections } = this.state;
-
-		return (
-			<Container fluid className="m-0 p-0">
-				<Row noGutters className="align-items-center">
-					<Col sm="5">
-						<div className={css.aboutItemsWrapper}>
-							<ul className={css.aboutList}>
-								{sections.map(({ name, id }, index) => (
-									<AboutSectionItem
-										key={index}
-										name={name}
-									/>
-								))}
-							</ul>
-						</div>
-					</Col>
-					<Col sm="7">
-						<AboutItemContent sections={sections} />
-					</Col>
-				</Row>
-			</Container>
-		)
-	}
-}
+const AboutSection = ({ social }) => (
+	<Container fluid className={css.aboutWrapper}>
+		<Row>
+			<Col sm={{ size: '10', offset: 1 }}>
+				<h2 className={`display-4 text-center`}>Who I am</h2>
+				<img src={aboutImage} alt="about me" className={css.aboutImage} />
+		    <p className="lead text-center">
+		      I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in
+		      Venezuela, currently living in Argentina. I love to share what I learn and
+		      I've been working on web development in almost 4 years. I spend most of my
+		      time learning about new Technologies, Methodologies, Best Practices and
+		      Paradigms. I primarily works with Javascript, HTML, CSS and all the
+		      technologies behind that. But im proficient in other languages too, like
+		      PHP and Ruby.
+		    </p>
+		    <Fade cascade>
+			    <ul className={css.socialWrapper}>
+			    	{ social.map(item => <SocialItem key={`socialItem-${item.name}`} {...item} />) }
+			    </ul>
+		    </Fade>
+			</Col>
+		</Row>
+	</Container>
+)
 
 export default AboutSection
