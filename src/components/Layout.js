@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div>
+      <Fragment>
         <Helmet>
           <title>{data.site.siteMetadata.title}</title>
           <link
@@ -27,7 +27,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <Menu />
         {children}
-      </div>
+      </Fragment>
     )}
   />
 )

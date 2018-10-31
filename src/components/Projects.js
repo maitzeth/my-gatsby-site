@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'reactstrap'
 import css from '../assets/css/project.module.scss'
 import Project from './Project'
 import globalStyles from '../assets/css/global.scss'
+import { Link } from 'gatsby'
 
 class Projects extends Component {
 	state = {
@@ -49,9 +50,11 @@ class Projects extends Component {
 					</Row>
 					<Row className="mt-5">
 						<Col className="text-center">
-							<Button className={globalStyles.whiteBtn}>
-								<span>View more</span>
-							</Button>
+							<Link to='/projects'>
+								<Button  className={globalStyles.whiteBtn}>
+									<span>View more</span>
+								</Button>
+							</Link>
 						</Col>
 					</Row>
 				</Container>

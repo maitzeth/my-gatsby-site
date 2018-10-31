@@ -1,0 +1,6 @@
+@import 'mixins/colors';
+@import 'mixins/flexbox';
+
+.pageWrapper {
+	background-color: $primary-color;
+}

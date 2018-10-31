@@ -40,10 +40,10 @@ class Menu extends Component {
               </NavItem>
               <NavItem>
                 <Link
-                  to="/works"
+                  to="/projects"
                   className={css.menuLink}
                 >
-                  <span>Works</span>
+                  <span>Projects</span>
                 </Link>
               </NavItem>
             </Nav>
