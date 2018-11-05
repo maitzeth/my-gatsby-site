@@ -4,7 +4,8 @@
 .projectsContainer {
 	background-color: $primary-color;
 	height: 100vh;
-	padding: 5em 0;
+	padding-top: 5em;
+	padding-bottom: 5em;
 	@include flexbox();
 	@include align-items(center);
 }
@@ -19,6 +20,14 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 250px;
+	-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 200ms ease;
+
+  &:hover {
+  	-webkit-filter: grayscale(0%);
+  	filter: grayscale(0%);
+  }
 }
 
 .overlayActive {

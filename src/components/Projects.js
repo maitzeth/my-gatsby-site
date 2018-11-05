@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import css from '../assets/css/project.module.scss'
 import Project from './Project'
-import globalStyles from '../assets/css/global.scss'
-import { Link } from 'gatsby'
+import CustomButton from './CustomButton'
 
 class Projects extends Component {
 	state = {
@@ -36,7 +35,7 @@ class Projects extends Component {
 				<Container>
 					<Row>
 						<Col>
-							<h2 className={`display-4 ${css.sectionTitle}`}>Works</h2>
+							<h2 className={`display-4 ${css.sectionTitle}`}>Latest Works</h2>
 						</Col>
 					</Row>
 					<Row className="mt-5">
@@ -50,11 +49,7 @@ class Projects extends Component {
 					</Row>
 					<Row className="mt-5">
 						<Col className="text-center">
-							<Link to='/projects'>
-								<Button  className={globalStyles.whiteBtn}>
-									<span>View more</span>
-								</Button>
-							</Link>
+							<CustomButton text="View more" link="/projects" color="black" />
 						</Col>
 					</Row>
 				</Container>

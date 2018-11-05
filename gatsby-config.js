@@ -22,23 +22,9 @@ module.exports = {
     'gatsby-plugin-netlify',
     `gatsby-transformer-json`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui', // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: true,
+        color: config.themeColor,
       },
     },
     {
@@ -54,7 +40,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 820,
+              maxWidth: 590,
               quality: 90,
               linkImagesToOriginal: false,
             },
