@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import css from '../assets/css/global.scss'
+import '../assets/css/global.scss'
 import { Link } from 'gatsby'
 import { Button } from 'reactstrap'
 
@@ -20,7 +20,7 @@ const CustomButton = ({ text, link, color, external = false }) => {
 			{!external ? (
 				<Link to={link}>{buttonInner}</Link>
 			) : (
-				<a src={link} target="_blank">
+				<a href={link} target="_blank" rel="noopener noreferrer">
 					{buttonInner}
 				</a>
 			)}

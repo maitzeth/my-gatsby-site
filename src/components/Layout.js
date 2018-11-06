@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Menu from './Menu'
+import Foot from './Foot'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -27,6 +28,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <Menu />
         {children}
+        <Foot />
       </Fragment>
     )}
   />

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import css from '../assets/css/page.module.scss'
@@ -16,6 +15,7 @@ const Project = ({
     client,
     date,
     service,
+    link,
     cover: {
       childImageSharp: {
         resize: { src },
@@ -61,8 +61,8 @@ const Project = ({
           <Row>
             <Col sm="12 text-center">
               <CustomButton
-                text="View project"
-                link="http://unsplash.it"
+                text="Visit site"
+                link={link}
                 color="white"
                 external={true}
               />
@@ -76,15 +76,6 @@ const Project = ({
 
 export default Project
 
-Project.propTypes = {
-  pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-  }).isRequired,
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object.isRequired,
-  }).isRequired,
-}
-
 export const pageQuery = graphql`
   query ProjectPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -95,6 +86,7 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         client
         service
+        link
         cover {
           childImageSharp {
             resize(width: 800) {

@@ -22,6 +22,8 @@
 	height: 250px;
 	-webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
   transition: all 200ms ease;
 
   &:hover {
@@ -34,6 +36,8 @@
 	-webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 	opacity: 0.5;
+	-webkit-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 
 	&:hover {
@@ -44,6 +48,8 @@
 }
 
 .overlayDefault {
+	-webkit-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 	opacity: 1;
 }
@@ -53,5 +59,15 @@
 		height: auto;
 		padding-top: 60px;
 		padding-bottom: 60px;
+	}
+
+	.ProjectImage {
+		height: 200px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.ProjectImage {
+		height: 200px;
 	}
 }

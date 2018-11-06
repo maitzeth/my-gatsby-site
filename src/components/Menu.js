@@ -49,7 +49,9 @@ class Menu extends Component {
             </Nav>
           </Container>
         </Navbar>
-        <NavbarToggler isActive={isActive} handleToggler={this.handleToggler} />
+        <div className={css.navbarTogglerWrapper}>
+          <NavbarToggler isActive={isActive} handleToggler={this.handleToggler} />
+        </div>
       </Fragment>
     )
   }

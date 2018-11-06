@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800');
 
 body {
-	font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-primary {
@@ -14,53 +14,13 @@ body {
   overflow: hidden;
 
   &:hover {
-  	background-color: transparent;
-  	border-color: #fff;
-		
-		span {
-			color: #000;
-			transition: all 100ms ease;
-		}
-
-  	&:after {
-  		width: 110%;
-  	}
-  }
-
-  span {
-  	position: relative;
-  	z-index: 2;
-  }
-
-  &:after {
-  	content: "";
-  	position: absolute;
-  	left: -5%;
-  	top: 0;
-  	height: 100%;
-  	width: 0%;
-  	z-index: 1;
-  	background-color: #fff;
-  	transition: all 200ms ease;
-    transform: skew(160deg);
-  }
-}
-
-.btn-secondary {
-  background-color: transparent;
-  border: none;
-  border: 2px solid #000;
-  border-radius: 0;
-  padding: 0.5em 3em;
-  position: relative;
-  overflow: hidden;
-
-  &:hover {
     background-color: transparent;
-    border-color: #000;
+    border-color: #fff;
     
     span {
-      color: #fff;
+      color: #000;
+      -webkit-transition: all 100ms ease;
+      -o-transition: all 100ms ease;
       transition: all 100ms ease;
     }
 
@@ -82,8 +42,61 @@ body {
     height: 100%;
     width: 0%;
     z-index: 1;
-    background-color: #000;
+    background-color: #fff;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
-    transform: skew(160deg);
+    -webkit-transform: skew(160deg);
+        -ms-transform: skew(160deg);
+            transform: skew(160deg);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: none;
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 0.5em 3em;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #000;
+    
+    span {
+      color: #fff;
+      -webkit-transition: all 100ms ease;
+      -o-transition: all 100ms ease;
+      transition: all 100ms ease;
+    }
+
+    &:after {
+      width: 110%;
+    }
+  }
+
+  span {
+    position: relative;
+    color: #000;
+    z-index: 2;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    z-index: 1;
+    background-color: #000;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    -webkit-transform: skew(160deg);
+        -ms-transform: skew(160deg);
+            transform: skew(160deg);
   }
 }

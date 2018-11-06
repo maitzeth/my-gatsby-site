@@ -2,11 +2,11 @@
 @import 'mixins/flexbox';
 
 .headerWrapper {
-	background-color: $black-primary-color;
-	height: 100vh;
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(center);
+  background-color: $black-primary-color;
+  height: 100vh;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
   @include flex-direction(column);
   position: relative;
 }
@@ -21,46 +21,51 @@
   cursor: default;
   
   span {
-  	font-weight: 700;
-  	position: relative;
-  	transition: all 150ms ease;
+    font-weight: 700;
+    position: relative;
+    -webkit-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease;
+    margin: 0 0.2em;
 
-  	b {
-  		position: relative;
-  		z-index: 2;
-  		font-style: none !important;
-  	}
+    b {
+      position: relative;
+      z-index: 2;
+      font-style: none !important;
+    }
 
-  	&:after {
-  		content: "";
-  		position: absolute;
-  		bottom: 0;
-  		left: 0;
-  		width: 100%;
-  		height: 2px;
-  		background-color: #fff;
-  		transition: all 150ms ease;
-  		z-index: 1;
-  	}
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      -webkit-transition: all 150ms ease;
+      -o-transition: all 150ms ease;
+      transition: all 150ms ease;
+      z-index: 1;
+    }
 
-  	&:hover {
-			color: #000;
+    &:hover {
+      color: #000;
 
-  		&:after {
-  			height: 100%;
-  		}
-  	}
+      &:after {
+        height: 100%;
+      }
+    }
   }
 }
 
 .headerSubtitle {
-	composes: headerTitle;
-	font-weight: 600;
-	font-size: 6em;
+  composes: headerTitle;
+  font-weight: 600;
+  font-size: 6em;
 }
 
 .headerTextWrapper {
-	padding: 2em;
+  padding: 2em;
 }
 
 .goToWrapper {
@@ -72,8 +77,9 @@
   border-radius: 15px;
   bottom: 15px;
   left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 
@@ -87,16 +93,22 @@
   width: 2px;
   -webkit-animation: scrollarrow 800ms infinite;
   animation: scrollarrow 800ms infinite;
-  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes scrollarrow {
+  0% {-webkit-transform: translateY(3px);transform: translateY(3px);}
+  100% {-webkit-transform: translateY(10px);transform: translateY(10px);} 
 }
 
 @keyframes scrollarrow {
-  0% {transform: translateY(3px);}
-  100% {transform: translateY(10px);} 
+  0% {-webkit-transform: translateY(3px);transform: translateY(3px);}
+  100% {-webkit-transform: translateY(10px);transform: translateY(10px);} 
 }
 
 @media (max-width: 567px) {
   .headerTitle {
-    font-size: 5em;
+    font-size: 2.5em;
   }
 }

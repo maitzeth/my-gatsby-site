@@ -44,6 +44,7 @@ class Projects extends Component {
 								key={node.frontmatter.client}
 								{...node}
 								opacity={opacity}
+								separation="my-3"
 							/>
 						))}
 					</Row>

@@ -1,0 +1,16 @@
+@import 'mixins/colors';
+@import 'mixins/flexbox';
+
+.errorWrapper {
+	height: 100vh;
+	background-color: $primary-color;
+	@include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.errorMessages {
+	h1 {
+		color: #fff;
+	}
+}

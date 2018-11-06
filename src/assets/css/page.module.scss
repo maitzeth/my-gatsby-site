@@ -74,3 +74,19 @@
 .projectTitles {
 	text-transform: uppercase;
 }
+
+@media (max-width: 578px) {
+	.projectTitle {
+		font-size: 1.3em;
+	}
+	
+	.projectImage {
+		height: 25vh;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.projectImage {
+		height: 25vh;
+	}
+}

@@ -2,8 +2,8 @@
 @import 'mixins/flexbox';
 
 .aboutWrapper {
-	display: flex;
-	align-items: center;
+	@include flexbox();
+  @include align-items(center);
 	height: 100vh;
 }
 
