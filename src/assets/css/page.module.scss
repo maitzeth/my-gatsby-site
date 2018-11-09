@@ -75,6 +75,22 @@
 	text-transform: uppercase;
 }
 
+.aboutPageWrapper {
+	height: 100vh;
+	background-color: $primary-color;
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(center);
+}
+
+.aboutContainer {
+  height: 100vh;
+  @include flexbox();
+	@include align-items(center);
+	@include justify-content(center);
+	@include flex-direction(column);
+}
+
 @media (max-width: 578px) {
 	.projectTitle {
 		font-size: 1.3em;

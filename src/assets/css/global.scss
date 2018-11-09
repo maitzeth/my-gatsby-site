@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800');
+@import 'mixins/colors';
+@import 'mixins/flexbox';
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -25,8 +27,17 @@ body {
     }
 
     &:after {
-      width: 110%;
+      width: 120%;
     }
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem transparent !important;
+  }
+
+  &:active {
+    background-color: transparent !important;
+    border-color: #fff !important;
   }
 
   span {
@@ -98,5 +109,15 @@ body {
     -webkit-transform: skew(160deg);
         -ms-transform: skew(160deg);
             transform: skew(160deg);
+  }
+}
+
+.activeItem {
+  &:after {
+    width: 120%;
+  }
+
+  span {
+    color: $primary-color;
   }
 }
