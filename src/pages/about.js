@@ -7,19 +7,19 @@ import CVButtons from '../components/CVButtons'
 import CVItems from '../components/CVItems'
 
 const primaryRowStyle = {
-	flex: '0 0 80%',
+	flex: '0 0 90%',
   alignItems: 'center',
-  padding: '5em 0'
+  padding: '5em 0 3.5em 0'
 }
 
 const secondaryRowStyle = {
-	flex: '0 0 20%'
+	flex: '0 0 10%'
 }
 
 class AboutPage extends Component {
 	state = {
 		activeItem: 0,
-		items: ['Summary', 'Skills', 'Experience', 'Education'],
+		items: ['Summary', 'Skills', 'Experience'],
 	}
 
 	handleSelection = index => {

@@ -1,4 +1,4 @@
-const config = require('./config/website')
+const config = require('./config/website');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -71,5 +71,12 @@ module.exports = {
         icon: 'src/favicon.png',
       },
     },
+    {
+      resolve: `gatsby-source-github-pinned`,
+      options: {
+        apiToken: `9ded1db4f0f1f7988bfb696db18a9d653d4dfc4d`
+      }
+    }
+
   ],
 }

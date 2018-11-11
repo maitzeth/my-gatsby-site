@@ -54,8 +54,8 @@ const Project = ({
             </Col>
           </Row>
           <Row className="my-4">
-            <Col sm="12 text-center">
-              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <Col sm="12">
+              <div dangerouslySetInnerHTML={{ __html: postNode.html }} className={css.projectInfo} />
             </Col>
           </Row>
           <Row>

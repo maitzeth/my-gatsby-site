@@ -4,7 +4,7 @@ import { Row, Col, Button } from 'reactstrap'
 const CVButtons = ({ activeItem, items, handleSelection }) => (
 	<Row>
 		{items.map((item, index) => (
-			<Col sm="3" key={`item-${index}`}>
+			<Col sm="4" key={`item-${index}`}>
 				<Button
 					color="primary"
 					className={`btn-block ${activeItem === index && 'activeItem'}`}

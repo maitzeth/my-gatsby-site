@@ -91,13 +91,27 @@
 	@include flex-direction(column);
 }
 
+.projectInfo {
+	h1, p {
+		text-align: center;
+	}
+}
+
 @media (max-width: 578px) {
+	.aboutPageWrapper, .aboutContainer {
+		height: auto;
+	}
+
 	.projectTitle {
 		font-size: 1.3em;
 	}
 	
 	.projectImage {
 		height: 25vh;
+	}
+
+	.aboutContainer {
+    padding: 1em 0;	
 	}
 }
 

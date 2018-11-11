@@ -121,3 +121,10 @@ body {
     color: $primary-color;
   }
 }
+
+@media (max-width: 576px) {
+  .btn-primary {
+    padding: 0.5em 0em; 
+    margin: 0.5em 0;  
+  }
+}
