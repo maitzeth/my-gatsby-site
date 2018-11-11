@@ -13,7 +13,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
-    'gatsby-plugin-page-transitions',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-lodash',
@@ -70,13 +69,6 @@ module.exports = {
         display: 'standalone',
         icon: 'src/favicon.png',
       },
-    },
-    {
-      resolve: `gatsby-source-github-pinned`,
-      options: {
-        apiToken: `9ded1db4f0f1f7988bfb696db18a9d653d4dfc4d`
-      }
     }
-
   ],
 }

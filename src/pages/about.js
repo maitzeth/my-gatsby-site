@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import PageTransition from 'gatsby-plugin-page-transitions'
+import React, { Component, Fragment } from 'react'
 import Layout from '../components/Layout'
 import css from '../assets/css/page.module.scss'
 import { Container, Row, Col } from 'reactstrap'
@@ -32,7 +31,7 @@ class AboutPage extends Component {
 		const { activeItem, items } = this.state
 
 		return (
-			<PageTransition>
+			<Fragment>
 				<Layout>
 					<section className={css.aboutPageWrapper}>
 						<Container className={css.aboutContainer}>
@@ -53,7 +52,7 @@ class AboutPage extends Component {
 						</Container>
 					</section>
 				</Layout>
-			</PageTransition>
+			</Fragment>
 		)
 	}
 }

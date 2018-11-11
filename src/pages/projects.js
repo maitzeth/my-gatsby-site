@@ -1,5 +1,4 @@
-import React from 'react'
-import PageTransition from 'gatsby-plugin-page-transitions'
+import React, { Fragment } from 'react'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import css from '../assets/css/page.module.scss'
@@ -11,7 +10,7 @@ const ProjectsPage = ({ data }) => {
 	const { edges } = data.allMarkdownRemark
 
 	return (
-		<PageTransition>
+		<Fragment>
 			<Layout>
 				<main className={css.pageWrapper}>
 					<header
@@ -33,7 +32,7 @@ const ProjectsPage = ({ data }) => {
 					</Container>
 				</main>
 			</Layout>
-		</PageTransition>
+		</Fragment>
 	)
 }
 

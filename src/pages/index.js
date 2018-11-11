@@ -1,28 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { graphql } from 'gatsby'
-import PageTransition from 'gatsby-plugin-page-transitions'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import AboutSection from '../components/AboutSection'
 import Projects from '../components/Projects'
-import Github from '../components/Github'
 
 class IndexPage extends Component {
   render() {
     const { title } = this.props.data.site.siteMetadata
     const { social } = this.props.data.socialJson
     const projectEdges = this.props.data.allMarkdownRemark.edges
-    const GitRepos = this.props.data.allPinnedRepo.edges
 
     return (
-      <PageTransition>
+      <Fragment>
         <Layout>
           <Header title={title} />
           <AboutSection social={social} />
           <Projects projectEdges={projectEdges} />
-          <Github GitRepos={GitRepos} />
         </Layout>
-      </PageTransition>
+      </Fragment>
     )
   }
 }
@@ -62,16 +58,6 @@ export const query = graphql`
               }
             }
           }
-        }
-      }
-    }
-
-    allPinnedRepo(limit: 4) {
-      edges {
-        node {
-          name
-          id
-          url
         }
       }
     }
