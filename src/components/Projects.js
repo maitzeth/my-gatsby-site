@@ -39,9 +39,9 @@ class Projects extends Component {
 						</Col>
 					</Row>
 					<Row className="mt-5">
-						{projectEdges.map(({ node }) => (
+						{projectEdges.map(({ node }, index) => (
 							<Project
-								key={node.frontmatter.client}
+								key={`client-${index}`}
 								{...node}
 								opacity={opacity}
 								separation="my-3"
