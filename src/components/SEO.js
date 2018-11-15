@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import config from '../../config/website';
 
 const SEO = props => {
+
   const { postNode, postPath, postSEO } = props;
   let title;
   let description;
@@ -12,7 +13,7 @@ const SEO = props => {
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
   if (postSEO) {
     const postMeta = postNode.frontmatter;
-    title = postMeta.title; // eslint-disable-line prefer-destructuring
+    title = `${postMeta.client} | ${postMeta.title}`; // eslint-disable-line prefer-destructuring
     description = postNode.excerpt;
     image = postMeta.cover.childImageSharp.resize.src;
     postURL = config.siteUrl + realPrefix + postPath;

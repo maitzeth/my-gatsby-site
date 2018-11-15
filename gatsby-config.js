@@ -69,6 +69,19 @@ module.exports = {
         display: 'standalone',
         icon: 'src/favicon.png',
       },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: config.googleAnalyticsID,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-emotion',
+      options: {
+        autoLabel: process.env.NODE_ENV !== 'production',
+        labelFormat: '[filename]--[local]',
+      },
     }
   ],
 }

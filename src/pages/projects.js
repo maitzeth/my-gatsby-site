@@ -21,9 +21,9 @@ const ProjectsPage = ({ data }) => {
 					</header>
 					<Container className="py-4">
 						<Row className="mt-5">
-							{edges.map(({ node }) => (
+							{edges.map(({ node }, index) => (
 								<Project
-									key={node.frontmatter.client}
+									key={`project-${index}`}
 									{...node}
 									separation="my-3"
 								/>

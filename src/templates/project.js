@@ -1,10 +1,11 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import CustomButton from '../components/CustomButton';
 import css from '../assets/css/page.module.scss'
-import { Container, Row, Col } from 'reactstrap'
-import moment from 'moment'
-import CustomButton from '../components/CustomButton'
+import { Container, Row, Col } from 'reactstrap';
+import moment from 'moment';
+import SEO from '../components/SEO';
 
 const Project = ({
   pageContext: { slug },
@@ -27,6 +28,7 @@ const Project = ({
 
   return (
     <Layout>
+      <SEO postPath={slug} postNode={postNode} postSEO />
       <div className={css.projectWrapper}>
         <Container>
           <Row>
@@ -55,7 +57,10 @@ const Project = ({
           </Row>
           <Row className="my-4">
             <Col sm="12">
-              <div dangerouslySetInnerHTML={{ __html: postNode.html }} className={css.projectInfo} />
+              <div
+                dangerouslySetInnerHTML={{ __html: postNode.html }}
+                className={css.projectInfo}
+              />
             </Col>
           </Row>
           <Row>
