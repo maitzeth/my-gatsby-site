@@ -3,9 +3,12 @@ import { Col } from 'reactstrap'
 import css from '../assets/css/project.module.scss'
 import { Link } from 'gatsby'
 
-const Project = ({ fields, frontmatter, opacity, separation }) => {
+const Project = ({ fields, frontmatter, opacity, separation, id }) => {
 	const { src } = frontmatter.cover.childImageSharp.fluid
 	const { slug } = fields
+	const { client } = frontmatter;
+
+	const imageTitle = client.split(' ').join("-")
 
 	return (
 		<Col
@@ -15,12 +18,16 @@ const Project = ({ fields, frontmatter, opacity, separation }) => {
 			} ${separation}`}
 		>
 			<Link to={slug}>
-				<figure className="m-0 p-0 project">
-					<div
-						className={css.ProjectImage}
-						style={{ backgroundImage: `url(${src})` }}
+				<div
+					className={`uk-cover-container uk-height-medium ${css.ProjectImage}`}
+				>
+					<img
+						src={src}
+						alt={`project ${client.toLowerCase()} ${id}`}
+						uk-cover="true"
+						title={`project-${imageTitle.toLowerCase()}-${id}`}
 					/>
-				</figure>
+				</div>
 			</Link>
 		</Col>
 	)

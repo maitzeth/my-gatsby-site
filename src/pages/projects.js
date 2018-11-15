@@ -24,6 +24,7 @@ const ProjectsPage = ({ data }) => {
 							{edges.map(({ node }, index) => (
 								<Project
 									key={`project-${index}`}
+									id={index}
 									{...node}
 									separation="my-3"
 								/>
