@@ -1,10 +1,36 @@
-import React from 'react'
-import css from '../assets/css/header.module.scss'
+import React, { Component, Fragment } from 'react';
+import css from '../assets/css/header.module.scss';
+import WindowSizeListener from 'react-window-size-listener';
+import dragImage from '../assets/images/dragicon.png';
 
-const GoTo = () => (
-	<div className={css.goToWrapper}>
-		<span className={css.iconScrollArrow} />
-	</div>
-)
+class GoTo extends Component {
+	state = {
+		windowWidth: window.innerWidth
+	};
 
-export default GoTo
+	componentDidMount() {
+		console.log(window.innerWidth);
+		this.setState({ windowWidth: window.innerWidth });
+	}
+
+	render() {
+		const { windowWidth } = this.state;
+
+		return (
+			<Fragment>
+				<WindowSizeListener onResize={windowSize => this.setState({ windowWidth: windowSize.windowWidth })} />
+				<div className={css.goToWrapper}>
+					{windowWidth > 567 ? (
+						<div className={css.goTo}>
+							<span className={css.iconScrollArrow} />
+						</div>
+					) : (
+						<img src={dragImage} alt="Drag Vertical Icon" className={css.dragIcon} />
+					)}
+				</div>
+			</Fragment>
+		);
+	}
+}
+
+export default GoTo;

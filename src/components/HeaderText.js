@@ -1,5 +1,5 @@
-import React from 'react'
-import css from '../assets/css/header.module.scss'
+import React from 'react';
+import css from '../assets/css/header.module.scss';
 
 const HeaderText = ({ title }) => (
 	<div className={css.headerTextWrapper}>

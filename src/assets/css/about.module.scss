@@ -3,16 +3,16 @@
 
 .aboutWrapper {
 	@include flexbox();
-  @include align-items(center);
+	@include align-items(center);
 	height: 100vh;
 }
 
 .aboutImage {
-  margin: 1em auto;
-  border-radius: 50%;
-  display: block;
-  height: auto;
-  width: 150px;
+	margin: 1em auto;
+	border-radius: 50%;
+	display: block;
+	height: auto;
+	width: 150px;
 }
 
 .socialWrapper {
@@ -28,13 +28,17 @@
 	margin: 0 0.2em;
 
 	a {
-    padding: 0.5em;
+		padding: 0.5em;
 	}
 
 	i {
 		font-size: 1.5em;
 		color: $primary-color;
 	}
+}
+
+.aboutSectionTitle {
+	color: $primary-color;
 }
 
 @media (max-width: 567px) {

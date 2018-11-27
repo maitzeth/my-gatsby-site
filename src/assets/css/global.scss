@@ -3,128 +3,128 @@
 @import 'mixins/flexbox';
 
 body {
-  font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .btn-primary {
-  background-color: transparent;
-  border: none;
-  border: 2px solid #fff;
-  border-radius: 0;
-  padding: 0.5em 3em;
-  position: relative;
-  overflow: hidden;
+	background-color: transparent;
+	border: none;
+	border: 2px solid #fff;
+	border-radius: 0;
+	padding: 0.5em 3em;
+	position: relative;
+	overflow: hidden;
 
-  &:hover {
-    background-color: transparent;
-    border-color: #fff;
-    
-    span {
-      color: #000;
-      -webkit-transition: all 100ms ease;
-      -o-transition: all 100ms ease;
-      transition: all 100ms ease;
-    }
+	&:hover {
+		background-color: transparent;
+		border-color: #fff;
 
-    &:after {
-      width: 120%;
-    }
-  }
-  
-  &:focus {
-    box-shadow: 0 0 0 0.2rem transparent !important;
-  }
+		span {
+			color: #000;
+			-webkit-transition: all 100ms ease;
+			-o-transition: all 100ms ease;
+			transition: all 100ms ease;
+		}
 
-  &:active {
-    background-color: transparent !important;
-    border-color: #fff !important;
-  }
+		&:after {
+			width: 120%;
+		}
+	}
 
-  span {
-    position: relative;
-    z-index: 2;
-  }
+	&:focus {
+		box-shadow: 0 0 0 0.2rem transparent !important;
+	}
 
-  &:after {
-    content: "";
-    position: absolute;
-    left: -5%;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    z-index: 1;
-    background-color: #fff;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    -webkit-transform: skew(160deg);
-        -ms-transform: skew(160deg);
-            transform: skew(160deg);
-  }
+	&:active {
+		background-color: transparent !important;
+		border-color: #fff !important;
+	}
+
+	span {
+		position: relative;
+		z-index: 2;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: -5%;
+		top: 0;
+		height: 100%;
+		width: 0%;
+		z-index: 1;
+		background-color: #fff;
+		-webkit-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+		-webkit-transform: skew(160deg);
+		-ms-transform: skew(160deg);
+		transform: skew(160deg);
+	}
 }
 
 .btn-secondary {
-  background-color: transparent;
-  border: none;
-  border: 2px solid #000;
-  border-radius: 0;
-  padding: 0.5em 3em;
-  position: relative;
-  overflow: hidden;
+	background-color: transparent;
+	border: none;
+	border: 2px solid #000;
+	border-radius: 0;
+	padding: 0.5em 3em;
+	position: relative;
+	overflow: hidden;
 
-  &:hover {
-    background-color: transparent;
-    border-color: #000;
-    
-    span {
-      color: #fff;
-      -webkit-transition: all 100ms ease;
-      -o-transition: all 100ms ease;
-      transition: all 100ms ease;
-    }
+	&:hover {
+		background-color: transparent;
+		border-color: #000;
 
-    &:after {
-      width: 110%;
-    }
-  }
+		span {
+			color: #fff;
+			-webkit-transition: all 100ms ease;
+			-o-transition: all 100ms ease;
+			transition: all 100ms ease;
+		}
 
-  span {
-    position: relative;
-    color: #000;
-    z-index: 2;
-  }
+		&:after {
+			width: 110%;
+		}
+	}
 
-  &:after {
-    content: "";
-    position: absolute;
-    left: -5%;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    z-index: 1;
-    background-color: #000;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    -webkit-transform: skew(160deg);
-        -ms-transform: skew(160deg);
-            transform: skew(160deg);
-  }
+	span {
+		position: relative;
+		color: #000;
+		z-index: 2;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: -5%;
+		top: 0;
+		height: 100%;
+		width: 0%;
+		z-index: 1;
+		background-color: #000;
+		-webkit-transition: all 200ms ease;
+		-o-transition: all 200ms ease;
+		transition: all 200ms ease;
+		-webkit-transform: skew(160deg);
+		-ms-transform: skew(160deg);
+		transform: skew(160deg);
+	}
 }
 
 .activeItem {
-  &:after {
-    width: 120%;
-  }
+	&:after {
+		width: 120%;
+	}
 
-  span {
-    color: $primary-color;
-  }
+	span {
+		color: $primary-color;
+	}
 }
 
 @media (max-width: 576px) {
-  .btn-primary {
-    padding: 0.5em 0em; 
-    margin: 0.5em 0;  
-  }
+	.btn-primary {
+		padding: 0.5em 0em;
+		margin: 0.5em 0;
+	}
 }

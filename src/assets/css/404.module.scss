@@ -5,8 +5,8 @@
 	height: 100vh;
 	background-color: $primary-color;
 	@include flexbox();
-  @include align-items(center);
-  @include justify-content(center);
+	@include align-items(center);
+	@include justify-content(center);
 }
 
 .errorMessages {

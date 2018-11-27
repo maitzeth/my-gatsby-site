@@ -84,34 +84,40 @@
 }
 
 .aboutContainer {
-  height: 100vh;
-  @include flexbox();
+	height: 100vh;
+	@include flexbox();
 	@include align-items(center);
 	@include justify-content(center);
 	@include flex-direction(column);
 }
 
 .projectInfo {
-	h1, p {
+	h1,
+	p {
 		text-align: center;
 	}
 }
 
 @media (max-width: 578px) {
-	.aboutPageWrapper, .aboutContainer {
+	.aboutPageWrapper,
+	.aboutContainer {
 		height: auto;
 	}
 
 	.projectTitle {
 		font-size: 1.3em;
 	}
-	
+
 	.projectImage {
 		height: 25vh;
 	}
 
 	.aboutContainer {
-    padding: 1em 0;	
+		padding: 1em 0;
+	}
+
+	.projectWrapper {
+		padding-top: 2em;
 	}
 }
 

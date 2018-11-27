@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
-import css from '../assets/css/project.module.scss'
-import Project from './Project'
-import CustomButton from './CustomButton'
+import React, { Component } from 'react';
+import { Col, Container, Row } from 'reactstrap';
+import css from '../assets/css/project.module.scss';
+import CustomButton from './CustomButton';
+import Project from './Project';
 
 class Projects extends Component {
 	state = {
-		opacity: false,
-	}
+		opacity: false
+	};
 
 	handleActiveOpacity = () => {
 		this.setState({
-			opacity: true,
-		})
-	}
+			opacity: true
+		});
+	};
 
 	handleLeaveOpacity = () => {
 		this.setState({
-			opacity: false,
-		})
-	}
+			opacity: false
+		});
+	};
 
 	render() {
-		const { projectEdges } = this.props
-		const { opacity } = this.state
+		const { projectEdges } = this.props;
+		const { opacity } = this.state;
 
 		return (
 			<Container
@@ -40,12 +40,7 @@ class Projects extends Component {
 					</Row>
 					<Row className="mt-5">
 						{projectEdges.map(({ node }, index) => (
-							<Project
-								key={`client-${index}`}
-								{...node}
-								opacity={opacity}
-								separation="my-3"
-							/>
+							<Project key={`client-${index}`} {...node} opacity={opacity} separation="my-3" />
 						))}
 					</Row>
 					<Row className="mt-5">
@@ -55,8 +50,8 @@ class Projects extends Component {
 					</Row>
 				</Container>
 			</Container>
-		)
+		);
 	}
 }
 
-export default Projects
+export default Projects;
