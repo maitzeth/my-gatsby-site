@@ -5,6 +5,8 @@ import { sectionTitle } from '../assets/css/project.module.scss';
 import css from '../assets/css/about.module.scss';
 import aboutImage from '../assets/images/about.jpg';
 import SocialItem from './SocialItem.js';
+import pdf from '../assets/cv.pdf';
+import CustomButton from './CustomButton';
 
 const AboutSection = ({ social }) => (
 	<Container fluid className={css.aboutWrapper}>
@@ -19,7 +21,10 @@ const AboutSection = ({ social }) => (
 					Paradigms. I primarily works with Javascript, HTML, CSS and all the technologies behind that. But im
 					proficient in other languages too, like PHP and Ruby.
 				</p>
-				<Fade cascade>
+				<div className="text-center">
+					<CustomButton text="View CV" link={pdf} color="white" external={true} />
+				</div>
+				<Fade>
 					<ul className={css.socialWrapper}>
 						{social.map((item) => <SocialItem key={`socialItem-${item.name}`} {...item} />)}
 					</ul>

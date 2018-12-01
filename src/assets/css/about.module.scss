@@ -2,49 +2,63 @@
 @import 'mixins/flexbox';
 
 .aboutWrapper {
-	@include flexbox();
-	@include align-items(center);
-	height: 100vh;
+  @include flexbox();
+  @include align-items(center);
+  height: 100vh;
 }
 
 .aboutImage {
-	margin: 1em auto;
-	border-radius: 50%;
-	display: block;
-	height: auto;
-	width: 150px;
+  margin: 1em auto;
+  border-radius: 50%;
+  display: block;
+  height: auto;
+  width: 150px;
 }
 
 .socialWrapper {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	text-align: center;
-	margin-top: 2em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .socialElement {
-	display: inline-block;
-	margin: 0 0.2em;
+  display: inline-block;
+  margin: 0 .6em;
+  text-align: center;
+  transition: all 200ms ease;
 
-	a {
-		padding: 0.5em;
-	}
+  &:hover {
+    transform: translateY(-3px);
+  }
 
-	i {
-		font-size: 1.5em;
-		color: $primary-color;
-	}
+  a {
+    padding: 0.5em;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h6 {
+    text-transform: capitalize;
+  }
+
+  i {
+    font-size: 1.5em;
+    color: $primary-color;
+  }
 }
 
 .aboutSectionTitle {
-	color: $primary-color;
+  color: $primary-color;
 }
 
 @media (max-width: 567px) {
-	.aboutWrapper {
-		height: auto;
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
+  .aboutWrapper {
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }

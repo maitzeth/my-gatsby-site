@@ -1,33 +1,47 @@
-import { Link } from 'gatsby';
-import React, { Component, Fragment } from 'react';
-import { Container, Nav, Navbar, NavItem } from 'reactstrap';
-import css from '../assets/css/menu.module.scss';
-import NavbarToggler from './NavbarToggler';
+import { Link } from 'gatsby'
+import React, { Component, Fragment } from 'react'
+import { Container, Nav, Navbar, NavItem } from 'reactstrap'
+import css from '../assets/css/menu.module.scss'
+import NavbarToggler from './NavbarToggler'
 
 class Menu extends Component {
 	state = {
-		isActive: false
-	};
+		isActive: false,
+	}
 
 	handleToggler = () => {
-		const { isActive } = this.state;
+		const { isActive } = this.state
 		this.setState({
-			isActive: !isActive
-		});
-	};
+			isActive: !isActive,
+		})
+	}
 
 	render() {
-		const { isActive } = this.state;
+		const { isActive } = this.state
 
 		return (
 			<Fragment>
-				<Navbar expand="sm" fixed="top" className={isActive ? css.menuActive : css.menuDefault}>
+				<Navbar
+					expand="sm"
+					fixed="top"
+					className={isActive ? css.menuActive : css.menuDefault}
+				>
 					<Container>
 						<Nav className="mx-auto text-center" navbar>
 							<NavItem>
 								<Link to="/" className={css.menuLink}>
 									<span>Home</span>
 								</Link>
+							</NavItem>
+							<NavItem>
+								<a
+									href="https://sourcerer.io/maitzeth"
+									className={css.menuLink}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									About
+								</a>
 							</NavItem>
 							<NavItem>
 								<Link to="/projects" className={css.menuLink}>
@@ -38,11 +52,14 @@ class Menu extends Component {
 					</Container>
 				</Navbar>
 				<div className={css.navbarTogglerWrapper}>
-					<NavbarToggler isActive={isActive} handleToggler={this.handleToggler} />
+					<NavbarToggler
+						isActive={isActive}
+						handleToggler={this.handleToggler}
+					/>
 				</div>
 			</Fragment>
-		);
+		)
 	}
 }
 
-export default Menu;
+export default Menu

@@ -1,57 +1,64 @@
-import React, { Component } from 'react';
-import { Col, Container, Row } from 'reactstrap';
-import css from '../assets/css/project.module.scss';
-import CustomButton from './CustomButton';
-import Project from './Project';
+import React, { Component } from 'react'
+import { Col, Container, Row } from 'reactstrap'
+import css from '../assets/css/project.module.scss'
+import CustomButton from './CustomButton'
+import Project from './Project'
+
+
 
 class Projects extends Component {
-	state = {
-		opacity: false
-	};
+  state = {
+    opacity: false
+  }
 
-	handleActiveOpacity = () => {
-		this.setState({
-			opacity: true
-		});
-	};
+  handleActiveOpacity = () => {
+    this.setState({
+      opacity: true,
+    })
+  }
 
-	handleLeaveOpacity = () => {
-		this.setState({
-			opacity: false
-		});
-	};
+  handleLeaveOpacity = () => {
+    this.setState({
+      opacity: false,
+    })
+  }
 
-	render() {
-		const { projectEdges } = this.props;
-		const { opacity } = this.state;
+  render() {
+    const { projectEdges } = this.props
+    const { opacity } = this.state
 
-		return (
-			<Container
-				fluid
-				className={css.projectsContainer}
-				onMouseEnter={this.handleActiveOpacity}
-				onMouseLeave={this.handleLeaveOpacity}
-			>
-				<Container>
-					<Row>
-						<Col>
-							<h2 className={`display-4 ${css.sectionTitle}`}>Latest Works</h2>
-						</Col>
-					</Row>
-					<Row className="mt-5">
-						{projectEdges.map(({ node }, index) => (
-							<Project key={`client-${index}`} {...node} opacity={opacity} separation="my-3" />
-						))}
-					</Row>
-					<Row className="mt-5">
-						<Col className="text-center">
-							<CustomButton text="View more" link="/projects" color="black" />
-						</Col>
-					</Row>
-				</Container>
-			</Container>
-		);
-	}
+    return (
+      <Container
+        fluid
+        className={css.projectsContainer}
+        onMouseEnter={this.handleActiveOpacity}
+        onMouseLeave={this.handleLeaveOpacity}
+      >
+        <Container>
+          <Row>
+            <Col>
+              <h2 className={`display-4 ${css.sectionTitle}`}>Latest Works</h2>
+            </Col>
+          </Row>
+          <Row className="mt-5">
+            {projectEdges.map(({ node }, index) => (
+              <Project
+                key={`client-${index}`}
+                {...node}
+                opacity={opacity}
+                separation="my-3"
+              />
+            ))}
+          </Row>
+          <Row className="mt-5">
+            <Col className="text-center">
+              <CustomButton text="View more" link="/projects" color="black" />
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+    )
+  }
 }
 
-export default Projects;
+export default Projects
