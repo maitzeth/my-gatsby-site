@@ -5,7 +5,7 @@ import dragImage from '../assets/images/dragicon.png'
 
 class GoTo extends Component {
 	state = {
-		windowWidth: window.innerWidth,
+		windowWidth: 0,
 	}
 
 	componentDidMount() {
