@@ -1,13 +1,13 @@
-const config = require('./config/website');
+const config = require('./config/website')
 
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
 	pathPrefix: config.pathPrefix,
 	siteMetadata: {
 		title: `André Iván`,
 		subtitle: `Web Developer`,
-		siteUrl: config.siteUrl + pathPrefix
+		siteUrl: config.siteUrl + pathPrefix,
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -23,14 +23,14 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-nprogress',
 			options: {
-				color: config.themeColor
-			}
+				color: config.themeColor,
+			},
 		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				path: `${__dirname}/content/`
-			}
+				path: `${__dirname}/content/`,
+			},
 		},
 		{
 			resolve: 'gatsby-transformer-remark',
@@ -41,21 +41,21 @@ module.exports = {
 						options: {
 							maxWidth: 590,
 							quality: 90,
-							linkImagesToOriginal: false
-						}
+							linkImagesToOriginal: false,
+						},
 					},
 					{
 						resolve: 'gatsby-remark-external-links',
 						options: {
 							target: '_blank',
-							rel: 'nofollow noopener noreferrer'
-						}
+							rel: 'nofollow noopener noreferrer',
+						},
 					},
 					{
-						resolve: 'gatsby-remark-responsive-iframe'
-					}
-				]
-			}
+						resolve: 'gatsby-remark-responsive-iframe',
+					},
+				],
+			},
 		},
 		{
 			resolve: 'gatsby-plugin-manifest',
@@ -67,21 +67,21 @@ module.exports = {
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
 				display: 'standalone',
-				icon: 'src/favicon.png'
-			}
+				icon: 'src/favicon.png',
+			},
 		},
 		{
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
-				trackingId: config.googleAnalyticsID
-			}
+				trackingId: config.googleAnalyticsID,
+			},
 		},
 		{
 			resolve: 'gatsby-plugin-emotion',
 			options: {
 				autoLabel: process.env.NODE_ENV !== 'production',
-				labelFormat: '[filename]--[local]'
-			}
-		}
-	]
-};
+				labelFormat: '[filename]--[local]',
+			},
+		},
+	],
+}

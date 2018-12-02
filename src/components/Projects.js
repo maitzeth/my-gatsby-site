@@ -4,11 +4,9 @@ import css from '../assets/css/project.module.scss'
 import CustomButton from './CustomButton'
 import Project from './Project'
 
-
-
 class Projects extends Component {
   state = {
-    opacity: false
+    opacity: false,
   }
 
   handleActiveOpacity = () => {

@@ -1,7 +1,7 @@
 ---
 client: "Amo Comunicacion"
 title: "Amo Comunicacion"
-cover: "./amo.jpeg"
+cover: "./bg.jpg"
 date: "2018-08-01"
 service: "Wordpress Theming"
 link: "http://amocomunicacion.com/"

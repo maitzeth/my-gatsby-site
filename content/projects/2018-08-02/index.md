@@ -1,7 +1,7 @@
 ---
 client: "Amo Comunicacion"
 title: "Manzana Brooklyn"
-cover: "./manzana.jpeg"
+cover: "./bg.jpg"
 date: "2018-08-02"
 service: "Wordpress Theming"
 link: "http://manzanabrooklyn.com/"

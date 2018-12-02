@@ -1,15 +1,15 @@
-import { graphql } from 'gatsby';
-import React, { Component, Fragment } from 'react';
-import AboutSection from '../components/AboutSection';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
-import Projects from '../components/Projects';
+import { graphql } from 'gatsby'
+import React, { Component, Fragment } from 'react'
+import AboutSection from '../components/AboutSection'
+import Header from '../components/Header'
+import Layout from '../components/Layout'
+import Projects from '../components/Projects'
 
 class IndexPage extends Component {
 	render() {
-		const { title } = this.props.data.site.siteMetadata;
-		const { social } = this.props.data.socialJson;
-		const projectEdges = this.props.data.allMarkdownRemark.edges;
+		const { title } = this.props.data.site.siteMetadata
+		const { social } = this.props.data.socialJson
+		const projectEdges = this.props.data.allMarkdownRemark.edges
 
 		return (
 			<Fragment>
@@ -19,7 +19,7 @@ class IndexPage extends Component {
 					<Projects projectEdges={projectEdges} />
 				</Layout>
 			</Fragment>
-		);
+		)
 	}
 }
 
@@ -36,7 +36,10 @@ export const query = graphql`
 				name
 			}
 		}
-		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
+		allMarkdownRemark(
+			sort: { fields: [frontmatter___date], order: DESC }
+			limit: 3
+		) {
 			edges {
 				node {
 					fields {
@@ -57,6 +60,6 @@ export const query = graphql`
 			}
 		}
 	}
-`;
+`
 
-export default IndexPage;
+export default IndexPage

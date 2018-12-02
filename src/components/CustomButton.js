@@ -1,7 +1,7 @@
-import { Link } from 'gatsby';
-import React, { Fragment } from 'react';
-import { Button } from 'reactstrap';
-import '../assets/css/global.scss';
+import { Link } from 'gatsby'
+import React, { Fragment } from 'react'
+import { Button } from 'reactstrap'
+import '../assets/css/global.scss'
 
 const primaryStyle = {
 	borderRadius: '0',
@@ -9,8 +9,8 @@ const primaryStyle = {
 	border: '2px solid #fff',
 	padding: '0.5em 3em',
 	position: 'relative',
-	overflow: 'hidden'
-};
+	overflow: 'hidden',
+}
 
 const secondaryStyle = {
 	borderRadius: '0',
@@ -18,8 +18,8 @@ const secondaryStyle = {
 	border: '2px solid #000',
 	padding: '0.5em 3em',
 	position: 'relative',
-	overflow: 'hidden'
-};
+	overflow: 'hidden',
+}
 
 const CustomButton = ({ text, link, color, external = false }) => {
 	const buttonInner =
@@ -31,7 +31,7 @@ const CustomButton = ({ text, link, color, external = false }) => {
 			<Button color="secondary" style={secondaryStyle}>
 				<span>{text}</span>
 			</Button>
-		);
+		)
 
 	return (
 		<Fragment>
@@ -43,7 +43,7 @@ const CustomButton = ({ text, link, color, external = false }) => {
 				</a>
 			)}
 		</Fragment>
-	);
-};
+	)
+}
 
-export default CustomButton;
+export default CustomButton

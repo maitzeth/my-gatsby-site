@@ -1,7 +1,7 @@
 ---
 client: "Glodstudio"
 title: "Peptus"
-cover: "./peptus.jpeg"
+cover: "./bg.jpg"
 date: "2017-12-02"
 service: "Wordpress Theming"
 link: "http://peptus.com"

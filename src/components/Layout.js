@@ -1,9 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { graphql, StaticQuery } from 'gatsby';
-import React, { Fragment } from 'react';
-import Foot from './Foot';
-import Menu from './Menu';
-import CEO from './SEO';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { graphql, StaticQuery } from 'gatsby'
+import React, { Fragment } from 'react'
+import Foot from './Foot'
+import Menu from './Menu'
+import CEO from './SEO'
 
 const Layout = ({ children }) => (
 	<StaticQuery
@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
 				}
 			}
 		`}
-		render={(data) => (
+		render={data => (
 			<Fragment>
 				<CEO />
 				<Menu />
@@ -26,6 +26,6 @@ const Layout = ({ children }) => (
 			</Fragment>
 		)}
 	/>
-);
+)
 
-export default Layout;
+export default Layout

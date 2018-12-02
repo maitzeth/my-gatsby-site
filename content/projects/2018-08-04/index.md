@@ -1,7 +1,7 @@
 ---
 client: "Amo Comunicacion"
 title: "Somos Femina"
-cover: "./femina.jpeg"
+cover: "./bg.jpg"
 date: "2018-08-04"
 service: "Wordpress Woocommerce"
 link: "http://somosfemina.com/"

@@ -1,7 +1,7 @@
 ---
 client: "GlodStudio"
 title: "GlodStudio"
-cover: "./glodstudio.jpeg"
+cover: "./bg.jpg"
 date: "2017-12-01"
 service: "Wordpress Theming"
 link: "http://glodstudio.com"

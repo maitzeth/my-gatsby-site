@@ -1,7 +1,7 @@
-import React from 'react';
-import css from '../assets/css/404.module.scss';
-import CustomButton from '../components/CustomButton';
-import Layout from '../components/Layout';
+import React from 'react'
+import css from '../assets/css/404.module.scss'
+import CustomButton from '../components/CustomButton'
+import Layout from '../components/Layout'
 
 const NotFoundPage = () => (
 	<Layout>
@@ -14,6 +14,6 @@ const NotFoundPage = () => (
 			</div>
 		</section>
 	</Layout>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage

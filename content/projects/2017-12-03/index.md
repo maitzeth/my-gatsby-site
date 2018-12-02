@@ -1,7 +1,7 @@
 ---
 client: "Glodstudio"
 title: "Konetti"
-cover: "./konetti.jpeg"
+cover: "./bg.jpg"
 date: "2017-12-03"
 service: "Wordpress Theming"
 link: "http://konetti.com"
