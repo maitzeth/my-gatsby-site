@@ -16,7 +16,7 @@ class IndexPage extends Component {
 				<Layout>
 					<Header title={title} />
 					<AboutSection social={social} />
-					<Projects projectEdges={projectEdges} />
+					<Projects projectEdges={projectEdges} />	
 				</Layout>
 			</Fragment>
 		)

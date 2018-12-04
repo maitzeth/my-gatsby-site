@@ -4681,6 +4681,10 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "=3.1.0"
 
+font-awesome@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+
 for-each@^0.3.2:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.3.tgz#69b447e88a0a5d32c3e7084f3f1710034b21376e"
@@ -11199,6 +11203,10 @@ uglifyjs-webpack-plugin@^1.2.4:
     uglify-es "^3.3.4"
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
+
+uikit@^3.0.0-rc.25:
+  version "3.0.0-rc.25"
+  resolved "https://registry.npmjs.org/uikit/-/uikit-3.0.0-rc.25.tgz#81d4ed1995c9cc8bdba2cf1cf83dc6d7c69031a8"
 
 ultron@~1.1.0:
   version "1.1.1"

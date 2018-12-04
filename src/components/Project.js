@@ -2,6 +2,8 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { Col } from 'reactstrap'
 import css from '../assets/css/project.module.scss'
+import 'uikit/dist/css/uikit-core.min.css'
+import 'uikit/dist/js/uikit-core.min.js'
 
 const Project = ({ fields, frontmatter, opacity, separation, id }) => {
   const { src } = frontmatter.cover.childImageSharp.fluid

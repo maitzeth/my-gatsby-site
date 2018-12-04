@@ -1,4 +1,5 @@
 import React from 'react'
+import 'font-awesome/css/font-awesome.min.css'
 import css from '../assets/css/about.module.scss'
 
 const SocialItem = ({ name, url }) => (

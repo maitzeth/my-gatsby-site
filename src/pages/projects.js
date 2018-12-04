@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import Project from '../components/Project'
 import { chunk } from 'lodash'
 
-let postsToShow = 3
+let postsToShow = 6
 
 const primaryStyle = {
   borderRadius: '0',
@@ -20,7 +20,7 @@ const primaryStyle = {
 
 class ProjectsPage extends React.Component {
   state = {
-    showingMore: postsToShow > 3,
+    showingMore: postsToShow > 6,
     postsToShow,
   }
 
