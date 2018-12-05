@@ -5,61 +5,50 @@
   background-color: $primary-color;
 }
 
-.pageHeaderImage {
-  height: 350px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+.imageWrapper {
   position: relative;
-  @include flexbox();
-  @include align-items(center);
-  @include justify-content(center);
 
   &:after {
     content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    background-color: #000;
     top: 0;
     left: 0;
-    background-color: $primary-color;
-    opacity: 0.9;
-    z-index: 1;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
+}
 
-  [class*="display-"] {
-    position: relative;
-    text-align: center;
+.imageTitle {
+  position: absolute;
+}
+
+.projectContent {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  a {
     color: #fff;
-    z-index: 2;
-  }
-}
-
-.projectWrapper {
-  padding-top: 6em;
-  padding-bottom: 3em;
-}
-
-.projectImage {
-  height: 60vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: relative;
-  @include flexbox();
-  @include align-items(center);
-  @include justify-content(center);
-
-  &:after {
-    content: "";
-    position: absolute;
     height: 100%;
-    width: 100%;
-    top: 0;
     left: 0;
-    background-color: $primary-color;
-    opacity: 0.9;
-    z-index: 1;
+    opacity: 0;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      opacity: 1;
+      text-decoration: none;
+    }
   }
 }
 

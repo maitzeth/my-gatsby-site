@@ -6,6 +6,8 @@ import css from '../assets/css/page.module.scss';
 import CustomButton from '../components/CustomButton';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import Img from 'gatsby-image';
+
 
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
   const {
@@ -14,7 +16,7 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
     date,
     service,
     link,
-    cover: { childImageSharp: { resize: { src } } }
+    cover: { childImageSharp: { fluid } }
   } = postNode.frontmatter;
 
   const formatDate = moment(date, 'DD.MM.YYYY').format('LL');
@@ -26,8 +28,9 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
         <Container>
           <Row>
             <Col>
-              <div className={css.projectImage} style={{ backgroundImage: `url(${src})` }}>
-                <h2 className={`${css.projectTitle} m-0`}>{title}</h2>
+              <div className={css.imageWrapper}>
+                <Img fluid={fluid} />
+                <h2 className={css.imageTitle}>{ title }</h2>
               </div>
             </Col>
           </Row>
@@ -76,8 +79,8 @@ export const pageQuery = graphql`
         link
         cover {
           childImageSharp {
-            resize(width: 800) {
-              src
+            fluid(maxWidth: 850, quality: 90) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

@@ -5,16 +5,19 @@ import config from '../../config/website';
 
 const SEO = (props) => {
   const { postNode, postPath, postSEO } = props;
+
   let title;
   let description;
   let image;
   let postURL;
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
+
   if (postSEO) {
     const postMeta = postNode.frontmatter;
-    title = `${postMeta.client} | ${postMeta.title}`; // eslint-disable-line prefer-destructuring
+    title = `${config.siteTitle} - ${postMeta.title}`; 
     description = postNode.excerpt;
-    image = postMeta.cover.childImageSharp.resize.src;
+    image = postMeta.cover.childImageSharp.fluid.src;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
     title = config.siteTitle;
@@ -30,8 +33,8 @@ const SEO = (props) => {
       '@id': blogURL,
       url: blogURL,
       name: title,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : ''
-    }
+      alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+    },
   ];
   if (postSEO) {
     schemaOrgJSONLD = [
@@ -45,29 +48,29 @@ const SEO = (props) => {
         headline: title,
         image: {
           '@type': 'ImageObject',
-          url: image
+          url: image,
         },
         description,
         datePublished: postNode.frontmatter.date,
         dateModified: postNode.frontmatter.date,
         author: {
           '@type': 'Person',
-          name: config.author
+          name: config.author,
         },
         publisher: {
           '@type': 'Organization',
           name: config.author,
           logo: {
             '@type': 'ImageObject',
-            url: config.siteUrl + realPrefix + config.siteLogo
-          }
+            url: config.siteUrl + realPrefix + config.siteLogo,
+          },
         },
         isPartOf: blogURL,
         mainEntityOfPage: {
           '@type': 'WebSite',
-          '@id': blogURL
-        }
-      }
+          '@id': blogURL,
+        },
+      },
     ];
   }
   return (
@@ -94,9 +97,3 @@ const SEO = (props) => {
 };
 
 export default SEO;
-
-SEO.propTypes = {
-  postNode: PropTypes.object,
-  postPath: PropTypes.string,
-  postSEO: PropTypes.bool
-};

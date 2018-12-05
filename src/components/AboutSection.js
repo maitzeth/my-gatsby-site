@@ -8,6 +8,7 @@ import SocialItem from './SocialItem.js';
 import pdf from '../assets/cv.pdf';
 import CustomButton from './CustomButton';
 
+
 const AboutSection = ({ social }) => (
   <Container fluid className={css.aboutWrapper}>
     <Row>
