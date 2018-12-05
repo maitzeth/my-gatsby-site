@@ -12,7 +12,7 @@ const AboutSection = ({ social }) => (
   <Container fluid className={css.aboutWrapper}>
     <Row>
       <Col sm={{ size: '10', offset: 1 }}>
-        <h2 className={`${sectionTitle} ${css.aboutSectionTitle} display-4 text-center`}>Who I am</h2>
+        <h2 className={`${sectionTitle} ${css.aboutSectionTitle} text-center`}>Who I am</h2>
         <img src={aboutImage} alt="about me" className={css.aboutImage} />
         <p className="lead text-center">
           I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in Venezuela, currently living

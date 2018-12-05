@@ -13,4 +13,8 @@ module.exports = {
   // Manifest and Progress color
   themeColor: '#0b0b0d',
   backgroundColor: '#ffffff',
+  // Settings for typography.jsx
+  headerFontFamily: 'Roboto',
+  bodyFontFamily: 'Roboto',
+  baseFontSize: '16px',
 };

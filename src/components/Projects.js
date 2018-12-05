@@ -35,7 +35,7 @@ class Projects extends Component {
         <Container>
           <Row>
             <Col>
-              <h2 className={`display-4 ${css.sectionTitle}`}>Latest Works</h2>
+              <h2 className={css.sectionTitle}>Latest Works</h2>
             </Col>
           </Row>
           <Row className="mt-5">

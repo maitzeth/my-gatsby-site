@@ -83,5 +83,11 @@ module.exports = {
 				labelFormat: '[filename]--[local]',
 			},
 		},
+		{
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography.jsx',
+      },
+    }
 	],
 }
