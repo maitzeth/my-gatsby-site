@@ -41,6 +41,7 @@
     "react-dom": "^16.5.1",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-hot-loader": "^4.3.12",
     "react-icons": "^3.2.0",
     "react-reveal": "^1.2.2",
     "react-star-rating-component": "^1.4.1",

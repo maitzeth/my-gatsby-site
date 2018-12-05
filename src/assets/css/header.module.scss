@@ -138,14 +138,18 @@
 	.dragIcon {
 		width: 2em;
 		animation-name: jump;
-    animation-duration: 400ms;
-    animation-iteration-count: infinite;
+		animation-duration: 400ms;
+		animation-iteration-count: infinite;
 		animation-direction: alternate;
 		animation-timing-function: ease;
-	}	
+	}
 
 	@keyframes jump {
-    from {transform: translateY(0);}
-    to {transform: translateY(-10px);}
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(-10px);
+		}
 	}
 }
