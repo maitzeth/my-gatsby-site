@@ -2,90 +2,90 @@
 @import 'mixins/flexbox';
 
 .projectsContainer {
-	background-color: $primary-color;
-	height: 100vh;
-	padding-top: 5em;
-	padding-bottom: 5em;
-	@include flexbox();
-	@include align-items(center);
+  background-color: $primary-color;
+  height: 100vh;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  @include flexbox();
+  @include align-items(center);
 }
 
 .sectionTitle {
-	color: $white-color;
-	text-align: center;
+  color: $white-color;
+  text-align: center;
 }
 
 .ProjectImage {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	height: 250px;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-	overflow: hidden;
-	position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 250px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  overflow: hidden;
+  position: relative;
 
-	&:hover {
-		-webkit-filter: grayscale(0%);
-		filter: grayscale(0%);
-	}
+  &:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
 }
 
 .ProjectImageItem {
-	max-width: none;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	vertical-align: middle;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
+  max-width: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .overlayActive {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	opacity: 0.5;
-	-webkit-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.5;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
 
-	&:hover {
-		opacity: 1 !important;
-		-webkit-filter: grayscale(0%);
-		filter: grayscale(0%);
-	}
+  &:hover {
+    opacity: 1 !important;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
 }
 
 .overlayDefault {
-	-webkit-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-	opacity: 1;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  opacity: 1;
 }
 
 @media (max-width: 567px) {
-	.projectsContainer {
-		height: auto;
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
+  .projectsContainer {
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
-	.ProjectImage {
-		height: 200px !important;
-	}
+  .ProjectImage {
+    height: 200px !important;
+  }
 
-	.sectionTitle {
-		font-size: 2em;
-	}
+  .sectionTitle {
+    font-size: 2em;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.ProjectImage {
-		height: 200px;
-	}
+  .ProjectImage {
+    height: 200px;
+  }
 }

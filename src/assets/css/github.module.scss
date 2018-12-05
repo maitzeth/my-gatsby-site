@@ -1,25 +1,25 @@
 .GitWrapper {
-	padding-top: 5em;
-	padding-bottom: 5em;
+  padding-top: 5em;
+  padding-bottom: 5em;
 }
 
 .RepoWrapper {
-	border-radius: 0;
+  border-radius: 0;
 
-	.RepoItem {
-		a {
-			color: #000;
+  .RepoItem {
+    a {
+      color: #000;
 
-			&:hover {
-				text-decoration: none;
-				color: #2c3e50;
-			}
-		}
-	}
+      &:hover {
+        text-decoration: none;
+        color: #2c3e50;
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {
-	.RepoWrapper {
-		text-align: center;
-	}
+  .RepoWrapper {
+    text-align: center;
+  }
 }

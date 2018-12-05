@@ -6,26 +6,26 @@ import Menu from './Menu';
 import CEO from './SEO';
 
 const Layout = ({ children }) => (
-	<StaticQuery
-		query={graphql`
-			query SiteTitleQuery {
-				site {
-					siteMetadata {
-						title
-						subtitle
-					}
-				}
-			}
-		`}
-		render={(data) => (
-			<Fragment>
-				<CEO />
-				<Menu />
-				{children}
-				<Foot />
-			</Fragment>
-		)}
-	/>
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            subtitle
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <Fragment>
+        <CEO />
+        <Menu />
+        {children}
+        <Foot />
+      </Fragment>
+    )}
+  />
 );
 
 export default Layout;

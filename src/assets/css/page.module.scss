@@ -2,127 +2,127 @@
 @import 'mixins/flexbox';
 
 .pageWrapper {
-	background-color: $primary-color;
+  background-color: $primary-color;
 }
 
 .pageHeaderImage {
-	height: 350px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	position: relative;
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(center);
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
 
-	&:after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-		background-color: $primary-color;
-		opacity: 0.9;
-		z-index: 1;
-	}
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $primary-color;
+    opacity: 0.9;
+    z-index: 1;
+  }
 
-	[class*="display-"] {
-		position: relative;
-		text-align: center;
-		color: #fff;
-		z-index: 2;
-	}
+  [class*="display-"] {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+  }
 }
 
 .projectWrapper {
-	padding-top: 6em;
-	padding-bottom: 3em;
+  padding-top: 6em;
+  padding-bottom: 3em;
 }
 
 .projectImage {
-	height: 60vh;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	position: relative;
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(center);
+  height: 60vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
 
-	&:after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-		background-color: $primary-color;
-		opacity: 0.9;
-		z-index: 1;
-	}
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $primary-color;
+    opacity: 0.9;
+    z-index: 1;
+  }
 }
 
 .projectTitle {
-	position: relative;
-	z-index: 2;
-	color: #fff;
-	font-weight: 100;
-	text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 
 .projectTitles {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .aboutPageWrapper {
-	height: 100vh;
-	background-color: $primary-color;
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(center);
+  height: 100vh;
+  background-color: $primary-color;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
 }
 
 .aboutContainer {
-	height: 100vh;
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(center);
-	@include flex-direction(column);
+  height: 100vh;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-direction(column);
 }
 
 .projectInfo {
-	h1,
-	p {
-		text-align: center;
-	}
+  h1,
+  p {
+    text-align: center;
+  }
 }
 
 @media (max-width: 578px) {
-	.aboutPageWrapper,
-	.aboutContainer {
-		height: auto;
-	}
+  .aboutPageWrapper,
+  .aboutContainer {
+    height: auto;
+  }
 
-	.projectTitle {
-		font-size: 1.3em;
-	}
+  .projectTitle {
+    font-size: 1.3em;
+  }
 
-	.projectImage {
-		height: 25vh;
-	}
+  .projectImage {
+    height: 25vh;
+  }
 
-	.aboutContainer {
-		padding: 1em 0;
-	}
+  .aboutContainer {
+    padding: 1em 0;
+  }
 
-	.projectWrapper {
-		padding-top: 2em;
-	}
+  .projectWrapper {
+    padding-top: 2em;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.projectImage {
-		height: 25vh;
-	}
+  .projectImage {
+    height: 25vh;
+  }
 }
