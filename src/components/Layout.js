@@ -1,4 +1,4 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { graphql, StaticQuery } from 'gatsby';
 import React, { Fragment } from 'react';
 import Foot from './Foot';
