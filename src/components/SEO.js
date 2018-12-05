@@ -89,9 +89,6 @@ const SEO = (props) => {
 			<meta name="twitter:url" content={config.siteUrl} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={image} />
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.22/css/uikit.min.css" />
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.22/js/uikit.min.js" />
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.22/js/uikit-icons.min.js" />
 		</Helmet>
 	);
 };
