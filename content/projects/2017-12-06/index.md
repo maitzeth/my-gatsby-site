@@ -6,14 +6,6 @@ date: "2017-12-06"
 service: "Wordpress Theming"
 link: "http://goyarealty.com"
 ---
-# Description
+##### Description
 
 Working with GlodStudio.
-
-#### Technologies:
-
-- HTML
-- CSS3
-- jQuery
-- Git
-- PHP/Wordpress

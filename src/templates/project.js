@@ -26,34 +26,38 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
       <SEO postPath={slug} postNode={postNode} postSEO />
       <div className={css.projectWrapper}>
         <Container>
-          <Row>
-            <Col>
+          <Row className="mt-3 align-items-center">
+            <Col sm="6">
               <div className={css.imageWrapper}>
                 <Img fluid={fluid} />
                 <h2 className={css.imageTitle}>{ title }</h2>
               </div>
             </Col>
+            <Col sm="6">
+              <Row>
+                <Col sm="6">
+                  <h6 className={css.projectTitles}>Client</h6>
+                  <p className={`text-left ${css.pg}`}>{client}</p>
+                </Col>
+                <Col sm="6">
+                  <h6 className={css.projectTitles}>Date</h6>
+                  <p className={`text-left ${css.pg}`}>{formatDate}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm="12">
+                  <h6 className={css.projectTitles}>Service</h6>
+                  <p className={`text-left ${css.pg}`}>{service}</p>
+                </Col>
+              </Row>
+              <Row className="my-2">
+                <Col sm="12">
+                  <div dangerouslySetInnerHTML={{ __html: postNode.html }} className={css.projectInfo} />
+                </Col>
+              </Row>
+            </Col>
           </Row>
-          <Row className="mt-3 text-center">
-            <Col sm="4">
-              <h5 className={css.projectTitles}>Client</h5>
-              <p className="lead">{client}</p>
-            </Col>
-            <Col sm="4">
-              <h5 className={css.projectTitles}>Date</h5>
-              <p className="lead">{formatDate}</p>
-            </Col>
-            <Col sm="4">
-              <h5 className={css.projectTitles}>Service</h5>
-              <p className="lead">{service}</p>
-            </Col>
-          </Row>
-          <Row className="my-4">
-            <Col sm="12">
-              <div dangerouslySetInnerHTML={{ __html: postNode.html }} className={css.projectInfo} />
-            </Col>
-          </Row>
-          <Row>
+          <Row className="mt-3">
             <Col sm="12 text-center">
               <CustomButton text="Visit site" link={link} color="white" external={true} />
             </Col>
