@@ -83,8 +83,8 @@ export const pageQuery = graphql`
         link
         cover {
           childImageSharp {
-            fluid(maxWidth: 850, quality: 90) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
