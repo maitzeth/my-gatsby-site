@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@auth0/cosmos": "^0.7.2",
+    "autoprefixer": "^9.4.4",
     "bootstrap": "^4.1.3",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
@@ -37,6 +38,9 @@
     "moment": "^2.22.2",
     "node-sass": "^4.9.4",
     "polished": "^2.2.0",
+    "postcss-discard-duplicates": "^4.0.2",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-focus": "^4.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",

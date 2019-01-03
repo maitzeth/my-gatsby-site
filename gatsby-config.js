@@ -1,5 +1,10 @@
 const config = require('./config/website');
-const variables = require('./config/variables');
+
+const autoprefixer = require('autoprefixer');
+const browserslist = require('browserslist');
+const postCssDiscardDuplicates = require('postcss-discard-duplicates');
+const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
+const postCssFocus = require('postcss-focus');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -13,14 +18,24 @@ module.exports = {
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-offline',
-		'gatsby-plugin-sass',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-lodash',
 		'gatsby-plugin-catch-links',
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-netlify',
-		`gatsby-transformer-json`,
+    `gatsby-transformer-json`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [
+          postCssDiscardDuplicates(),
+          postCssFlexbugsFixes(),
+          postCssFocus(),
+          autoprefixer(),
+        ],
+      }
+    },
 		{
 			resolve: 'gatsby-plugin-nprogress',
 			options: {
@@ -90,11 +105,11 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography.jsx',
       },
     },
-    {
-      resolve: `gatsby-source-github-pinned`,
-      options: {
-        apiToken: variables ? variables.githubtk : process.env.NODE_ENV 
-      }
-    }
+    // {
+    //   resolve: `gatsby-source-github-pinned`,
+    //   options: {
+    //     apiToken: 'ba3723e9ad1eb522797a0245b6f21d63847618e8' 
+    //   }
+    // }
 	],
 }

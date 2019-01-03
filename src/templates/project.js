@@ -11,7 +11,6 @@ import Img from 'gatsby-image';
 
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
   const {
-    title,
     client,
     date,
     service,
@@ -30,7 +29,6 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
             <Col sm="6">
               <div className={css.imageWrapper}>
                 <Img fluid={fluid} />
-                <h2 className={css.imageTitle}>{ title }</h2>
               </div>
             </Col>
             <Col sm="6">

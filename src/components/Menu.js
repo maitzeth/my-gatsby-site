@@ -21,7 +21,7 @@ class Menu extends Component {
 
     return (
       <Fragment>
-        <Navbar expand="sm" fixed="top" className={isActive ? css.menuActive : css.menuDefault}>
+        <Navbar expand="sm" fixed="top" className={isActive ? css.menuActive : css.menuDefault} onClick={this.handleToggler}>
           <Container>
             <Nav className="mx-auto text-center" navbar>
               <NavItem>

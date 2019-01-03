@@ -24,25 +24,7 @@
 
 .imageWrapper {
   position: relative;
-
-  &:after {
-    content: "";
-    background-color: #000;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
-
-  &:hover {
-    .imageTitle {
-      opacity: 1;
-      top: 50%;
-    }
-  }
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 }
 
 .projectContent {
@@ -153,6 +135,14 @@
     font-size: 1.3em;
   }
 
+  .projectTitles {
+    text-align: center;
+
+    &:after {
+      margin: 5px auto;
+    }
+  }
+
   .projectImage {
     height: 25vh;
   }
@@ -163,6 +153,33 @@
 
   .projectWrapper {
     padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .projectWrapper {
+    height: auto;
+  }
+
+  p.pg {
+    text-align: center !important;
+  }
+
+  .projectInfo {
+    p {
+      text-align: center;
+    }
+  
+    h5 {
+      text-align: center;
+
+      &:after {
+        margin: 5px auto;
+      }
+    }
+  }
+
+  .imageWrapper {
+    margin-bottom: 1em;
   }
 }
 
