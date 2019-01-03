@@ -1,4 +1,5 @@
-const config = require('./config/website')
+const config = require('./config/website');
+const variables = require('./config/variables');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -88,6 +89,12 @@ module.exports = {
       options: {
         pathToConfigModule: 'src/utils/typography.jsx',
       },
+    },
+    {
+      resolve: `gatsby-source-github-pinned`,
+      options: {
+        apiToken: variables ? variables.githubtk : process.env.NODE_ENV 
+      }
     }
 	],
 }
