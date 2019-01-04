@@ -1,5 +1,6 @@
 @import 'mixins/colors';
 @import 'mixins/flexbox';
+@import 'mixins/helpers';
 
 .projectsContainer {
   background-color: $primary-color;
@@ -8,11 +9,21 @@
   padding-bottom: 5em;
   @include flexbox();
   @include align-items(center);
+
+  @include bp-small {
+    height: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 }
 
 .sectionTitle {
   color: $white-color;
   text-align: center;
+
+  @include bp-small {
+    font-size: 2em;
+  }
 }
 
 .ProjectImage {
@@ -20,17 +31,21 @@
   background-repeat: no-repeat;
   background-position: center center;
   height: 250px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
+  @include filter(grayscale(100%));
+  @include transition(all 200ms ease);
   overflow: hidden;
   position: relative;
 
   &:hover {
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
+    @include filter(grayscale(0));
+  }
+
+  @include bp-small {
+    height: 200px !important;
+  }
+
+  @include bp-medium {
+    height: 200px;
   }
 }
 
@@ -39,7 +54,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  @include transform(translate(-50%, -50%));
   vertical-align: middle;
   object-fit: cover;
   width: 100%;
@@ -47,45 +62,17 @@
 }
 
 .overlayActive {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  opacity: 0.5;
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
+  @include filter(grayscale(100%));
+  @include opacity(0.5);
+  @include transition(all 200ms ease);
 
   &:hover {
-    opacity: 1 !important;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
+    @include opacity(1);
+    @include filter(grayscale(0));
   }
 }
 
 .overlayDefault {
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-  opacity: 1;
-}
-
-@media (max-width: 567px) {
-  .projectsContainer {
-    height: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .ProjectImage {
-    height: 200px !important;
-  }
-
-  .sectionTitle {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .ProjectImage {
-    height: 200px;
-  }
+  @include transition(all 200ms ease);
+  @include opacity(1);
 }

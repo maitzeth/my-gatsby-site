@@ -33,14 +33,20 @@ class Projects extends Component {
         onMouseLeave={this.handleLeaveOpacity}
       >
         <Container>
-          <Row>
+          <Row className="mb-4">
             <Col>
               <h2 className={css.sectionTitle}>Latest Works</h2>
             </Col>
           </Row>
-          <Row className="mt-5">
+          <Row>
             {projectEdges.map(({ node }, index) => (
-              <Project key={`client-${index}`} {...node} opacity={opacity} separation="my-3" id={index} />
+              <Project 
+                key={`client-${index}`} 
+                {...node} 
+                opacity={opacity} 
+                separation="my-3" 
+                id={index} 
+              />
             ))}
           </Row>
           <Row className="mt-5">

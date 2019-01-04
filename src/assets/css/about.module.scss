@@ -1,10 +1,17 @@
 @import 'mixins/colors';
 @import 'mixins/flexbox';
+@import 'mixins/helpers';
 
 .aboutWrapper {
   @include flexbox();
   @include align-items(center);
   height: 100vh;
+
+  @include bp-small {
+    height: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 }
 
 .aboutImage {
@@ -27,15 +34,15 @@
   display: inline-block;
   margin: 0 .6em;
   text-align: center;
-  transition: all 200ms ease;
+  @include transition(all 200ms ease);
 
   &:hover {
-    transform: translateY(-3px);
+    @include transform(translateY(-3px));
   }
 
   a {
     padding: 0.5em;
-    color: #000;
+    color: $black-primary-color;
 
     &:hover {
       text-decoration: none;
@@ -54,12 +61,4 @@
 
 .aboutSectionTitle {
   color: $primary-color;
-}
-
-@media (max-width: 567px) {
-  .aboutWrapper {
-    height: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 }

@@ -1,10 +1,11 @@
 @import 'mixins/colors';
 @import 'mixins/flexbox';
+@import 'mixins/helpers';
 
 .btn-primary {
   background-color: transparent;
   border: none;
-  border: 2px solid #fff;
+  border: 2px solid $white-color;
   border-radius: 0;
   padding: 0.5em 3em;
   position: relative;
@@ -12,13 +13,11 @@
 
   &:hover {
     background-color: transparent;
-    border-color: #fff;
+    border-color: $white-color;
 
     span {
-      color: #000;
-      -webkit-transition: all 100ms ease;
-      -o-transition: all 100ms ease;
-      transition: all 100ms ease;
+      color: $black-primary-color;
+      @include transition(all 100ms ease);
     }
 
     &:after {
@@ -26,13 +25,9 @@
     }
   }
 
-  &:focus {
-    box-shadow: 0 0 0 0.2rem transparent !important;
-  }
-
   &:active {
     background-color: transparent !important;
-    border-color: #fff !important;
+    border-color: $white-color !important;
   }
 
   span {
@@ -48,20 +43,20 @@
     height: 100%;
     width: 0%;
     z-index: 1;
-    background-color: #fff;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    -webkit-transform: skew(160deg);
-    -ms-transform: skew(160deg);
-    transform: skew(160deg);
+    background-color: $white-color;
+    @include transition(all 200ms ease);
+    @include transform(skew(160deg));
+  }
+
+  @include bp-small {
+    margin: 0.5em 0;
   }
 }
 
 .btn-secondary {
   background-color: transparent;
   border: none;
-  border: 2px solid #000;
+  border: 2px solid $black-primary-color;
   border-radius: 0;
   padding: 0.5em 3em;
   position: relative;
@@ -69,13 +64,11 @@
 
   &:hover {
     background-color: transparent;
-    border-color: #000;
+    border-color: $black-primary-color;
 
     span {
-      color: #fff;
-      -webkit-transition: all 100ms ease;
-      -o-transition: all 100ms ease;
-      transition: all 100ms ease;
+      color: $white-color;
+      @include transition(all 100ms ease);
     }
 
     &:after {
@@ -85,7 +78,7 @@
 
   span {
     position: relative;
-    color: #000;
+    color: $black-primary-color;
     z-index: 2;
   }
 
@@ -97,13 +90,9 @@
     height: 100%;
     width: 0%;
     z-index: 1;
-    background-color: #000;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    -webkit-transform: skew(160deg);
-    -ms-transform: skew(160deg);
-    transform: skew(160deg);
+    background-color: $black-primary-color;
+    @include transition(all 200ms ease);
+    @include transform(skew(160deg));
   }
 }
 
@@ -114,12 +103,5 @@
 
   span {
     color: $primary-color;
-  }
-}
-
-@media (max-width: 576px) {
-  .btn-primary {
-    padding: 0.5em 0em;
-    margin: 0.5em 0;
   }
 }

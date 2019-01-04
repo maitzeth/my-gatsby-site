@@ -35,17 +35,17 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
               <Row>
                 <Col sm="6">
                   <h6 className={css.projectTitles}>Client</h6>
-                  <p className={`text-left ${css.pg}`}>{client}</p>
+                  <p className={css.pg}>{client}</p>
                 </Col>
                 <Col sm="6">
                   <h6 className={css.projectTitles}>Date</h6>
-                  <p className={`text-left ${css.pg}`}>{formatDate}</p>
+                  <p className={css.pg}>{formatDate}</p>
                 </Col>
               </Row>
               <Row>
                 <Col sm="12">
                   <h6 className={css.projectTitles}>Service</h6>
-                  <p className={`text-left ${css.pg}`}>{service}</p>
+                  <p className={css.pg}>{service}</p>
                 </Col>
               </Row>
               <Row className="my-2">

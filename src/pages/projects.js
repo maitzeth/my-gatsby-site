@@ -48,12 +48,12 @@ class ProjectsPage extends React.Component {
 
   componentDidMount() {
     // If you add a listener.
-    window.addEventListener(`scroll`, this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
     // You have to remove it.
-    window.removeEventListener(`scroll`, this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -65,10 +65,10 @@ class ProjectsPage extends React.Component {
         <Layout>
           <main className={css.pageWrapper}>
             <header className={css.pageHeaderImage} style={{ backgroundImage: `url(${image})` }}>
-              <h3 className="display-4">Projects</h3>
+              <h1>Projects</h1>
             </header>
             <Container className="py-4">
-              <Row className="mt-5">
+              <Row>
                 {chunk(edges.slice(0, postsToShow), 3).map((chunk, i) => (
                   <Fragment key={`chunk-${i}`}>
                     {chunk.map(({ node }, index) => (

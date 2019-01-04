@@ -1,5 +1,6 @@
 @import 'mixins/colors';
 @import 'mixins/flexbox';
+@import 'mixins/helpers';
 
 .headerWrapper {
   background-color: $black-primary-color;
@@ -23,9 +24,7 @@
   span {
     font-weight: 700;
     position: relative;
-    -webkit-transition: all 150ms ease;
-    -o-transition: all 150ms ease;
-    transition: all 150ms ease;
+    @include transition(all 150ms ease);
     margin: 0 0.2em;
 
     b {
@@ -41,20 +40,22 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: #fff;
-      -webkit-transition: all 150ms ease;
-      -o-transition: all 150ms ease;
-      transition: all 150ms ease;
+      background-color: $white-color;
+      @include transition(all 150ms ease);
       z-index: 1;
     }
 
     &:hover {
-      color: #000;
+      color: $black-primary-color;
 
       &:after {
         height: 100%;
       }
     }
+  }
+
+  @include bp-small {
+    font-size: 2.5em;
   }
 }
 
@@ -72,84 +73,42 @@
   position: absolute;
   bottom: 15px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  @include transform(translateX(-50%));
 }
 
 .goTo {
-  border: 2px solid #fff;
+  border: 2px solid $white-color;
   mix-blend-mode: exclusion;
   width: 30px;
   height: 60px;
   border-radius: 15px;
-}
 
-.iconScrollArrow {
-  display: block;
-  background: #fff;
-  position: absolute;
-  top: 3px;
-  left: 48%;
-  height: 15px;
-  width: 2px;
-  -webkit-animation: scrollarrow 800ms infinite;
-  animation: scrollarrow 800ms infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-}
-
-@-webkit-keyframes scrollarrow {
-  0% {
-    -webkit-transform: translateY(3px);
-    transform: translateY(3px);
-  }
-  100% {
-    -webkit-transform: translateY(10px);
-    transform: translateY(10px);
-  }
-}
-
-@keyframes scrollarrow {
-  0% {
-    -webkit-transform: translateY(3px);
-    transform: translateY(3px);
-  }
-  100% {
-    -webkit-transform: translateY(10px);
-    transform: translateY(10px);
-  }
-}
-
-@media (max-width: 567px) {
-  .headerTitle {
-    font-size: 2.5em;
-  }
-
-  .goTo {
+  @include bp-small {
     width: 20px;
     height: 40px;
+  }
 
-    .iconScrollArrow {
+  .iconScrollArrow {
+    display: block;
+    background: $white-color;
+    position: absolute;
+    top: 3px;
+    left: 48%;
+    height: 15px;
+    width: 2px;
+    @include animation(scrollarrow 400ms infinite alternate ease-in-out);
+
+    @include bp-small {
       height: 7px;
     }
   }
+}
 
-  .dragIcon {
-    width: 2em;
-    animation-name: jump;
-    animation-duration: 400ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease;
+@include keyframes(scrollarrow) {
+  0% {
+    @include transform(translateY(3px));
   }
-
-  @keyframes jump {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-10px);
-    }
+  100% {
+    @include transform(translateY(10px));
   }
 }

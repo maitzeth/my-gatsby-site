@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "andre-ivan-gatsby-portfolio",
+  "description": "André Iván Gatsby Site",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "André Iván <andre801mz@gmail.com>",
   "dependencies": {
     "@auth0/cosmos": "^0.7.2",
     "autoprefixer": "^9.4.4",
@@ -71,6 +71,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/maitzeth/my-gatsby-site"
   }
 }

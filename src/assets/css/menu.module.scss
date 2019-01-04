@@ -1,8 +1,9 @@
 @import 'mixins/colors';
 @import 'mixins/flexbox';
+@import 'mixins/helpers';
 
 .menuLink {
-  color: #fff;
+  color: $white-color;
   padding: 0.5em;
   margin: 0 0.5em;
   font-weight: 300;
@@ -11,46 +12,45 @@
 
   &:hover {
     text-decoration: none;
-    color: #fff;
+    color: $white-color;
   }
 }
 
 .menuDefault {
-  background-color: #000;
+  background-color: $black-primary-color;
   padding: 1em 0;
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
+  @include transition(all 200ms ease);
 
-.menuActive {
-  background-color: #000;
-  padding: 1em 0;
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-
-@media (max-width: 567px) {
-  .menuDefault {
-    opacity: 0;
+  @include bp-small {
+    @include opacity(0);
     visibility: hidden;
     padding: 2em 0;
     height: 100vh;
     position: fixed;
     z-index: 3;
   }
+}
 
-  .menuActive {
-    opacity: 1;
+.menuActive {
+  background-color: $black-primary-color;
+  padding: 1em 0;
+  @include transition(all 200ms ease);
+
+  @include bp-small {
+    @include opacity(1);
     visibility: visible;
     padding: 2em 0;
     height: 100vh;
     position: fixed;
     z-index: 3;
   }
+}
 
-  .navbarToggler {
+.navbarToggler {
+  display: none;
+
+  @include bp-small {
+    display: block;
     position: absolute;
     width: 40px;
     height: 20px;
@@ -60,90 +60,96 @@
     border: none;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    @include transform(translate(-50%, -50%));
+  }
 
-    &:focus {
+  &:focus {
+    @include bp-small {
       outline: none;
     }
   }
+}
 
-  .navbarTogglerWrapper {
+.navbarTogglerWrapper {
+  display: none;
+
+  @include bp-small {
+    display: block;
     position: fixed;
     top: 15px;
     right: 15px;
     z-index: 4;
     height: 50px;
     width: 75px;
-    background-color: #000;
-  }
-
-  .togglerDefault {
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    position: absolute;
-    -webkit-transition: all 150ms ease;
-    -o-transition: all 150ms ease;
-    transition: all 150ms ease;
-
-    &:nth-child(1) {
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-      top: 0;
-      margin-left: -4px;
-    }
-
-    &:nth-child(2) {
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-
-    &:nth-child(3) {
-      top: 100%;
-      margin-left: -4px;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-  }
-
-  .togglerOpen {
-    composes: togglerDefault;
-
-    &:nth-child(1) {
-      -webkit-transform: translateY(10px) rotate(45deg);
-      -ms-transform: translateY(10px) rotate(45deg);
-      transform: translateY(10px) rotate(45deg);
-      background-color: #fff;
-      margin: 0;
-    }
-
-    &:nth-child(2) {
-      opacity: 0;
-    }
-
-    &:nth-child(3) {
-      -webkit-transform: translateY(-10px) rotate(-45deg);
-      -ms-transform: translateY(-10px) rotate(-45deg);
-      transform: translateY(-10px) rotate(-45deg);
-      background-color: #fff;
-      margin: 0;
-    }
-  }
-
-  .menuLink {
-    font-size: 2em;
+    background-color: $black-primary-color;
   }
 }
 
-@media (min-width: 566px) {
-  .navbarToggler,
-  .navbarTogglerWrapper {
-    display: none;
+.togglerDefault {
+  display: none;
+
+  @include bp-small {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $white-color;
+    position: absolute;
+    @include transition(all 150ms ease);
+  }
+
+  &:nth-child(1) {
+    @include bp-small {
+      @include transform(translateY(-50%));
+      top: 0;
+      margin-left: -4px;
+    }
+  }
+
+  &:nth-child(2) {
+    @include bp-small {
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+  }
+
+  &:nth-child(3) {
+    @include bp-small {
+      top: 100%;
+      margin-left: -4px;
+      @include transform(translateY(-50%));
+    }
+  }
+  
+}
+
+.togglerOpen {
+  composes: togglerDefault;
+
+  &:nth-child(1) {
+    @include bp-small {
+      @include transform(translateY(10px) rotate(45deg));
+      background-color: $white-color;
+      margin: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    @include bp-small {
+      @include opacity(0);
+    }
+  }
+
+  &:nth-child(3) {
+    @include bp-small {
+      @include transform(translateY(-10px) rotate(-45deg));
+      background-color: $white-color;
+      margin: 0;
+    }
+  }
+}
+
+.menuLink {
+  @include bp-small {
+    font-size: 2em;
   }
 }
