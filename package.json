@@ -37,6 +37,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "node-sass": "^4.9.4",
+    "nprogress": "^0.2.0",
     "polished": "^2.2.0",
     "postcss-discard-duplicates": "^4.0.2",
     "postcss-flexbugs-fixes": "^4.1.0",
