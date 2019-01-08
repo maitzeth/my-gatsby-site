@@ -6,6 +6,7 @@
   "dependencies": {
     "@auth0/cosmos": "^0.7.2",
     "autoprefixer": "^9.4.4",
+    "babel-plugin-styled-components": "^1.10.0",
     "bootstrap": "^4.1.3",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
@@ -25,6 +26,7 @@
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sharp": "^2.0.6",
     "gatsby-plugin-sitemap": "^2.0.1",
+    "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-plugin-typography": "^2.2.2",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^2.0.4",
@@ -54,6 +56,7 @@
     "react-typography": "^0.16.13",
     "react-window-size-listener": "^1.2.3",
     "reactstrap": "^6.5.0",
+    "styled-components": "^4.1.3",
     "typography": "^0.16.17",
     "uikit": "^3.0.0-rc.25"
   },

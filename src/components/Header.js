@@ -1,13 +1,23 @@
 import React from 'react'
 import HeaderText from './HeaderText'
 import GoTo from './GoTo'
-import css from '../assets/css/header.module.scss'
+import styled from 'styled-components';
+
+const HeaderWrapper = styled.a`
+  background-color: ${props => props.theme.primaryColor};
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+`;
 
 const Header = ({ title }) => (
-  <header className={css.headerWrapper}>
+  <HeaderWrapper>
     <HeaderText title={title} />
     <GoTo />
-  </header>
+  </HeaderWrapper>
 )
 
 export default Header

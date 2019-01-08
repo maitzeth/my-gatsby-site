@@ -2,113 +2,52 @@
 @import 'mixins/flexbox';
 @import 'mixins/helpers';
 
-.headerWrapper {
-  background-color: $black-primary-color;
-  height: 100vh;
-  @include flexbox();
-  @include align-items(center);
-  @include justify-content(center);
-  @include flex-direction(column);
-  position: relative;
-}
+// .headerSubtitle {
+//   composes: headerTitle;
+//   font-weight: 700;
+//   font-size: 6em;
+// }
 
-.headerTitle {
-  font-size: 80px;
-  letter-spacing: -0.04em;
-  color: $white-color;
-  font-weight: 300;
-  text-transform: lowercase;
-  text-align: center;
-  cursor: default;
+// .goToWrapper {
+//   position: absolute;
+//   bottom: 15px;
+//   left: 50%;
+//   @include transform(translateX(-50%));
+// }
 
-  span {
-    font-weight: 700;
-    position: relative;
-    @include transition(all 150ms ease);
-    margin: 0 0.2em;
+// .goTo {
+//   border: 2px solid $white-color;
+//   mix-blend-mode: exclusion;
+//   width: 30px;
+//   height: 60px;
+//   border-radius: 15px;
 
-    b {
-      position: relative;
-      z-index: 2;
-      font-style: none !important;
-    }
+//   @include bp-small {
+//     width: 20px;
+//     height: 40px;
+//   }
 
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: $white-color;
-      @include transition(all 150ms ease);
-      z-index: 1;
-    }
+//   .iconScrollArrow {
+//     display: block;
+//     background: $white-color;
+//     position: absolute;
+//     top: 3px;
+//     left: 48%;
+//     height: 15px;
+//     width: 2px;
+//     @include animation(scrollarrow 400ms infinite alternate ease-in-out);
 
-    &:hover {
-      color: $black-primary-color;
+//     @include bp-small {
+//       height: 7px;
+//     }
+//   }
+// }
 
-      &:after {
-        height: 100%;
-      }
-    }
-  }
-
-  @include bp-small {
-    font-size: 2.5em;
-  }
-}
-
-.headerSubtitle {
-  composes: headerTitle;
-  font-weight: 700;
-  font-size: 6em;
-}
-
-.headerTextWrapper {
-  padding: 2em;
-}
-
-.goToWrapper {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  @include transform(translateX(-50%));
-}
-
-.goTo {
-  border: 2px solid $white-color;
-  mix-blend-mode: exclusion;
-  width: 30px;
-  height: 60px;
-  border-radius: 15px;
-
-  @include bp-small {
-    width: 20px;
-    height: 40px;
-  }
-
-  .iconScrollArrow {
-    display: block;
-    background: $white-color;
-    position: absolute;
-    top: 3px;
-    left: 48%;
-    height: 15px;
-    width: 2px;
-    @include animation(scrollarrow 400ms infinite alternate ease-in-out);
-
-    @include bp-small {
-      height: 7px;
-    }
-  }
-}
-
-@include keyframes(scrollarrow) {
-  0% {
-    @include transform(translateY(3px));
-  }
-  100% {
-    @include transform(translateY(10px));
-  }
-}
+// @include keyframes(scrollarrow) {
+//   0% {
+//     @include transform(translateY(3px));
+//   }
+//   100% {
+//     @include transform(translateY(10px));
+//   }
+// }

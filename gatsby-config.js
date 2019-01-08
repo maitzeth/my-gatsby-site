@@ -24,7 +24,8 @@ module.exports = {
 		'gatsby-plugin-catch-links',
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-netlify',
-    `gatsby-transformer-json`,
+    'gatsby-transformer-json',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-sass',
       options: {

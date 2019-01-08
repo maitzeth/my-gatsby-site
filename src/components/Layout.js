@@ -4,6 +4,14 @@ import React, { Fragment } from 'react';
 import Foot from './Foot';
 import Menu from './Menu';
 import CEO from './SEO';
+import { ThemeProvider } from 'styled-components';
+
+const theme = {
+  primaryColor: '#0b0b0d',
+  secondaryColor: '#131315',
+  whitesmokeColor: '#dfe6e9',
+  grayColor: '#71797b'
+}
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -18,12 +26,14 @@ const Layout = ({ children }) => (
       }
     `}
     render={(data) => (
-      <Fragment>
-        <CEO />
-        <Menu />
-        {children}
-        <Foot />
-      </Fragment>
+      <ThemeProvider theme={theme}>
+        <Fragment>
+          <CEO />
+          <Menu />
+            {children}
+          <Foot />
+        </Fragment>
+      </ThemeProvider>
     )}
   />
 );
