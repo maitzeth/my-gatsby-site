@@ -1,12 +1,13 @@
 import React from 'react';
-import css from '../assets/css/header.module.scss';
+import GoToWrapper from './styles/GoToWrapper';
+import GoToItem from './styles/GoToItem';
 
 const GoTo = () => (
-  <div className={css.goToWrapper}>
-    <div className={css.goTo}>
-      <span className={css.iconScrollArrow} />
-    </div>
-  </div>
+  <GoToWrapper>
+    <GoToItem>
+      <span />
+    </GoToItem>
+  </GoToWrapper>
 );
 
 export default GoTo;
