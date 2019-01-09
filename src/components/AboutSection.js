@@ -12,10 +12,10 @@ import LeadParagraph from './styles/LeadParagraph';
 import CircularImg from './styles/CircularImg';
 import WhiteSectionTitle from './styles/WhiteSectionTitle';
 import TextCenter from './styles/TextCenter';
-import ulWrapper from './styles/ulWrapper';
+import ULWrapper from './styles/ULWrapper';
 
 const AboutSection = ({ social }) => (
-  <Container fluid className={css.aboutWrapper}>
+  <Container className={css.aboutWrapper}>
     <Row>
       <Col sm={{ size: '10', offset: 1 }}>
         <WhiteSectionTitle>
@@ -33,9 +33,9 @@ const AboutSection = ({ social }) => (
           <CustomButton text="View CV" link={pdf} color="white" external={true} />
         </TextCenter>
         <Fade>
-          <ulWrapper>
+          <ULWrapper>
             {social.map((item) => <SocialItem key={`socialItem-${item.name}`} {...item} />)}
-          </ulWrapper>
+          </ULWrapper>
         </Fade>
       </Col>
     </Row>

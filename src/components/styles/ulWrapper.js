@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ulWrapper = styled.div`
+const ULWrapper = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
@@ -8,5 +8,5 @@ const ulWrapper = styled.div`
   margin-top: 1em;
 `;
 
-export default ulWrapper;
+export default ULWrapper;
 
