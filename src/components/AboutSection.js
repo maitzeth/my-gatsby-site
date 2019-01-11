@@ -5,32 +5,36 @@ import css from '../assets/css/about.module.scss';
 import aboutImage from '../assets/images/about.jpg';
 import SocialItem from './SocialItem.js';
 import pdf from '../assets/cv.pdf';
-import CustomButton from './CustomButton';
 
 // 
 import LeadParagraph from './styles/LeadParagraph';
 import CircularImg from './styles/CircularImg';
-import WhiteSectionTitle from './styles/WhiteSectionTitle';
+import Title from './styles/Title';
 import TextCenter from './styles/TextCenter';
 import ULWrapper from './styles/ULWrapper';
+import CutomBtn from './styles/CutomBtn';
 
 const AboutSection = ({ social }) => (
   <Container className={css.aboutWrapper}>
     <Row>
       <Col sm={{ size: '10', offset: 1 }}>
-        <WhiteSectionTitle>
+        <Title black>
           lol
-        </WhiteSectionTitle>
+        </Title>
         <CircularImg 
           src={aboutImage} 
           width="150px" 
           alt="about-section-image" 
         />
+
         <LeadParagraph>
           something
         </LeadParagraph>
+
         <TextCenter>
-          <CustomButton text="View CV" link={pdf} color="white" external={true} />
+          <CutomBtn href={pdf} black target="_blank" rel="noopener noreferrer">
+            <span>View CV</span>
+          </CutomBtn>
         </TextCenter>
         <Fade>
           <ULWrapper>
@@ -43,3 +47,16 @@ const AboutSection = ({ social }) => (
 );
 
 export default AboutSection;
+
+
+// import Link from 'gatsby-link';
+
+// const StyledLink = styled(Link)`
+//   color: aqua;
+// `;
+
+// // ...
+
+// <StyledLink to="/">
+//   Gatsby
+// </StyledLink>

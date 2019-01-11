@@ -2,9 +2,8 @@
 @import 'mixins/helpers';
 
 .aboutWrapper {
-  @include flexbox();
-  @include align-items(center);
-  height: 100vh;
+  padding-top: 3em;
+  padding-bottom: 3em;
 
   @include bp-small {
     height: auto;
