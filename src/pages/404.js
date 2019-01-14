@@ -1,6 +1,5 @@
 import React from 'react';
 import css from '../assets/css/404.module.scss';
-import CustomButton from '../components/CustomButton';
 import Layout from '../components/Layout';
 
 const NotFoundPage = () => (
@@ -9,7 +8,6 @@ const NotFoundPage = () => (
       <div className={css.errorMessages}>
         <h1 className="display-4">Sorry, this page doesn't exists.</h1>
         <div className="text-center my-3">
-          <CustomButton text="Go back" link="/" color="black" />
         </div>
       </div>
     </section>

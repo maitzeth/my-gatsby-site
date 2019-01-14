@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import css from '../assets/css/project.module.scss';
-import CustomButton from './CustomButton';
 import Project from './Project';
+import Title from './styles/Title';
+import CustomBtnLink from './styles/CustomBtnLink';
 
 class Projects extends Component {
   state = {
@@ -35,7 +36,7 @@ class Projects extends Component {
         <Container>
           <Row className="mb-4">
             <Col>
-              <h2 className={css.sectionTitle}>Latest Works</h2>
+              <Title white>Latest eworks</Title>
             </Col>
           </Row>
           <Row>
@@ -51,7 +52,9 @@ class Projects extends Component {
           </Row>
           <Row className="mt-5">
             <Col className="text-center">
-              <CustomButton text="View more" link="/projects" color="black" />
+              <CustomBtnLink to="/projects">
+                <span>View more</span>
+              </CustomBtnLink>
             </Col>
           </Row>
         </Container>

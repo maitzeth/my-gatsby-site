@@ -3,7 +3,6 @@ import moment from 'moment';
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import css from '../assets/css/page.module.scss';
-import CustomButton from '../components/CustomButton';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Img from 'gatsby-image';
@@ -14,7 +13,6 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
     client,
     date,
     service,
-    link,
     cover: { childImageSharp: { fluid } }
   } = postNode.frontmatter;
 
@@ -57,7 +55,6 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
           </Row>
           <Row className="mt-3">
             <Col sm="12 text-center">
-              <CustomButton text="Visit site" link={link} color="white" external={true} />
             </Col>
           </Row>
         </Container>

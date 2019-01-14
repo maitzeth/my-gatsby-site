@@ -17,38 +17,6 @@
   }
 }
 
-.sectionTitle {
-  color: $white-color;
-  text-align: center;
-
-  @include bp-small {
-    font-size: 2em;
-  }
-}
-
-.ProjectImage {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 250px;
-  @include filter(grayscale(100%));
-  @include transition(all 200ms ease);
-  overflow: hidden;
-  position: relative;
-
-  &:hover {
-    @include filter(grayscale(0));
-  }
-
-  @include bp-small {
-    height: 200px !important;
-  }
-
-  @include bp-medium {
-    height: 200px;
-  }
-}
-
 .ProjectImageItem {
   max-width: none;
   position: absolute;
