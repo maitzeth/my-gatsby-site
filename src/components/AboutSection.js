@@ -11,8 +11,38 @@ import LeadParagraph from './styles/LeadParagraph';
 import CircularImg from './styles/CircularImg';
 import Title from './styles/Title';
 import TextCenter from './styles/TextCenter';
-import ULWrapper from './styles/ULWrapper';
 import CutomBtn from './styles/CutomBtn';
+
+const ULWrapper = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  margin-top: 2em;
+
+  li {
+    display: inline-block;
+    padding: 0.5em;
+    transition: all 200ms ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    a {
+      text-decoration: none;
+      color: ${props => props.theme.primaryColor};
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      i {
+        font-size: 1.5em;
+      }
+    }
+  }
+`;
 
 const AboutSection = ({ social }) => (
   <Container className={css.aboutWrapper}>
@@ -47,16 +77,3 @@ const AboutSection = ({ social }) => (
 );
 
 export default AboutSection;
-
-
-// import Link from 'gatsby-link';
-
-// const StyledLink = styled(Link)`
-//   color: aqua;
-// `;
-
-// // ...
-
-// <StyledLink to="/">
-//   Gatsby
-// </StyledLink>
