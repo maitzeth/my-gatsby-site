@@ -6,6 +6,7 @@ import image from '../assets/images/headingbg.jpg';
 import Layout from '../components/Layout';
 import Project from '../components/Project';
 import { chunk } from 'lodash';
+import Title from '../components/styles/Title';
 
 let postsToShow = 6;
 
@@ -17,6 +18,11 @@ const primaryStyle = {
   position: 'relative',
   overflow: 'hidden'
 };
+
+const titleStyles = {
+  position: 'relative',
+  zIndex: '2'
+}
 
 class ProjectsPage extends React.Component {
   state = {
@@ -65,7 +71,7 @@ class ProjectsPage extends React.Component {
         <Layout>
           <main className={css.pageWrapper}>
             <header className={css.pageHeaderImage} style={{ backgroundImage: `url(${image})` }}>
-              <h1>Projects</h1>
+              <Title style={titleStyles}>Projects</Title>
             </header>
             <Container className="py-4">
               <Row>

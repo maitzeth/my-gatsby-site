@@ -13,6 +13,8 @@ import Title from './styles/Title';
 import TextCenter from './styles/TextCenter';
 import CutomBtn from './styles/CutomBtn';
 
+import styled from 'styled-components';
+
 const ULWrapper = styled.ul`
   padding: 0;
   margin: 0;
