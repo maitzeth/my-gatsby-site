@@ -2,50 +2,6 @@
 @import 'mixins/flexbox';
 @import 'mixins/helpers';
 
-.menuLink {
-  color: $white-color;
-  padding: 0.5em;
-  margin: 0 0.5em;
-  font-weight: 300;
-  letter-spacing: 2px;
-  font-size: 1em;
-
-  &:hover {
-    text-decoration: none;
-    color: $white-color;
-  }
-}
-
-.menuDefault {
-  background-color: $black-primary-color;
-  padding: 1em 0;
-  @include transition(all 200ms ease);
-
-  @include bp-small {
-    @include opacity(0);
-    visibility: hidden;
-    padding: 2em 0;
-    height: 100vh;
-    position: fixed;
-    z-index: 3;
-  }
-}
-
-.menuActive {
-  background-color: $black-primary-color;
-  padding: 1em 0;
-  @include transition(all 200ms ease);
-
-  @include bp-small {
-    @include opacity(1);
-    visibility: visible;
-    padding: 2em 0;
-    height: 100vh;
-    position: fixed;
-    z-index: 3;
-  }
-}
-
 .navbarToggler {
   display: none;
 
@@ -67,21 +23,6 @@
     @include bp-small {
       outline: none;
     }
-  }
-}
-
-.navbarTogglerWrapper {
-  display: none;
-
-  @include bp-small {
-    display: block;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 4;
-    height: 50px;
-    width: 75px;
-    background-color: $black-primary-color;
   }
 }
 

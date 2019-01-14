@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import AboutSection from '../components/AboutSection';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
-import Projects from '../components/Projects';
+import ProjectSection from '../components/ProjectSection';
 
 class IndexPage extends Component {
   render() {
@@ -16,7 +16,7 @@ class IndexPage extends Component {
         <Layout>
           <Header title={title} />
           <AboutSection social={social} />
-          <Projects projectEdges={projectEdges} />
+          <ProjectSection projectEdges={projectEdges} />
         </Layout>
       </Fragment>
     );

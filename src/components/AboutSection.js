@@ -6,45 +6,12 @@ import aboutImage from '../assets/images/about.jpg';
 import SocialItem from './SocialItem.js';
 import pdf from '../assets/cv.pdf';
 
-// 
 import LeadParagraph from './styles/LeadParagraph';
 import CircularImg from './styles/CircularImg';
 import Title from './styles/Title';
 import TextCenter from './styles/TextCenter';
 import CutomBtn from './styles/CutomBtn';
-
-import styled from 'styled-components';
-
-const ULWrapper = styled.ul`
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  margin-top: 2em;
-
-  li {
-    display: inline-block;
-    padding: 0.5em;
-    transition: all 200ms ease;
-
-    &:hover {
-      transform: translateY(-3px);
-    }
-
-    a {
-      text-decoration: none;
-      color: ${props => props.theme.primaryColor};
-
-      &:hover {
-        text-decoration: none;
-      }
-
-      i {
-        font-size: 1.5em;
-      }
-    }
-  }
-`;
+import ListWrapper from './styles/ListWrapper';
 
 const AboutSection = ({ social }) => (
   <Container className={css.aboutWrapper}>
@@ -69,9 +36,9 @@ const AboutSection = ({ social }) => (
           </CutomBtn>
         </TextCenter>
         <Fade>
-          <ULWrapper>
+          <ListWrapper>
             {social.map((item) => <SocialItem key={`socialItem-${item.name}`} {...item} />)}
-          </ULWrapper>
+          </ListWrapper>
         </Fade>
       </Col>
     </Row>

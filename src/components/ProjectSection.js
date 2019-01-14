@@ -5,7 +5,7 @@ import Project from './Project';
 import Title from './styles/Title';
 import CustomBtnLink from './styles/CustomBtnLink';
 
-class Projects extends Component {
+class ProjectSection extends Component {
   state = {
     opacity: false
   };
@@ -63,4 +63,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default ProjectSection;
