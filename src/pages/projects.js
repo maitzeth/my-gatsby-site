@@ -1,28 +1,25 @@
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
-import { Container, Row, Button, Col } from 'reactstrap';
-import css from '../assets/css/page.module.scss';
+import { Container, Row, Col } from 'reactstrap';
 import image from '../assets/images/headingbg.jpg';
 import Layout from '../components/Layout';
 import Project from '../components/Project';
 import { chunk } from 'lodash';
 import Title from '../components/styles/Title';
+import CustomBtn from '../components/styles/CustomBtn';
+
+import PageWrapper from '../components/styles/PageWrapper';
+import PageHeaderImage from '../components/styles/PageHeaderImage';
+
+import styled from 'styled-components';
 
 let postsToShow = 6;
+let morePosts = 3;
 
-const primaryStyle = {
-  borderRadius: '0',
-  backgroundColor: 'transparent',
-  border: '2px solid #fff',
-  padding: '0.5em 3em',
-  position: 'relative',
-  overflow: 'hidden'
-};
-
-const titleStyles = {
-  position: 'relative',
-  zIndex: '2'
-}
+const CustomTitle = styled(Title)`
+  position: relative;
+  z-index: 2;
+`;
 
 class ProjectsPage extends React.Component {
   state = {
@@ -31,9 +28,12 @@ class ProjectsPage extends React.Component {
   };
 
   updatePostToShow = () => {
-    const distanceToBottom = document.documentElement.offsetHeight - (window.scrollY + window.innerHeight);
-    if (this.state.showingMore && distanceToBottom < 10) {
-      this.setState({ postsToShow: this.state.postsToShow + 3 });
+    const { showingMore, postsToShow } = this.state;
+    const { scrollY, innerHeight } = window;
+
+    const distanceToBottom = document.documentElement.offsetHeight - (scrollY + innerHeight);
+    if (showingMore && distanceToBottom < 10) {
+      this.setState({ postsToShow: postsToShow + morePosts });
     }
     this.ticking = false;
   };
@@ -45,37 +45,38 @@ class ProjectsPage extends React.Component {
     }
   };
 
-  handleClick = () => {
+  handleClick = e => {
+    const { postsToShow } = this.state;
+    e.preventDefault();
     this.setState({
-      postsToShow: this.state.postsToShow + 3,
+      postsToShow: postsToShow + morePosts,
       showingMore: true
     });
   };
 
   componentDidMount() {
-    // If you add a listener.
     window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    // You have to remove it.
     window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
     const { postsToShow, showingMore } = this.state;
     const { edges } = this.props.data.allMarkdownRemark;
+    const { location } = this.props;
 
     return (
       <Fragment>
-        <Layout>
-          <main className={css.pageWrapper}>
-            <header className={css.pageHeaderImage} style={{ backgroundImage: `url(${image})` }}>
-              <Title style={titleStyles}>Projects</Title>
-            </header>
+        <Layout pathname={location.pathname}>
+          <PageWrapper>
+            <PageHeaderImage image={image}>
+              <CustomTitle>Projects</CustomTitle>
+            </PageHeaderImage>
             <Container className="py-4">
               <Row>
-                {chunk(edges.slice(0, postsToShow), 3).map((chunk, i) => (
+                {chunk(edges.slice(0, postsToShow), morePosts).map((chunk, i) => (
                   <Fragment key={`chunk-${i}`}>
                     {chunk.map(({ node }, index) => (
                       <Project key={`project-${index}`} id={index} {...node} separation="my-3" />
@@ -87,14 +88,14 @@ class ProjectsPage extends React.Component {
               {!showingMore && (
                 <Row className="mt-2">
                   <Col sm="12" className="text-center">
-                    <Button color="primary" style={primaryStyle} onClick={this.handleClick}>
+                    <CustomBtn onClick={this.handleClick}>
                       <span>Load more</span>
-                    </Button>
+                    </CustomBtn>
                   </Col>
                 </Row>
               )}
             </Container>
-          </main>
+          </PageWrapper>
         </Layout>
       </Fragment>
     );

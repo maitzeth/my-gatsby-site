@@ -10,10 +10,11 @@ class IndexPage extends Component {
     const { title } = this.props.data.site.siteMetadata;
     const { social } = this.props.data.socialJson;
     const projectEdges = this.props.data.allMarkdownRemark.edges;
+    const { location } = this.props;
 
     return (
       <Fragment>
-        <Layout>
+        <Layout pathname={location.pathname}>
           <Header title={title} />
           <AboutSection social={social} />
           <ProjectSection projectEdges={projectEdges} />

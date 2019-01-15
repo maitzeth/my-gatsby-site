@@ -2,7 +2,7 @@ const theme = {
   primaryColor: '#0b0b0d',
   secondaryColor: '#131315',
   whitesmokeColor: '#dfe6e9',
-  grayColor: '#71797b',
+  grayColor: '#333333',
   black: '#000000',
   breakpoints: {
     xs: '576px',
