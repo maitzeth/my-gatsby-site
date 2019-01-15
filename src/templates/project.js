@@ -17,10 +17,9 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode }, lo
   } = postNode.frontmatter;
 
   const formatDate = moment(date, 'DD.MM.YYYY').format('LL');
-
   return (
     <Layout pathname={location.pathname} customSEO>
-      <SEO postPath={slug} postNode={postNode} postSEO />
+      <SEO postNode={postNode} pathname={location.pathname} single />
       <div className={css.projectWrapper}>
         <Container>
           <Row className="mt-3 align-items-center">

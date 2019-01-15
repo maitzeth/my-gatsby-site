@@ -6,12 +6,12 @@ module.exports = {
   siteLanguage: 'en', // Language Tag on <html> element
   ogLanguage: 'en_US',
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Minimalistic dark portfolio with full-width grid and large images',
-  author: 'Maitzeth', // Author for schemaORGJSONLD
+  siteDescription: 'A simple minimalistic portfolio for Web Developer and Informatic Engineer André Iván.',
+  author: 'André Iván', // Author for schemaORGJSONLD
   userTwitter: '@Maitzeth', // Twitter Username
   googleAnalyticsID: 'UA-68658728-1',
   // Manifest and Progress color
-  themeColor: '#0b0b0d',
+  themeColor: 'red',
   backgroundColor: '#ffffff',
   // Settings for typography.jsx
   headerFontFamily: 'Roboto',
