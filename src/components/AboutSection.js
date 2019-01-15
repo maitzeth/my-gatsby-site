@@ -1,7 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Col, Container, Row } from 'reactstrap';
-import css from '../assets/css/about.module.scss';
 import aboutImage from '../assets/images/about.jpg';
 import SocialItem from './SocialItem.js';
 import pdf from '../assets/cv.pdf';
@@ -13,8 +12,15 @@ import TextCenter from './styles/TextCenter';
 import CutomBtn from './styles/CutomBtn';
 import ListWrapper from './styles/ListWrapper';
 
+import styled from 'styled-components';
+
+const Content = styled(Container)`
+  padding-top: 3em;
+  padding-bottom: 3em;
+`;
+
 const AboutSection = ({ social }) => (
-  <Container className={css.aboutWrapper}>
+  <Content>
     <Row>
       <Col sm={{ size: '10', offset: 1 }}>
         <Title black>
@@ -42,7 +48,7 @@ const AboutSection = ({ social }) => (
         </Fade>
       </Col>
     </Row>
-  </Container>
+  </Content>
 );
 
 export default AboutSection;

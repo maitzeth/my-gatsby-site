@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import React, { Component, Fragment } from 'react';
 import { Container, Nav, Navbar, NavItem } from 'reactstrap';
-import css from '../assets/css/menu.module.scss';
 import NavbarToggler from './NavbarToggler';
 import styled from 'styled-components';
 
@@ -37,13 +36,20 @@ const NavLink = styled(Link)`
   }
 `;
 
-const NavbarTogglerWrapper = styled.a`
+const NavbarTogglerWrapper = styled.div`
   color: #fff !important;
   padding: 0.5em;
   margin: 0 0.5em;
   font-weight: 300;
   letter-spacing: 2px;
   font-size: 1em;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 70px;
+  height: 60px;
+  background-color: ${props => props.theme.primaryColor};
+  z-index: 10;
 
   &:hover {
     text-decoration: none;
