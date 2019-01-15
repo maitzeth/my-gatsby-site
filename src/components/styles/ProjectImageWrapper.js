@@ -14,7 +14,7 @@ const ProjectImageWrapper = styled.div`
     filter: grayscale(0%);
   }
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     height: 200px;
   }
 

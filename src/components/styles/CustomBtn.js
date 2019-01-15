@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CutomBtn = styled.a`
+const CustomBtn = styled.a`
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -10,7 +10,6 @@ const CutomBtn = styled.a`
   font-size: 1rem;
   line-height: 1.5;
   transition: all .15s ease-in-out;
-
   border-radius: 0px;
   background-color: transparent;
   border: 2px solid ${props => props.black ? props.theme.primaryColor : '#fff'};
@@ -51,4 +50,4 @@ const CutomBtn = styled.a`
   }
 `;
 
-export default CutomBtn;
+export default CustomBtn;

@@ -1,42 +1,35 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import css from '../assets/css/project.module.scss';
 import Project from './Project';
 import Title from './styles/Title';
 import CustomBtnLink from './styles/CustomBtnLink';
+import styled from 'styled-components';
+
+const ContentWrapper = styled(Container)`
+  background-color: ${props => props.theme.primaryColor};
+  height: 100vh;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
+    height: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+`;
 
 class ProjectSection extends Component {
-  state = {
-    opacity: false
-  };
-
-  handleActiveOpacity = () => {
-    this.setState({
-      opacity: true
-    });
-  };
-
-  handleLeaveOpacity = () => {
-    this.setState({
-      opacity: false
-    });
-  };
-
   render() {
     const { projectEdges } = this.props;
-    const { opacity } = this.state;
 
     return (
-      <Container
-        fluid
-        className={css.projectsContainer}
-        onMouseEnter={this.handleActiveOpacity}
-        onMouseLeave={this.handleLeaveOpacity}
-      >
+      <ContentWrapper fluid>
         <Container>
           <Row className="mb-4">
             <Col>
-              <Title white>Latest eworks</Title>
+              <Title white>Latest works</Title>
             </Col>
           </Row>
           <Row>
@@ -44,9 +37,7 @@ class ProjectSection extends Component {
               <Project 
                 key={`client-${index}`} 
                 {...node} 
-                opacity={opacity} 
-                separation="my-3" 
-                id={index} 
+                id={index}
               />
             ))}
           </Row>
@@ -58,7 +49,7 @@ class ProjectSection extends Component {
             </Col>
           </Row>
         </Container>
-      </Container>
+      </ContentWrapper>
     );
   }
 }

@@ -3,17 +3,12 @@ import { graphql, StaticQuery } from 'gatsby';
 import React, { Fragment } from 'react';
 import Foot from './Foot';
 import Menu from './Menu';
-import CEO from './SEO';
+import SEO from './SEO';
+import theme from '../../config/theme';
 import { ThemeProvider } from 'styled-components';
 
-const theme = {
-  primaryColor: '#0b0b0d',
-  secondaryColor: '#131315',
-  whitesmokeColor: '#dfe6e9',
-  grayColor: '#71797b'
-}
 
-const Layout = ({ children }) => (
+const Layout = ({ children, pathname, customSEO }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -25,10 +20,10 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={(data) => (
+    render={() => (
       <ThemeProvider theme={theme}>
         <Fragment>
-          <CEO />
+          {!customSEO && <SEO pathname={pathname} />}
           <Menu />
             {children}
           <Foot />

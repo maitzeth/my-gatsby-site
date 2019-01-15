@@ -9,7 +9,7 @@ const MenuNav = styled(Navbar)`
   padding: 1em 0;
   transition: all 200ms ease;
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     transform: translateX(${props => props.isactive === 'true' ? '0%' : '100%'});
     padding: 2em 0;
     height: 100vh;
@@ -31,7 +31,7 @@ const NavLink = styled(Link)`
     color: #fff;
   }
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     font-size: 1.2em;
   }
 `;
@@ -46,8 +46,8 @@ const NavbarTogglerWrapper = styled.div`
   position: fixed;
   top: 10px;
   right: 10px;
-  width: 70px;
-  height: 60px;
+  width: 60px;
+  height: 50px;
   background-color: ${props => props.theme.primaryColor};
   z-index: 10;
 
@@ -56,7 +56,7 @@ const NavbarTogglerWrapper = styled.div`
     color: #fff;
   }
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     font-size: 1.2em;
   }
 `;
@@ -64,7 +64,7 @@ const NavbarTogglerWrapper = styled.div`
 const NavExternalLink = styled.div`
   display: none;
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     display: block;
     position: fixed;
     top: 15px;

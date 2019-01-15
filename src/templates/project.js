@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 import Img from 'gatsby-image';
 
 
-const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
+const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode }, location }) => {
   const {
     client,
     date,
@@ -19,7 +19,7 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
   const formatDate = moment(date, 'DD.MM.YYYY').format('LL');
 
   return (
-    <Layout>
+    <Layout pathname={location.pathname} customSEO>
       <SEO postPath={slug} postNode={postNode} postSEO />
       <div className={css.projectWrapper}>
         <Container>

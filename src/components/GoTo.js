@@ -27,12 +27,12 @@ const GoToItem = styled.div`
     transform: translate(-50%, 0%);
     animation: ${jumpArrow} 400ms infinite alternate cubic-bezier(0.44, -0.31, 1, 0.47);
 
-    @media only screen and (max-width: 575.98px) {
+    @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
       height: 7px;
     }
   }
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     width: 20px;
     height: 40px;
   }

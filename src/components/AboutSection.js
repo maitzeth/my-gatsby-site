@@ -9,7 +9,7 @@ import LeadParagraph from './styles/LeadParagraph';
 import CircularImg from './styles/CircularImg';
 import Title from './styles/Title';
 import TextCenter from './styles/TextCenter';
-import CutomBtn from './styles/CutomBtn';
+import CustomBtn from './styles/CustomBtn';
 import ListWrapper from './styles/ListWrapper';
 
 import styled from 'styled-components';
@@ -37,9 +37,9 @@ const AboutSection = ({ social }) => (
         </LeadParagraph>
 
         <TextCenter>
-          <CutomBtn href={pdf} black target="_blank" rel="noopener noreferrer">
+          <CustomBtn href={pdf} black target="_blank" rel="noopener noreferrer">
             <span>View CV</span>
-          </CutomBtn>
+          </CustomBtn>
         </TextCenter>
         <Fade>
           <ListWrapper>

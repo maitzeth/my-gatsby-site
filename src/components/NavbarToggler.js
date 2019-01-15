@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const NavbarTogglerBtn = styled.button`
   display: none;
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     display: block;
     position: absolute;
-    width: 40px;
+    width: 30px;
     height: 20px;
     cursor: pointer;
     z-index: 4;
@@ -19,7 +19,7 @@ const NavbarTogglerBtn = styled.button`
   }
 
   &:focus {
-    @media only screen and (max-width: 575.98px) {
+    @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
       outline: none;
     }
   }
@@ -28,7 +28,7 @@ const NavbarTogglerBtn = styled.button`
 const NavbarTogglerItem = styled.div`
   display: none;
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     display: block;
     width: 100%;
     height: 2px;
@@ -38,7 +38,7 @@ const NavbarTogglerItem = styled.div`
   }
 
   &:nth-child(1) {
-    @media only screen and (max-width: 575.98px) {
+    @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
       transform: ${props => !props.isActive ? 'translateY(-50%)' : 'translateY(10px) rotate(45deg)'};
       top: 0;
       margin-left: -4px;
@@ -46,7 +46,7 @@ const NavbarTogglerItem = styled.div`
   }
 
   &:nth-child(2) {
-    @media only screen and (max-width: 575.98px) {
+    @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
       top: 50%;
       transform: translateY(-50%);
       opacity: ${props => !props.isActive ? '1' : '0'};
@@ -54,7 +54,7 @@ const NavbarTogglerItem = styled.div`
   }
 
   &:nth-child(3) {
-    @media only screen and (max-width: 575.98px) {
+    @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
       top: 100%;
       margin-left: -4px;
       transform: ${props => !props.isActive ? 'translateY(-50%)' : 'translateY(-10px) rotate(-45deg)'};

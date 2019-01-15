@@ -1,39 +1,49 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
+import LeadParagraph from './styles/LeadParagraph';
+import styled from 'styled-components';
+
+const Footer = styled.footer`
+  background-color: ${props => props.theme.black};
+  color: ${props => props.theme.whitesmokeColor};
+  height: 50px;
+  display: flex;
+  align-items: center;
+`;
+
+const FooterText = styled(LeadParagraph)`
+  color: ${props => props.theme.whitesmokeColor};
+  margin: 0;
+  font-size: 0.8em;
+`;
+
+const Heart = styled.span`
+  .fa-heart {
+    color: red;
+    margin: 0 5px;
+  }
+`;
 
 const Foot = () => {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
 
-  const footerStyles = {
-    backgroundColor: 'black',
-    color: '#fff',
-    padding: '1em 0'
-  };
-
-  const heartColor = {
-    color: 'red',
-    margin: '0 5px'
-  };
-
-  const paragraphSize = {
-    fontSize: '0.8em'
-  };
-
   return (
-    <footer style={footerStyles}>
+    <Footer>
       <Container>
         <Row>
           <Col sm="12" className="text-center">
-            <p className="lead m-0" style={paragraphSize}>
+            <FooterText>
               Made with
-              <i className="fa fa-heart red-color" aria-hidden="true" style={heartColor} />
+              <Heart>
+                <i className="fa fa-heart" aria-hidden="true" />
+              </Heart>
               by me. © {year}
-            </p>
+            </FooterText>
           </Col>
         </Row>
       </Container>
-    </footer>
+    </Footer>
   );
 };
 

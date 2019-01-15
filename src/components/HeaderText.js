@@ -47,7 +47,7 @@ const HeaderTitle = styled.h1`
     }
   }
 
-  @media only screen and (max-width: 575.98px) {
+  @media only screen and (max-width: ${props => props.theme.breakpoints.xs}) {
     font-size: 2.5em;
   }
 `;
