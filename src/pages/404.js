@@ -24,8 +24,8 @@ const ErrorBtnWrapper = styled.div`
   margin: 1em 0;
 `; 
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = ({ location }) => (
+  <Layout pathname={location.pathname}>
     <ErrorWrapper>
       <Container>
         <Row>
