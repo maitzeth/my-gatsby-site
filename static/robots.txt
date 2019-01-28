@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: */imprint/
-
-sitemap: https://andreivan.netlify.com/sitemap.xml

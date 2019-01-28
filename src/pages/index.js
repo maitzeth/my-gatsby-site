@@ -1,63 +1,35 @@
-import { graphql } from 'gatsby';
-import React, { Component, Fragment } from 'react';
-import AboutSection from '../components/AboutSection';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
-import ProjectSection from '../components/ProjectSection';
+import React from 'react'
+import { graphql } from "gatsby"
+import Layout from '../components/Layout'
+import HeaderSection from '../components/HeaderSection'
+import AboutSection from '../components/AboutSection'
 
-class IndexPage extends Component {
-  render() {
-    const { title } = this.props.data.site.siteMetadata;
-    const { social } = this.props.data.socialJson;
-    const projectEdges = this.props.data.allMarkdownRemark.edges;
-    const { location } = this.props;
+const IndexPage = ({ data }) => {
 
-    return (
-      <Fragment>
-        <Layout pathname={location.pathname}>
-          <Header title={title} />
-          <AboutSection social={social} />
-          <ProjectSection projectEdges={projectEdges} />
-        </Layout>
-      </Fragment>
-    );
-  }
+  const { aboutText, social } = data.site.siteMetadata;
+
+  return (
+    <Layout>
+      <HeaderSection />
+      <AboutSection aboutText={aboutText} social={social} />
+    </Layout>
+  )
 }
 
-export const query = graphql`
-  query HomePageQueries {
+export const IndexPageQuery = graphql`
+  query {
     site {
       siteMetadata {
-        title
-      }
-    }
-    socialJson {
-      social {
-        url
-        name
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            service
-            client
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
-          }
+        aboutText,
+        social {
+          id
+          icon
+          title
+          url
         }
       }
     }
   }
-`;
+`
 
-export default IndexPage;
+export default IndexPage

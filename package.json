@@ -1,64 +1,28 @@
 {
-  "name": "andre-ivan-gatsby-portfolio",
-  "description": "André Iván Gatsby Site",
-  "version": "1.0.0",
-  "author": "André Iván <andre801mz@gmail.com>",
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@auth0/cosmos": "^0.7.2",
-    "autoprefixer": "^9.4.4",
-    "babel-plugin-styled-components": "^1.10.0",
-    "bootstrap": "^4.1.3",
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
-    "emotion-theming": "^9.2.9",
-    "font-awesome": "^4.7.0",
-    "gatsby": "^2.0.23",
-    "gatsby-image": "^2.0.17",
-    "gatsby-plugin-catch-links": "^2.0.5",
-    "gatsby-plugin-emotion": "^2.0.5",
-    "gatsby-plugin-google-analytics": "^2.0.7",
-    "gatsby-plugin-lodash": "^3.0.1",
-    "gatsby-plugin-manifest": "^2.0.6",
-    "gatsby-plugin-netlify": "^2.0.2",
-    "gatsby-plugin-nprogress": "^2.0.5",
-    "gatsby-plugin-offline": "^2.0.9",
-    "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-sass": "^2.0.1",
-    "gatsby-plugin-sharp": "^2.0.6",
-    "gatsby-plugin-sitemap": "^2.0.1",
-    "gatsby-plugin-styled-components": "^3.0.4",
-    "gatsby-plugin-typography": "^2.2.2",
-    "gatsby-remark-external-links": "^0.0.4",
-    "gatsby-remark-images": "^2.0.4",
-    "gatsby-remark-responsive-iframe": "^2.0.5",
-    "gatsby-source-filesystem": "^2.0.4",
-    "gatsby-source-github-pinned": "^0.0.4",
-    "gatsby-transformer-json": "^2.1.4",
-    "gatsby-transformer-remark": "^2.1.7",
-    "gatsby-transformer-sharp": "^2.1.3",
-    "lodash": "^4.17.11",
-    "moment": "^2.22.2",
-    "node-sass": "^4.9.4",
-    "nprogress": "^0.2.0",
-    "polished": "^2.2.0",
-    "postcss-discard-duplicates": "^4.0.2",
-    "postcss-flexbugs-fixes": "^4.1.0",
-    "postcss-focus": "^4.0.0",
+    "gatsby": "^2.0.76",
+    "gatsby-image": "^2.0.20",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-typography": "^2.2.6",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-sharp": "^2.1.8",
     "prop-types": "^15.6.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-emotion": "^9.2.12",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.3.12",
-    "react-icons": "^3.2.0",
     "react-reveal": "^1.2.2",
-    "react-star-rating-component": "^1.4.1",
-    "react-typography": "^0.16.13",
-    "react-window-size-listener": "^1.2.3",
-    "reactstrap": "^6.5.0",
+    "react-spring": "^7.2.10",
+    "react-typography": "^0.16.18",
     "styled-components": "^4.1.3",
-    "typography": "^0.16.17",
-    "uikit": "^3.0.0-rc.25"
+    "typography": "^0.16.18"
   },
   "keywords": [
     "gatsby"
@@ -67,14 +31,18 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "prettier": "^1.14.2"
+    "prettier": "^1.15.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maitzeth/my-gatsby-site"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

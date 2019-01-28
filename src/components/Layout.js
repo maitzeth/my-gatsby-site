@@ -1,36 +1,72 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { graphql, StaticQuery } from 'gatsby';
 import React, { Fragment } from 'react';
-import Foot from './Foot';
-import Menu from './Menu';
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { StaticQuery, graphql } from 'gatsby';
+import Navbar from './Navbar';
+import config from '../config';
 import SEO from './SEO';
-import theme from '../../config/theme';
-import { ThemeProvider } from 'styled-components';
 
+const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  };
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+  }
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.secondaryColor};
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+  }
+  article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+`;
 
-const Layout = ({ children, pathname, customSEO }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
             title
-            subtitle
           }
         }
       }
     `}
-    render={() => (
-      <ThemeProvider theme={theme}>
+    render={data => (
+      <ThemeProvider theme={config.theme}>
         <Fragment>
-          {!customSEO && <SEO pathname={pathname} />}
-          <Menu />
-            {children}
-          <Foot />
+          <SEO />
+          <GlobalStyle />
+          <Navbar siteTitle={data.site.siteMetadata.title} />
+          {children}
         </Fragment>
       </ThemeProvider>
     )}
   />
-);
+)
 
-export default Layout;
+export default Layout
