@@ -8,8 +8,6 @@ const BtnWrapper = styled(Link)`
   max-width: 100%;
   text-decoration: none;
 
-  margin-left: ${props => props.navbar ? '2rem' : '0'};
-
   &:hover {
   	span:before {
 	  	transform: scale(1, 0.99999999) translateZ(0);
@@ -52,8 +50,8 @@ const BtnText = styled.span`
   }
 `;
 
-const Btn = ({ children, navbar }) => (
-	<BtnWrapper navbar>
+const Btn = ({ children, navbar, to }) => (
+	<BtnWrapper to={to}>
 		<BtnInner>
 			<BtnText>
 				{ children }

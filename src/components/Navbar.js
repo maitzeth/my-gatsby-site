@@ -60,6 +60,10 @@ const HeaderItems = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  a {
+    margin-left: 2rem;
+  }
 `;
 
 const Header = ({ siteTitle }) => (
@@ -71,13 +75,13 @@ const Header = ({ siteTitle }) => (
             <span>{ siteTitle }</span>
           </LogoWrapper>
           <HeaderItems>
-            <Btn to="/" navbar>
+            <Btn to="/">
               Home
             </Btn>
-            <Btn to="/about" navbar>
+            <Btn to="/about">
               About
             </Btn>
-            <Btn to="/work" navbar>
+            <Btn to="/work">
               Work
             </Btn>
           </HeaderItems>

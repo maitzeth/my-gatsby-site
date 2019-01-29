@@ -3,21 +3,24 @@ import { graphql } from "gatsby"
 import Layout from '../components/Layout'
 import HeaderSection from '../components/HeaderSection'
 import AboutSection from '../components/AboutSection'
+import ProjectSection from '../components/ProjectSection'
 
 const IndexPage = ({ data }) => {
 
   const { aboutText, social } = data.site.siteMetadata;
+  const projects = data.allMarkdownRemark.edges; 
 
   return (
     <Layout>
       <HeaderSection />
       <AboutSection aboutText={aboutText} social={social} />
+      <ProjectSection projects={projects} />
     </Layout>
   )
 }
 
 export const IndexPageQuery = graphql`
-  query {
+  query PageQuery {
     site {
       siteMetadata {
         aboutText,
@@ -29,6 +32,26 @@ export const IndexPageQuery = graphql`
         }
       }
     }
+
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            slug
+
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 1600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
   }
 `
 

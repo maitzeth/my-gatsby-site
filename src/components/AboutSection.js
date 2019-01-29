@@ -72,7 +72,7 @@ const AboutSection = ({ aboutText, social }) => (
         </AboutImageWrapper>
         <Lead center>{ aboutText }</Lead>
         <ViewMoreWrapper>
-          <Btn>View more</Btn>
+          <Btn to="/about">View more</Btn>
         </ViewMoreWrapper>
         <SocialWrapper>
           {
