@@ -48,6 +48,14 @@ export const IndexPageQuery = graphql`
                 }
               }
             }
+
+            code {
+              childImageSharp {
+                fluid(maxWidth: 1600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

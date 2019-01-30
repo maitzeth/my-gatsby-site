@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spring, animated, config } from 'react-spring'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
-const Item = styled.div`
+const Item = styled(Link)`
   min-height: 300px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 40px, rgba(0, 0, 0, 0.2) 0px 15px 12px;
@@ -14,14 +14,27 @@ const Item = styled.div`
   color: white;
   overflow: hidden;
   transition: all 0.3s ease-in-out 0s;
+  border-radius: 10px;
 
   &:hover {
     color: white;
     transform: translateY(-6px);
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
     min-height: 300px;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.s}) {
+    min-height: 200px;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.m}) {
+    min-height: 200px;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.l}) {
+    min-height: 350px;
   }
 `;
 
@@ -29,57 +42,53 @@ const Cover = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+
+
   div {
     overflow: hidden;
   }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${props => props.theme.secondaryColor};
+    opacity: 0.5;
+    transition: all 200ms ease;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 0;
+    }
+  }
 `;
 
-const Content = styled.div`
-  padding: 1rem;
-  position: relative;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  opacity: 0;
-  height: 0;
-
-  ${Item}:hover & {
-    opacity: 1;
-    height: 120px;
-  }
-`
-
-const Name = styled.h2`
-  margin-bottom: 0;
-  margin-top: 0;
+const Imagen = styled(Img)`
+  width: 100%;
+  height: 100%;
 `;
 
 const ProjectItem = ({ delay, node }) => {
 
-  const { slug, title } = node.frontmatter;
-  const { fluid } = node.frontmatter.cover.childImageSharp;
+
+  const { slug } = node.frontmatter;
+  const snapshot = node.frontmatter.cover.childImageSharp.fluid;
+  const code = node.frontmatter.code.childImageSharp.fluid;
 
   return (
-    <Spring
-      native
-      delay={200 * delay}
-      from={{ opacity: 0, transform: 'translate3d(0, 30px, 0)' }}
-      to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-      config={config.slow}
-    >
-    { props => (
-        <animated.div style={props}>
-          <Item to={slug}>
-            <Cover>
-              <Img fluid={fluid} />
-            </Cover>
-            <Content>
-              <Name>{ title }</Name>
-            </Content>
-          </Item>
-        </animated.div>
-      ) 
-    }
-    </Spring>
-  )
+    <Item to={slug}>
+      <Cover>
+        <Imagen fluid={snapshot} />
+        <Imagen fluid={code} />
+      </Cover>
+    </Item>
+  ) 
 };
 
 export default ProjectItem;

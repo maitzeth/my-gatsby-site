@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { StaticQuery, graphql } from 'gatsby';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import config from '../config';
 import SEO from './SEO';
 
@@ -63,6 +64,7 @@ const Layout = ({ children }) => (
           <GlobalStyle />
           <Navbar siteTitle={data.site.siteMetadata.title} />
           {children}
+          <Footer />
         </Fragment>
       </ThemeProvider>
     )}
