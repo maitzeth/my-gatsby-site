@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby'
 
 const FooterWrapper = styled.footer`
-  padding: 1rem 1.5rem;
-  margin-top: 1.5rem;
+  height: 60px;
   background-color: ${props => props.theme.secondaryColor};
-  max-width: 1600px;
+  max-width: 100%;
 `;
 
 const FooterGrid = styled.div`

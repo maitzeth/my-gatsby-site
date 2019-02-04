@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     primaryColor: 'whitesmoke',
     secondaryColor: '#191919',
-    redColor: '#e74c3c',
+    redColor: '#990100',
     whiteColor: '#fff',
     blackColor: '#000',
     breakpoints: {

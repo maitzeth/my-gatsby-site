@@ -1,35 +1,9 @@
 import React, { Fragment } from 'react';
 import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from 'styled-components';
 import { Spring } from 'react-spring';
 import Scroller from './Scroller';
-
-const HeaderWrapper = styled.div`
-  position: relative;
-  height: 70vh;
-
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    height: 100vh;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${props => props.theme.primaryColor};
-    opacity: 0.8;
-    z-index: 1;
-  }
-`;
-
-const Imagen = styled(Img)`
-  width: 100%;
-  height: 100%;
-`;
+import { HeaderWrapper, Imagen } from './HeaderWrapper';
 
 const HeaderTitleWrapper = styled.div`
   position: absolute;

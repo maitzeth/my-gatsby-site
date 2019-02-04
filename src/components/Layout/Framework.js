@@ -38,6 +38,23 @@ const LeadWrapper = styled.p`
   text-align: ${props => props.center ? 'center' : 'left'};
 `;
 
+const ProjectContent = styled.div`
+  max-width: 1600px;
+  padding: 0.5rem 1.0875rem;
+  margin: 0 auto;
+`;
+
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 1.5rem;
+  
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
 export const Container = ({ children }) => (
   <Wrapper>
     { children }
@@ -54,4 +71,16 @@ export const Lead = (props) => (
   <LeadWrapper {...props}>
     { props.children }
   </LeadWrapper>
+);
+
+export const ProjectWrapper = ({ children }) => (
+  <ProjectContent>
+    { children }
+  </ProjectContent>
+);
+
+export const ProjectInner = ({ children }) => (
+  <ProjectGrid>
+    { children }
+  </ProjectGrid>
 );
