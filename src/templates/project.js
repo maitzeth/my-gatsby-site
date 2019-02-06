@@ -14,6 +14,7 @@ import {
   Title,
   Lead,
 } from '../components/Layout/Framework'
+import BtnExternal from '../components/BtnExternal';
 
 const ProjectInner = styled.div`
   padding-top: 2em;
@@ -143,8 +144,13 @@ const Buttons = styled.i`
     top: 0;
 `
 
+const SiteURLWrapper = styled.div`
+  margin-top: 2em;
+  text-align: center;
+`;
+
 const SingleProject = ({ data }) => {
-  const { title, date, techs, role } = data.markdownRemark.frontmatter
+  const { title, date, techs, role, url } = data.markdownRemark.frontmatter
   const HeaderImage =
     data.markdownRemark.frontmatter.cover.childImageSharp.fluid
 
@@ -232,7 +238,11 @@ const SingleProject = ({ data }) => {
           </Row>
           <Row>
             <Col>
-              <Button>qweqwe</Button>
+              <SiteURLWrapper>
+                <BtnExternal href={url}>
+                  VISIT SITE
+                </BtnExternal>
+              </SiteURLWrapper>
             </Col>
           </Row>
         </ProjectInner>
@@ -250,6 +260,7 @@ export const query = graphql`
         date
         techs
         role
+        url
 
         cover {
           childImageSharp {

@@ -6,6 +6,7 @@ date: "29-01-2019"
 title: "Amy Luo"
 techs: ['Wordpress', 'HTML5', 'CSS3', 'Javascript', 'jQuery']
 role: "Developer"
+url: "https://twitter.com/"
 ---
 
 # Lorem ipsum
