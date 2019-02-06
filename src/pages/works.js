@@ -11,7 +11,6 @@ const WorksWrapper = styled(ProjectWrapper)`
   padding-bottom: 4em;
 `;
 
-
 const Works = ({ data }) => {
   const projects = data.allMarkdownRemark.edges;
 

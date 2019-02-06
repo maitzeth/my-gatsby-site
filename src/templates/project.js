@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import { HeaderWrapper, Imagen } from '../components/HeaderWrapper'
 import {
   Container,
@@ -149,7 +150,7 @@ const SiteURLWrapper = styled.div`
   text-align: center;
 `;
 
-const SingleProject = ({ data }) => {
+const SingleProject = ({ data, location }) => {
   const { title, date, techs, role, url } = data.markdownRemark.frontmatter
   const HeaderImage =
     data.markdownRemark.frontmatter.cover.childImageSharp.fluid
@@ -160,8 +161,11 @@ const SingleProject = ({ data }) => {
 
   const titleCode = title.split(' ').join('-')
 
+  const postNode = data.markdownRemark.frontmatter;
+
   return (
-    <Layout>
+    <Layout pathname={location.pathname} customSEO>
+      <SEO pathname={location.pathname} postNode={postNode} single />
       <Spring
         delay={100}
         from={{ transform: 'translateY(-10%)', opacity: '0' }}

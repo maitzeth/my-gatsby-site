@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, pathname, customSEO}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -60,7 +60,7 @@ const Layout = ({ children }) => (
     render={data => (
       <ThemeProvider theme={config.theme}>
         <Fragment>
-          <SEO />
+          {!customSEO && <SEO pathname={pathname} />}
           <GlobalStyle />
           <Navbar siteTitle={data.site.siteMetadata.title} />
           {children}
