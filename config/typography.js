@@ -1,43 +1,21 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  title: 'LekoArts',
-  baseFontSize: '18px',
+  title: 'Maitzeth',
+  baseFontSize: '16px',
   baseLineHeight: 1.45,
-  /* Use the system font stack as fallback */
-  headerFontFamily: [
-    'Montserrat',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Roboto',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-  ],
-  bodyFontFamily: [
-    'Istok Web',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Roboto',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-  ],
-  scaleRatio: 2.441,
-  headerWeight: 700,
-  overrideStyles: () => ({
-    img: {
-      marginBottom: 0,
+  headerFontFamily: ['Oswald', 'sans-serif'],
+  bodyFontFamily: ['Roboto', 'sans-serif'],
+  googleFonts: [
+    {
+      name: 'Oswald',
+      styles: ['700'],
     },
-  }),
+    {
+      name: 'Roboto',
+      styles: ['400'],
+    },
+  ],
 })
 
 export default typography

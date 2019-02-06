@@ -1,7 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-const Wrapper = styled.div`
+export const Container = styled.div`
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -18,69 +17,66 @@ const Wrapper = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.m}) {
     max-width: 960px;
   }
-  
-  @media (min-width: ${props => props.theme.breakpoints.l}) {
-    max-width: 1140px;
-  }
-`;
 
-const TitleWrapper = styled.h2`
+  @media (min-width: ${props => props.theme.breakpoints.l}) {
+    max-width: 1000px;
+  }
+`
+
+export const Title = styled.h2`
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   color: ${props => props.theme.secondaryColor};
   margin-bottom: 1rem;
-`;
+`
 
-const LeadWrapper = styled.p`
+export const Lead = styled.p`
   font-size: 1.15rem;
   font-weight: 300;
-  text-align: ${props => props.center ? 'center' : 'left'};
-`;
+  text-align: ${props => (props.center ? 'center' : 'left')};
+`
 
-const ProjectContent = styled.div`
+export const ProjectWrapper = styled.div`
   max-width: 1600px;
   padding: 0.5rem 1.0875rem;
   margin: 0 auto;
-`;
+`
 
-const ProjectGrid = styled.div`
+export const ProjectInner = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-top: 1.5rem;
-  
+
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     grid-template-columns: 1fr;
   }
-`;
+`
 
-export const Container = ({ children }) => (
-  <Wrapper>
-    { children }
-  </Wrapper>
-);
+export const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  align-items: ${props => (props.align ? props.align : 'initial')};
 
-export const Title = ({ children }) => (
-  <TitleWrapper>
-    { children }
-  </TitleWrapper>
-);
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    flex-direction: column;
+  }
+`
 
-export const Lead = (props) => (
-  <LeadWrapper {...props}>
-    { props.children }
-  </LeadWrapper>
-);
+export const Col = styled.div`
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: ${props => (props.noGutters ? '0' : '15px')};
+  padding-left: ${props => (props.noGutters ? '0' : '15px')};
+  position: relative;
 
-export const ProjectWrapper = ({ children }) => (
-  <ProjectContent>
-    { children }
-  </ProjectContent>
-);
-
-export const ProjectInner = ({ children }) => (
-  <ProjectGrid>
-    { children }
-  </ProjectGrid>
-);
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+`

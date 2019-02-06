@@ -1,220 +1,244 @@
-import React from 'react';
-import { graphql } from "gatsby"
-import { Spring } from 'react-spring';
-import styled from 'styled-components';
+import React from 'react'
+import { graphql } from 'gatsby'
+import { Spring } from 'react-spring'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
+import moment from 'moment'
 
-import Layout from '../components/Layout';
-import { HeaderWrapper, Imagen} from '../components/HeaderWrapper';
-import moment from 'moment';
+import Layout from '../components/Layout'
+import { HeaderWrapper, Imagen } from '../components/HeaderWrapper'
+import {
+  Container,
+  Row,
+  Col,
+  Title,
+  Lead,
+} from '../components/Layout/Framework'
 
+const ProjectInner = styled.div`
+  padding-top: 2em;
+  padding-bottom: 2em;
+`
 
-const SingleHeadingWrapper = styled.div`
-  max-width: 800px;
-  padding: 0 1.0875rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    height: auto;
-    padding: 1em 0;
-  }
-
-  @media (min-width: ${props => props.theme.breakpoints.s}) {
-    height: calc(70vh - 60px);
-  }
-
-  @media (min-width: ${props => props.theme.breakpoints.m}) {
-    height: calc(50vh - 60px);
-  }
-`;
-
-const SingleHeadingInner = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: center;
-
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-`;
-
-const SingleHeadingLeft = styled.div`
-  padding: 0;
-`;
-
-const SingleHeadingRight = styled.div`
-  padding: 0;
-
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    padding: 20px;
-  }
-`;
-
-const SingleMeta = styled.div`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: ${props => props.top ? '1fr 1fr 1fr' : '1fr'};
-  gap: 20px;
-
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-`;
-
-const SingleMetaItem = styled.li`
-
-`;
-
-const MetaTitle = styled.h5`
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: 900;
-  color: ${props => props.theme.secondaryColor};
-  opacity: 0.5;
-  margin: 0;
+const SingleTitle = styled(Title)`
+  margin-bottom: 3rem;
+  font-weight: 300;
+  font-size: 3rem;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
-    height: 1px;
-    background-color: ${props => props.theme.secondaryColor};
+    height: 3px;
+    margin: 0.5em auto;
     width: 50px;
-    margin: 0.5em 0;
-    margin-bottom: 1em;
+    background-color: ${props => props.theme.redColor};
   }
-`;
+`
 
-const MetaBody = styled.p`
-  margin: 0;
-  line-height: 1em;
-  font-size: 0.7em;
-  font-weight: bold;
-`;
+const MetaTitle = styled(Title)`
+  text-align: left;
+  font-size: 1.3rem;
 
-const TechWrapper = styled.span`
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    text-align: center;
+  }
+`
+
+const MetaText = styled(Lead)`
+  font-size: 1rem;
+
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    text-align: center;
+  }
+`
+
+const TechWrapper = styled.div`
   display: flex;
-  justify-content: space-between
-`;
+  justify-content: space-between;
 
-const Tech = styled.span`
-  padding: 1em;
-  border-radius: 5px;
-  background-color: ${props => props.theme.redColor};
-  color: ${props => props.theme.whiteColor};
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-`;
-
-const SingleTitle = styled.div`
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  background-color: ${props => props.theme.redColor};
-  color: ${props => props.theme.whiteColor};
-  padding: 1em 0;
-
-  h2 {
-    margin: 0;
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    flex-direction: column;
+    text-align: center;
   }
-`;
+`
+
+const Tech = styled.div`
+  background-color: ${props => props.theme.redColor};
+  padding: 0.5em 1em;
+  color: ${props => props.theme.whiteColor};
+
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    margin: 0.1em;
+    padding: 0.3em 0.5em;
+  }
+`
+
+const CodeWrapper = styled.div`
+  position: relative;
+
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    margin-bottom: 2rem;
+  }
+`
+
+const Bar = styled.div`
+  display: block;
+  position: absolute;
+  height: 24px;
+  background-color: #ddd;
+  width: 100%;
+  color: #6a6a6a;
+  z-index: 10;
+  top: 0;
+`
+
+const BarTitle = styled.h2`
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: MontSerrat, Tahoma, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  color: #8a8a8a;
+`
+
+const Buttons = styled.i`
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: #ff5f57;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+
+  &:before {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    background-color: #ff5f57;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    content: ' ';
+    left: 16px;
+    background-color: #ffbd2e;
+    top: 0;
+  }
+
+  &:after {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    background-color: #ff5f57;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    content: ' ';
+    left: 32px;
+    background-color: #28ca41;
+    top: 0;
+`
 
 const SingleProject = ({ data }) => {
+  const { title, date, techs, role } = data.markdownRemark.frontmatter
+  const HeaderImage =
+    data.markdownRemark.frontmatter.cover.childImageSharp.fluid
 
-  const { title, date, techs, role } = data.markdownRemark.frontmatter;
-  const HeaderImage = data.markdownRemark.frontmatter.cover.childImageSharp.fluid
-  const bottomImage = data.markdownRemark.frontmatter.code.childImageSharp.fluid;
+  const convertedDate = moment(date, 'DD-MM-YYYY').format('MMM Do YY')
 
-  const convertedDate = moment(date, 'DD-MM-YYYY').format("MMM Do YY");
+  const codeImage = data.markdownRemark.frontmatter.code.childImageSharp.fluid
 
+  const titleCode = title.split(' ').join('-')
 
   return (
     <Layout>
-      <Spring 
-        delay={200} 
-        from={{ transform: 'translateY(-10%)', opacity: '0' }} 
+      <Spring
+        delay={100}
+        from={{ transform: 'translateY(-10%)', opacity: '0' }}
         to={{ transform: 'translateY(0px)', opacity: '1' }}
       >
-        { props => (
-            <HeaderWrapper single={true} opacity="0.3" style={props}>
-              <SingleTitle>
-                <h2>{ title }</h2>
-              </SingleTitle>
-              <Imagen fluid={HeaderImage} />
-            </HeaderWrapper>
-          ) 
-        }
+        {props => (
+          <HeaderWrapper single={true} opacity="0.3" style={props}>
+            <Imagen fluid={HeaderImage} />
+          </HeaderWrapper>
+        )}
       </Spring>
-      <SingleHeadingWrapper>
-        <SingleHeadingInner>
 
-          <SingleHeadingLeft>
-            <Imagen fluid={bottomImage} />
-          </SingleHeadingLeft>
-
-          <SingleHeadingRight>
-            <SingleMeta top={true}>
-
-              <SingleMetaItem>
-                <MetaTitle>
-                  Client
-                </MetaTitle>
-                <MetaBody>
-                  { date }
-                </MetaBody>
-              </SingleMetaItem>
-
-              <SingleMetaItem>
-                <MetaTitle>
-                  Role
-                </MetaTitle>
-                <MetaBody>
-                  { role }
-                </MetaBody>
-              </SingleMetaItem>
-
-              <SingleMetaItem>
-                <MetaTitle>
-                  Date
-                </MetaTitle>
-                <MetaBody>
-                  { convertedDate }
-                </MetaBody>
-              </SingleMetaItem>
-
-            </SingleMeta>
-
-            <SingleMeta>
-              <SingleMetaItem>
-                <MetaTitle>
-                  Techs
-                </MetaTitle>
-                <MetaBody>
-                  <TechWrapper>
-                    { 
-                      techs.map(tech => <Tech key={`tech-${tech.toLowerCase()}`}>{ tech }</Tech>)
-                    }
-                  </TechWrapper>
-                </MetaBody>
-              </SingleMetaItem>
-            </SingleMeta>
-
-          </SingleHeadingRight>
-
-
-        </SingleHeadingInner>
-      </SingleHeadingWrapper>      
+      <Container>
+        <ProjectInner>
+          <Row>
+            <Col>
+              <Spring
+                delay={300}
+                from={{ transform: 'translateY(10%)', opacity: '0' }}
+                to={{ transform: 'translateY(0px)', opacity: '1' }}
+              >
+                {props => <SingleTitle style={props}>{title}</SingleTitle>}
+              </Spring>
+            </Col>
+          </Row>
+          <Row align="center">
+            <Spring
+              delay={400}
+              from={{ transform: 'translateY(10%)', opacity: '0' }}
+              to={{ transform: 'translateY(0px)', opacity: '1' }}
+            >
+              {props => (
+                <Col>
+                  <CodeWrapper style={props}>
+                    <Bar>
+                      <BarTitle>{`${titleCode}.js`}</BarTitle>
+                      <Buttons />
+                    </Bar>
+                    <Img fluid={codeImage} />
+                  </CodeWrapper>
+                </Col>
+              )}
+            </Spring>
+            <Spring
+              delay={500}
+              from={{ transform: 'translateY(10%)', opacity: '0' }}
+              to={{ transform: 'translateY(0px)', opacity: '1' }}
+            >
+              {props => (
+                <Col style={props}>
+                  <Row>
+                    <Col noGutters>
+                      <MetaTitle>Date</MetaTitle>
+                      <MetaText>{convertedDate}</MetaText>
+                    </Col>
+                    <Col noGutters>
+                      <MetaTitle>Role</MetaTitle>
+                      <MetaText>{role}</MetaText>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col noGutters>
+                      <MetaTitle>Techs</MetaTitle>
+                      <TechWrapper>
+                        {techs.map(tech => (
+                          <Tech key={tech.toLowerCase()}>{tech}</Tech>
+                        ))}
+                      </TechWrapper>
+                    </Col>
+                  </Row>
+                </Col>
+              )}
+            </Spring>
+          </Row>
+          <Row>
+            <Col>
+              <Button>qweqwe</Button>
+            </Col>
+          </Row>
+        </ProjectInner>
+      </Container>
     </Layout>
-  );
+  )
 }
 
 export const query = graphql`
@@ -228,7 +252,7 @@ export const query = graphql`
         role
 
         cover {
-        childImageSharp {
+          childImageSharp {
             fluid(maxWidth: 1600) {
               ...GatsbyImageSharpFluid
             }
@@ -237,8 +261,8 @@ export const query = graphql`
 
         code {
           childImageSharp {
-            fluid(maxWidth: 1600) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
@@ -247,4 +271,4 @@ export const query = graphql`
   }
 `
 
-export default SingleProject;
+export default SingleProject

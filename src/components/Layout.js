@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { StaticQuery, graphql } from 'gatsby';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import config from '../config';
-import SEO from './SEO';
+import React, { Fragment } from 'react'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import config from '../config'
+import SEO from './SEO'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 0;
     margin-bottom: 1rem;
   }
-`;
+`
 
 const Layout = ({ children }) => (
   <StaticQuery

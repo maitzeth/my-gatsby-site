@@ -1,13 +1,14 @@
-const config = require('./src/config');
+const config = require('./src/config')
 
 module.exports = {
   siteMetadata: {
     title: `André Iván`,
     subtitle: `Web Developer`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    aboutText: "I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in Venezuela, currently living in Argentina. I love to share what I learn and I've been working on web development in almost 4 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and proficient in other languages too, like PHP and Ruby.",
-    author: `@gatsbyjs`,
-    social: config.social
+    aboutText:
+      "I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in Venezuela, currently living in Argentina. I love to share what I learn and I've been working on web development in almost 4 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and proficient in other languages too, like PHP and Ruby.",
+    author: `@maitzeth`,
+    social: config.social,
   },
   plugins: [
     {
@@ -39,13 +40,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: 'config/typography.js'
+        pathToConfigModule: 'config/typography.js',
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
   ],
 }

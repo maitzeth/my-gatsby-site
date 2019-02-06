@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 
@@ -36,7 +36,7 @@ const Item = styled(Link)`
   @media (min-width: ${props => props.theme.breakpoints.l}) {
     min-height: 350px;
   }
-`;
+`
 
 const Cover = styled.div`
   width: 100%;
@@ -45,13 +45,12 @@ const Cover = styled.div`
   display: flex;
   flex-direction: column;
 
-
   div {
     overflow: hidden;
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -67,19 +66,17 @@ const Cover = styled.div`
       opacity: 0;
     }
   }
-`;
+`
 
 const Imagen = styled(Img)`
   width: 100%;
   height: 100%;
-`;
+`
 
 const ProjectItem = ({ delay, node }) => {
-
-
-  const { slug } = node.frontmatter;
-  const snapshot = node.frontmatter.cover.childImageSharp.fluid;
-  const code = node.frontmatter.code.childImageSharp.fluid;
+  const { slug } = node.frontmatter
+  const snapshot = node.frontmatter.cover.childImageSharp.fluid
+  const code = node.frontmatter.code.childImageSharp.fluid
 
   return (
     <Item to={slug}>
@@ -88,7 +85,7 @@ const ProjectItem = ({ delay, node }) => {
         <Imagen fluid={code} />
       </Cover>
     </Item>
-  ) 
-};
+  )
+}
 
-export default ProjectItem;
+export default ProjectItem

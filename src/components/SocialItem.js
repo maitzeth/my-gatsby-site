@@ -6,7 +6,7 @@ const ItemWrapper = styled.li`
   margin: 0.5em 1em;
   transition: all 200ms ease;
 
-  i { 
+  i {
     font-size: 1.7rem;
   }
 
@@ -17,20 +17,20 @@ const ItemWrapper = styled.li`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     margin: 0.5em 0.3em;
   }
-`;
+`
 
 const ItemLink = styled.a`
   display: block;
   padding: 0.3em;
-`;
+`
 
 const SocialItem = ({ icon, title, url }) => (
   <ItemWrapper>
     <ItemLink href={url} target="_blank" rel="noopener noreferrer">
       <i className={`fa fa-${icon}`} />
-      <h5>{ title }</h5>
+      <h5>{title}</h5>
     </ItemLink>
   </ItemWrapper>
-);
+)
 
 export default SocialItem
