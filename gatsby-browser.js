@@ -1,7 +1,9 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+const NProgress = require('nprogress')
 
-// You can delete this file if you're not using it
+exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+  NProgress.start();
+}
+
+exports.onRouteUpdate = ({ location, prevLocation }) => {
+  NProgress.done();
+}

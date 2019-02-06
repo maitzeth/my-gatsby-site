@@ -43,10 +43,17 @@ module.exports = {
         pathToConfigModule: 'config/typography.js',
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: config.theme.redColor,
+        showSpinner: true,
+      }
+    },
     `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-transformer-remark',
+    'gatsby-transformer-remark'
   ],
 }
