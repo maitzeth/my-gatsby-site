@@ -26,7 +26,7 @@ const ItemLink = styled.a`
 
 const SocialItem = ({ icon, title, url }) => (
   <ItemWrapper>
-    <ItemLink href={url} target="_blank" rel="noopener noreferrer">
+    <ItemLink href={url} target="_blank" rel="nofollow noopener noreferrer">
       <i className={`fa fa-${icon}`} />
       <h5>{title}</h5>
     </ItemLink>

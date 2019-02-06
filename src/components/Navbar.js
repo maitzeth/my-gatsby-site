@@ -81,8 +81,8 @@ const Header = ({ siteTitle }) => (
             <Btn to="/about">
               About
             </Btn>
-            <Btn to="/work">
-              Work
+            <Btn to="/works">
+              Works
             </Btn>
           </HeaderItems>
         </NavbarWrapper>

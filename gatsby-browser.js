@@ -1,9 +1,9 @@
 const NProgress = require('nprogress')
 
-exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+exports.onPreRouteUpdate = () => {
   NProgress.start();
 }
 
-exports.onRouteUpdate = ({ location, prevLocation }) => {
+exports.onRouteUpdate = () => {
   NProgress.done();
 }
