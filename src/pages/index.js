@@ -59,7 +59,8 @@ export const IndexPageQuery = graphql`
           }
         }
       }
-    } 
+    }
+     
   }
 `
 

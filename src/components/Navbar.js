@@ -37,7 +37,8 @@ const NavbarWrapper = styled.nav`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   }
 `;
 
@@ -46,9 +47,11 @@ const LogoWrapper = styled(Link)`
   font-weight: 900;
   align-items: center;
 
-  span {
+  h3 {
     text-transform: uppercase;
     margin-left: 0.75rem;
+    margin: 0;
+    letter-spacing: -1px;
 
     @media (max-width: ${props => props.theme.breakpoints.xs}) {
       display: none;
@@ -72,7 +75,7 @@ const Header = ({ siteTitle }) => (
         <NavbarWrapper style={props}>
           <LogoWrapper to="/">
             <Logo />
-            <span>{ siteTitle }</span>
+            <h3>{ siteTitle }</h3>
           </LogoWrapper>
           <HeaderItems>
             <Btn to="/">

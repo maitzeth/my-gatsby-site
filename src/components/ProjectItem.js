@@ -22,7 +22,7 @@ const Item = styled(Link)`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    min-height: 300px;
+    min-height: 200px;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.s}) {
@@ -73,7 +73,7 @@ const Imagen = styled(Img)`
   height: 100%;
 `
 
-const ProjectItem = ({ delay, node }) => {
+const ProjectItem = ({ node }) => {
   const { slug } = node.frontmatter
   const snapshot = node.frontmatter.cover.childImageSharp.fluid
   const code = node.frontmatter.code.childImageSharp.fluid

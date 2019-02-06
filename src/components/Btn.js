@@ -21,6 +21,10 @@ const BtnInner = styled.span`
   display: inline-block;
   z-index: 1;
   padding-bottom: 4px;
+
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    padding: 0;
+  }
 `;
 
 const BtnText = styled.span`

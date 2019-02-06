@@ -50,7 +50,7 @@ export const ProjectInner = styled.div`
   margin-top: 1.5rem;
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `
 
