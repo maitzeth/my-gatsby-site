@@ -47,11 +47,12 @@ const LogoWrapper = styled(Link)`
   font-weight: 900;
   align-items: center;
 
-  h3 {
+  span {
     text-transform: uppercase;
     margin-left: 0.75rem;
     margin: 0;
     letter-spacing: -1px;
+    font-family: 'Oswald',sans-serif;
 
     @media (max-width: ${props => props.theme.breakpoints.xs}) {
       display: none;
@@ -75,7 +76,7 @@ const Header = ({ siteTitle }) => (
         <NavbarWrapper style={props}>
           <LogoWrapper to="/">
             <Logo />
-            <h3>{ siteTitle }</h3>
+            <span>{ siteTitle }</span>
           </LogoWrapper>
           <HeaderItems>
             <Btn to="/">

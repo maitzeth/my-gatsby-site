@@ -79,8 +79,10 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
         <meta name="image" content={image} />
         <meta name="gatsby-starter" content="Gatsby André Iván Portfolio" />
         <meta name='robots' content='index,follow' />
-
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        
         <link rel='fluid-icon' type='image/png' href='/logo-50x50.png' />
+        <link rel="icon" type="image/png" href="/logo-50x50.png" />
 
         <meta name="msapplication-TileColor" content="#990100" />
 
