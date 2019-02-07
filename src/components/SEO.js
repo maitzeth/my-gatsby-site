@@ -115,15 +115,14 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
   )
 }
 
-const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
-
-export default SEO
-
-export const querySEO = graphql`
-  query {
+const querySEO = graphql`
+  query querySEO {
     site {
       buildTime(formatString: "YYYY-MM-DD")
     }
   }
 `
 
+const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
+
+export default SEO
