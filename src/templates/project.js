@@ -165,7 +165,7 @@ const SingleProject = ({ data, location }) => {
 
   return (
     <Layout pathname={location.pathname} customSEO>
-      <SEO pathname={location.pathname} postNode={postNode} single />
+      <SEO pathname={location.pathname} postNode={postNode} excerpt={data.markdownRemark.excerpt} single />
       <Spring
         delay={100}
         from={{ transform: 'translateY(-10%)', opacity: '0' }}
@@ -259,13 +259,13 @@ export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date
         techs
         role
         url
-
         cover {
           childImageSharp {
             fluid(maxWidth: 1600) {

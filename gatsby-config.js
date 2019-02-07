@@ -1,6 +1,7 @@
 const config = require('./src/config')
 
 module.exports = {
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: `André Iván`,
     subtitle: `Web Developer`,
@@ -26,18 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/logo.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'config/typography.js',
@@ -50,10 +39,50 @@ module.exports = {
         showSpinner: true,
       }
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: config.googleAnalyticsID,
+        anonymize: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {
+        displayName: process.env.NODE_ENV !== 'production',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitleShort,
+        lang: 'en-US',
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.theme.whiteColor,
+        theme_color: config.theme.redColor,
+        display: 'standalone',
+        icons: [
+          {
+            src: '/favicons/logo-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/favicons/logo-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-catch-links'
   ],
 }

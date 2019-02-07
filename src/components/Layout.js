@@ -62,7 +62,7 @@ const Layout = ({ children, pathname, customSEO}) => (
         <Fragment>
           {!customSEO && <SEO pathname={pathname} />}
           <GlobalStyle />
-          <Navbar siteTitle={data.site.siteMetadata.title} />
+          <Navbar siteTitle={data.site.siteMetadata.title} customSEO={customSEO} pathname={pathname} />
           {children}
           <Footer />
         </Fragment>

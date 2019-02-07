@@ -5,13 +5,13 @@ import HeaderSection from '../components/HeaderSection'
 import AboutSection from '../components/AboutSection'
 import ProjectSection from '../components/ProjectSection'
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
 
   const { aboutText, social } = data.site.siteMetadata;
   const projects = data.allMarkdownRemark.edges; 
 
   return (
-    <Layout>
+    <Layout pathname={location.pathname}>
       <HeaderSection />
       <AboutSection aboutText={aboutText} social={social} />
       <ProjectSection projects={projects} />
