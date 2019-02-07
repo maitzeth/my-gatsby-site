@@ -1,0 +1,10 @@
+/* TEAM */
+
+Creator: Maitzeth
+URL: https://andremz.me
+Description: Hello there! I'm André Iván a self-taught and passionate front-end developer
+
+/* SITE */
+
+Standards: HTML5, CSS
+Components: Gatsby

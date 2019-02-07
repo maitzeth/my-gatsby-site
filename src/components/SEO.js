@@ -80,10 +80,9 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
         <meta name="gatsby-starter" content="Gatsby André Iván Portfolio" />
         <meta name='robots' content='index,follow' />
 
-        <link rel='fluid-icon' type='image/png' href='/logo.png' />
+        <link rel='fluid-icon' type='image/png' href='/logo-50x50.png' />
 
         <meta name="msapplication-TileColor" content="#990100" />
-        <meta name="msapplication-config" content="browserconfig.xml" />
 
         <meta property="og:locale" content={config.ogLanguage} />
         <meta property="og:site_name" content={config.ogSiteName ? config.ogSiteName : ''} />
@@ -94,6 +93,10 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
         <meta property="og:image" content={image} />
         <meta property="og:image:alt" content={description} />
 
+        <meta property="og:see_also" content="https://github.com/maitzeth/" />
+        <meta property="og:see_also" content="https://www.instagram.com/maitzethdrummer" />
+        <meta property="og:see_also" content="https://twitter.com/maitzeth" />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
         <meta name="twitter:title" content={title} />
@@ -102,6 +105,7 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
         <meta name="twitter:image" content={image} />
         <meta name="twitter:image:alt" content={description} />
 
+        <link type="text/plain" href={`${config.siteUrl}/humans.txt`} rel="author" />
         <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
 
 

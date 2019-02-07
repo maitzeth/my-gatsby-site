@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /imprint
+
+sitemap: https://www.andremz.me/sitemap.xml
