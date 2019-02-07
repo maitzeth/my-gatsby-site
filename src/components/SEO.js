@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
-import { TypographyStyle, GoogleFont } from 'react-typography'
-import typography from '../../config/typography.js'
 import { graphql, StaticQuery } from 'gatsby'
 import config from '../config';
 
@@ -113,8 +111,6 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
         {!single && (<link rel="stylesheet" href="css/font-awesome.min.css" />) }
         <link rel="stylesheet" href="css/nprogress.css" />
       </Helmet>
-      <TypographyStyle typography={typography} />
-      <GoogleFont typography={typography} />
     </Fragment>
   )
 }
