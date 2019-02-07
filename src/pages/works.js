@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import { ProjectWrapper, ProjectInner } from '../components/Layout/Framework'
 import ProjectItem from '../components/ProjectItem';
+import { graphql } from 'gatsby'
 
 
 const WorksWrapper = styled(ProjectWrapper)`

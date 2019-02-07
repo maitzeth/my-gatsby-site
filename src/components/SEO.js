@@ -108,9 +108,6 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
         <link type="text/plain" href={`${config.siteUrl}/humans.txt`} rel="author" />
         <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
 
-
-
-
         {!single && (<link rel="stylesheet" href="css/font-awesome.min.css" />) }
         <link rel="stylesheet" href="css/nprogress.css" />
       </Helmet>
