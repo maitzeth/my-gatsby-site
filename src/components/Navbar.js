@@ -70,6 +70,11 @@ const HeaderItems = styled.div`
   }
 `;
 
+const NavbarLink = styled(Btn)`
+  font-weight: 900;
+  text-transform: uppercase;
+`;
+
 const Header = ({ siteTitle }) => (
   <Spring from={{ transform: 'translateY(-100%)' }} to={{ transform: 'translateY(0px)' }}>
     { props => (
@@ -79,15 +84,15 @@ const Header = ({ siteTitle }) => (
             <span>{ siteTitle }</span>
           </LogoWrapper>
           <HeaderItems>
-            <Btn to="/">
+            <NavbarLink to="/">
               Home
-            </Btn>
-            <Btn to="/about">
+            </NavbarLink>
+            <NavbarLink to="/about">
               About
-            </Btn>
-            <Btn to="/works">
+            </NavbarLink>
+            <NavbarLink to="/works">
               Works
-            </Btn>
+            </NavbarLink>
           </HeaderItems>
         </NavbarWrapper>
       )

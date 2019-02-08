@@ -54,8 +54,8 @@ const BtnText = styled.span`
   }
 `;
 
-const Btn = ({ children, navbar, to }) => (
-	<BtnWrapper to={to}>
+const Btn = ({ children, navbar, to, className }) => (
+	<BtnWrapper to={to} className={className}>
 		<BtnInner>
 			<BtnText>
 				{ children }

@@ -12,11 +12,11 @@ const WorksWrapper = styled(ProjectWrapper)`
   padding-bottom: 4em;
 `;
 
-const Works = ({ data }) => {
+const Works = ({ data, location }) => {
   const projects = data.allMarkdownRemark.edges;
 
   return (
-    <Layout>
+    <Layout pathname={location.pathname}>
       <WorksWrapper>
         <ProjectInner>
           {

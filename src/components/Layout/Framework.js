@@ -74,9 +74,43 @@ export const Col = styled.div`
   padding-left: ${props => (props.noGutters ? '0' : '15px')};
   position: relative;
 
+  flex: ${props => {
+    switch(props.size) {
+      case '1':
+        return '0 0 8.333333%;';
+      case '2':
+        return '0 0 16.666667%';
+      case '3':
+        return '0 0 25%';
+      case '4':
+        return '0 0 33.333333%';
+      case '5':
+        return '0 0 41.666667%';
+      case '6':
+        return '0 0 50%';
+      case '7':
+        return '0 0 58.333333%';
+      case '8':
+        return '0 0 66.666667%';
+      case '9':
+        return '0 0 75%';
+      case '10':
+        return '0 0 83.333333%';
+      case '11':
+        return '0 0 91.666667%';
+      case '12':
+        return '0 0 100%';
+      default:
+        return '0 0 100%';
+    }
+  }};
+
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
   }
 `
+
+//   flex: 0 0 50%;
+//   max-width: 50%;
