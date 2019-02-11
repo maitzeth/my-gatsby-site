@@ -12,7 +12,8 @@ import {
   Title,
 } from '../components/Layout/Framework'
 
-import BtnExternal from '../components/BtnExternal'
+
+import WorkItem from '../components/WorkItem';
 
 const AboutWrapper = styled.main`
   padding-top: 5em;
@@ -39,15 +40,6 @@ const AboutListWrapper = styled.ul`
   padding: 0;
 `
 
-const AboutListItem = styled.li`
-  margin: 0.3em 0;
-`
-
-const AboutText = styled(Lead)`
-  span {
-    font-weight: bold;
-  }
-`
 
 const AboutPage = ({ location, data }) => {
   const { aboutText } = data.site.siteMetadata
@@ -71,20 +63,9 @@ const AboutPage = ({ location, data }) => {
             <Col>
               <AboutTitle>Experience</AboutTitle>
               <AboutListWrapper>
-                {works.map((work, index) => {
-                  const { date, url, role, job } = work.node.frontmatter
-                  const { html } = work.node
-
-                  return (
-                    <AboutListItem key={index}>
-                      <AboutText>
-                        <span>{role}</span> - ({date}) -{' '}
-                        <BtnExternal href={url}>{job}</BtnExternal>
-                      </AboutText>
-                      <div dangerouslySetInnerHTML={{ __html: html }} />
-                    </AboutListItem>
-                  )
-                })}
+                {
+                  works.map((work, index) => <WorkItem key={index} {...work} />)
+                }
               </AboutListWrapper>
             </Col>
           </Row>
@@ -102,7 +83,10 @@ export const AboutPageQuery = graphql`
       }
     }
 
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/works/" } }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___order], order: DESC },
+      filter: { fileAbsolutePath: { regex: "/works/" } }
+    ) {
       edges {
         node {
           frontmatter {
