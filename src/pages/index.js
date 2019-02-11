@@ -1,14 +1,13 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import HeaderSection from '../components/HeaderSection'
 import AboutSection from '../components/AboutSection'
 import ProjectSection from '../components/ProjectSection'
 
 const IndexPage = ({ data, location }) => {
-
-  const { aboutText, social } = data.site.siteMetadata;
-  const projects = data.allMarkdownRemark.edges; 
+  const { aboutText, social } = data.site.siteMetadata
+  const projects = data.allMarkdownRemark.edges
 
   return (
     <Layout pathname={location.pathname}>
@@ -23,7 +22,7 @@ export const IndexPageQuery = graphql`
   query PageQuery {
     site {
       siteMetadata {
-        aboutText,
+        aboutText
         social {
           id
           icon
@@ -33,7 +32,7 @@ export const IndexPageQuery = graphql`
       }
     }
 
-    allMarkdownRemark {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           frontmatter {
@@ -60,7 +59,6 @@ export const IndexPageQuery = graphql`
         }
       }
     }
-     
   }
 `
 

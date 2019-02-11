@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Title, Lead } from './Layout/Framework'
-import SocialItem from './SocialItem';
-import Btn from './Btn';
+import SocialItem from './SocialItem'
+import Btn from './Btn'
 
 const AboutInner = styled.div`
   margin: 0 auto;
@@ -16,8 +16,8 @@ const AboutInner = styled.div`
   border-radius: 10px;
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-  	width: 100%;
-  	transform: translateY(0);
+    width: 100%;
+    transform: translateY(0);
   }
 
   @media (min-width: ${props => props.theme.breakpoints.s}) {
@@ -31,7 +31,7 @@ const AboutInner = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.l}) {
     width: 900px;
   }
-`;
+`
 
 const SocialWrapper = styled.ul`
   margin: 0;
@@ -39,23 +39,28 @@ const SocialWrapper = styled.ul`
   list-style: none;
   display: flex;
   justify-content: center;
-`;
+`
 
 const ViewMoreWrapper = styled.div`
   text-align: center;
   margin: 1em 0;
-`;
+`
 
 const AboutImageWrapper = styled.div`
-  width: 150px;
+  width: 200px;
   margin: 1em auto;
-`;
+`
+
+const AboutImage = styled(Img)`
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+`
 
 const AboutSection = ({ aboutText, social }) => (
   <StaticQuery
     query={graphql`
       {
-        file(relativePath: { eq: "logo.png" }) {
+        file(relativePath: { eq: "front-me.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 80) {
               ...GatsbyImageSharpFluid
@@ -68,20 +73,20 @@ const AboutSection = ({ aboutText, social }) => (
       <AboutInner>
         <Title>About</Title>
         <AboutImageWrapper>
-          <Img fluid={data.file.childImageSharp.fluid} />
+          <AboutImage fluid={data.file.childImageSharp.fluid} />
         </AboutImageWrapper>
-        <Lead center>{ aboutText }</Lead>
+        <Lead center>{aboutText}</Lead>
         <ViewMoreWrapper>
           <Btn to="/about">View more</Btn>
         </ViewMoreWrapper>
         <SocialWrapper>
-          {
-            social.map(social => <SocialItem key={social.id} {...social} />)
-          }
+          {social.map(social => (
+            <SocialItem key={social.id} {...social} />
+          ))}
         </SocialWrapper>
       </AboutInner>
-    )} 
+    )}
   />
-);
+)
 
-export default AboutSection;
+export default AboutSection

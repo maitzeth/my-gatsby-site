@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 const BtnWrapper = styled.a`
@@ -12,7 +12,7 @@ const BtnWrapper = styled.a`
       transform: scale(1, 0.99999999) translateZ(0);
     }
   }
-`;
+`
 
 const BtnInner = styled.span`
   position: relative;
@@ -20,7 +20,7 @@ const BtnInner = styled.span`
   display: inline-block;
   z-index: 1;
   padding-bottom: 4px;
-`;
+`
 
 const BtnText = styled.span`
   position: relative;
@@ -47,16 +47,19 @@ const BtnText = styled.span`
     z-index: -1;
     background-repeat: repeat-x;
   }
-`;
+`
 
-const Btn = ({ children, href }) => (
-  <BtnWrapper href={href} target="_blank" rel="nofollow noopener noreferrer">
+const Btn = ({ children, href, className }) => (
+  <BtnWrapper
+    href={href}
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+    className={className}
+  >
     <BtnInner>
-      <BtnText>
-        { children }
-      </BtnText>
+      <BtnText>{children}</BtnText>
     </BtnInner>
   </BtnWrapper>
-);
+)
 
-export default Btn;
+export default Btn

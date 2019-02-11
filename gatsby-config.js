@@ -10,7 +10,7 @@ module.exports = {
       "I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in Venezuela, currently living in Argentina. I love to share what I learn and I've been working on web development in almost 4 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and proficient in other languages too, like PHP and Ruby.",
     author: `@maitzeth`,
     social: config.social,
-    siteUrl: config.siteUrl
+    siteUrl: config.siteUrl,
   },
   plugins: [
     {
@@ -28,6 +28,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'works',
+        path: `${__dirname}/content/works`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'config/typography.js',
@@ -38,7 +45,7 @@ module.exports = {
       options: {
         color: config.theme.redColor,
         showSpinner: true,
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -84,6 +91,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-transformer-remark',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-catch-links'
+    'gatsby-plugin-catch-links',
   ],
 }
