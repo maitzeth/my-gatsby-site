@@ -31,7 +31,7 @@ const Works = ({ data, location }) => {
 export const WorksPageQuery = graphql`
   query {
 
-    allMarkdownRemark {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           frontmatter {

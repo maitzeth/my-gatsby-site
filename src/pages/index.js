@@ -32,7 +32,10 @@ export const IndexPageQuery = graphql`
       }
     }
 
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+    allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/projects/" } },
+        limit: 3
+      ) {
       edges {
         node {
           frontmatter {
