@@ -13,8 +13,8 @@
 <p align="center">
   <a href="https://github.com/prettier/prettier">
     <img
-      src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square"
-      alt="styled with prettier"
+      src="https://img.shields.io/badge/stytled%20with-styled--components-ff69b4.svg"
+      alt="styled with styled-components"
     />
   </a>
   <a href="https://www.netlify.com">
