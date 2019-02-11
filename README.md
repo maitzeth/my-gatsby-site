@@ -2,10 +2,10 @@
   <a href="https://andremz.me">
     <img
       src="https://andremz.me/static/ab4c5098c99bba154300c822e176d82d/fd998/logo.png"
-      height="100"
-      width="352"
-      alt="lekoarts"
-      title="lekoarts"
+      height="150"
+      width="150"
+      alt="maitzeth"
+      title="maitzeth"
     />
   </a>
 </p>
