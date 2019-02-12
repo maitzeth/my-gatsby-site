@@ -33,9 +33,9 @@
 
 ## Features
 
-- Gatsby-Image (Responsive images)
-- PWA
-- SEO (sitemap, schema.org data, OpenGraph, Twitter and Facebook tags)
+- Gatsby-Image (Responsive and fatest images load).
+- Progressive Web App (PWA).
+- SEO (sitemap, schema.org data, OpenGraph, Twitter tags, facebook tags and basic tags for a good user experience).
 
 ## Tech Stack
 

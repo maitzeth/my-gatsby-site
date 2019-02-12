@@ -56,18 +56,13 @@ const MetaText = styled(Lead)`
 
 const TechWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    flex-direction: column;
-    text-align: center;
-  }
 `
 
 const Tech = styled.div`
   background-color: ${props => props.theme.redColor};
   padding: 0.5em 1em;
   color: ${props => props.theme.whiteColor};
+  margin: 0 0.3em;
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     margin: 0.1em;
@@ -77,6 +72,7 @@ const Tech = styled.div`
 
 const CodeWrapper = styled.div`
   position: relative;
+  margin: 2em 0;
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     margin-bottom: 2rem;
@@ -146,7 +142,6 @@ const Buttons = styled.i`
 `
 
 const SiteURLWrapper = styled.div`
-  margin-top: 2em;
   text-align: center;
 `;
 
@@ -192,6 +187,40 @@ const SingleProject = ({ data, location }) => {
               </Spring>
             </Col>
           </Row>
+
+          <Row>
+             <Spring
+              delay={500}
+              from={{ transform: 'translateY(10%)', opacity: '0' }}
+              to={{ transform: 'translateY(0px)', opacity: '1' }}
+            >
+              {props => (
+                <Col style={props}>
+                  <Row>
+                    <Col size="4">
+                      <MetaTitle>Date</MetaTitle>
+                      <MetaText>{convertedDate}</MetaText>
+                    </Col>
+                    <Col size="4">
+                      <MetaTitle>Role</MetaTitle>
+                      <MetaText>{role}</MetaText>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col size="12">
+                      <MetaTitle>Techs</MetaTitle>
+                      <TechWrapper>
+                        {techs.map(tech => (
+                          <Tech key={tech.toLowerCase()}>{tech}</Tech>
+                        ))}
+                      </TechWrapper>
+                    </Col>
+                  </Row>
+                </Col>
+              )}
+            </Spring>
+          </Row>
+
           <Row align="center">
             <Spring
               delay={400}
@@ -207,36 +236,6 @@ const SingleProject = ({ data, location }) => {
                     </Bar>
                     <Img fluid={codeImage} />
                   </CodeWrapper>
-                </Col>
-              )}
-            </Spring>
-            <Spring
-              delay={500}
-              from={{ transform: 'translateY(10%)', opacity: '0' }}
-              to={{ transform: 'translateY(0px)', opacity: '1' }}
-            >
-              {props => (
-                <Col style={props}>
-                  <Row>
-                    <Col noGutters>
-                      <MetaTitle>Date</MetaTitle>
-                      <MetaText>{convertedDate}</MetaText>
-                    </Col>
-                    <Col noGutters>
-                      <MetaTitle>Role</MetaTitle>
-                      <MetaText>{role}</MetaText>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col noGutters>
-                      <MetaTitle>Techs</MetaTitle>
-                      <TechWrapper>
-                        {techs.map(tech => (
-                          <Tech key={tech.toLowerCase()}>{tech}</Tech>
-                        ))}
-                      </TechWrapper>
-                    </Col>
-                  </Row>
                 </Col>
               )}
             </Spring>

@@ -33,7 +33,4 @@ module.exports = {
     { id: 3, icon: 'instagram', title: 'Instagram', url: 'http://instagram.com' },
     { id: 4, icon: 'github', title: 'Github', url: 'http://github.com' }
   ],
-  skills: [
-    'HTML5', 'CSS3', 'Javascript', 'Wordpress Theming', 'NodeJS', 'NextJS', 'ReactJS', 'GatsbyJS', 'AngularJS'
-  ]
 }
