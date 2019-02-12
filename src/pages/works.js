@@ -3,25 +3,24 @@ import Layout from '../components/Layout'
 import styled from 'styled-components'
 
 import { ProjectWrapper, ProjectInner } from '../components/Layout/Framework'
-import ProjectItem from '../components/ProjectItem';
+import ProjectItem from '../components/ProjectItem'
 import { graphql } from 'gatsby'
-
 
 const WorksWrapper = styled(ProjectWrapper)`
   padding-top: 4em;
   padding-bottom: 4em;
-`;
+`
 
 const Works = ({ data, location }) => {
-  const projects = data.allMarkdownRemark.edges;
+  const projects = data.allMarkdownRemark.edges
 
   return (
     <Layout pathname={location.pathname}>
       <WorksWrapper>
         <ProjectInner>
-          {
-            projects.map((project, index) => <ProjectItem key={index} {...project} />)
-          }
+          {projects.map((project, index) => (
+            <ProjectItem key={index} {...project} />
+          ))}
         </ProjectInner>
       </WorksWrapper>
     </Layout>
@@ -30,8 +29,7 @@ const Works = ({ data, location }) => {
 
 export const WorksPageQuery = graphql`
   query {
-
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+    allMarkdownRemark {
       edges {
         node {
           frontmatter {
@@ -58,7 +56,6 @@ export const WorksPageQuery = graphql`
         }
       }
     }
-     
   }
 `
 
