@@ -76,13 +76,11 @@ const Imagen = styled(Img)`
 const ProjectItem = ({ node }) => {
   const { slug } = node.frontmatter
   const snapshot = node.frontmatter.cover.childImageSharp.fluid
-  const code = node.frontmatter.code.childImageSharp.fluid
 
   return (
     <Item to={slug}>
       <Cover>
         <Imagen fluid={snapshot} />
-        <Imagen fluid={code} />
       </Cover>
     </Item>
   )

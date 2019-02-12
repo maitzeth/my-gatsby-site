@@ -151,6 +151,7 @@ const SiteURLWrapper = styled.div`
 `;
 
 const SingleProject = ({ data, location }) => {
+
   const { title, date, techs, role, url } = data.markdownRemark.frontmatter
   const HeaderImage =
     data.markdownRemark.frontmatter.cover.childImageSharp.fluid

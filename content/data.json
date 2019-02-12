@@ -1,0 +1,15 @@
+{
+  "experience": [
+    {
+      "period": {
+        "from": "2015",
+        "to": "2017"
+      },
+      "role": "Web Development Instructor",
+      "url": "https://escuelaweb.net/",
+      "place": "Escuela Web LLC.",
+      "description": "This was my first important job, where I started as a trainee. Later I started to teach specific topics on some of the school's classes; and then I taught some big courses like 'Basic HTML5 And CSS3', teaching about good practices when you write code, teaching some tools for faster development (GIT, SASS, GULP) and a little bit of Javascript; and about Wordpress and Wordpress Theming (PHP Theming)."
+    }
+  ],
+  "skills": ["HTML5", "CSS3", "Javascript", "Wordpress Theming", "NodeJS", "NextJS", "ReactJS", "GatsbyJS", "AngularJS", "GIT"]
+}

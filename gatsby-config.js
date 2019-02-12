@@ -16,6 +16,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `data`,
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -85,5 +92,6 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-catch-links',
+    'gatsby-transformer-json'
   ],
 }
