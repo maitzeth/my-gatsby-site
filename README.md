@@ -37,6 +37,13 @@
 - Progressive Web App (PWA).
 - SEO (sitemap, schema.org data, OpenGraph, Twitter tags, facebook tags and basic tags for a good user experience).
 
+## Extra-Libs
+
+- React-Spring
+- React Hooks
+- Popmotion POSE
+- NProgress
+
 ## Tech Stack
 
 - Hosted on Netlify

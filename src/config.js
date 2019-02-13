@@ -28,9 +28,9 @@ module.exports = {
     }
   },
   social: [
-    { id: 1, icon: 'facebook', title: 'Facebook', url: 'http://facebook.co' },
-    { id: 2, icon: 'twitter', title: 'Twitter', url: 'http://twitter.com' },
-    { id: 3, icon: 'instagram', title: 'Instagram', url: 'http://instagram.com' },
-    { id: 4, icon: 'github', title: 'Github', url: 'http://github.com' }
+    { id: 1, icon: 'FaFacebookF', title: 'Facebook', url: 'http://facebook.co' },
+    { id: 2, icon: 'FaTwitter', title: 'Twitter', url: 'http://twitter.com' },
+    { id: 3, icon: 'FaInstagram', title: 'Instagram', url: 'http://instagram.com' },
+    { id: 4, icon: 'FaGithub', title: 'Github', url: 'http://github.com' }
   ],
 }
