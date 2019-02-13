@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Lead } from './Layout/Framework.js'
 import BtnExternal from './BtnExternal'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
+import posed from 'react-pose';
 
 const AboutListItem = styled.li`
   margin: 0.3em 0;
@@ -31,14 +32,6 @@ const BtnWork = styled(BtnExternal)`
     &:before {
         transform: scale(1,0.1) translateZ(0);
     }
-  }
-`;
-
-const ContentWrapper = styled.div`
-  overflow: hidden;
-  transition: all 200ms ease;
-  @media (min-width: ${props => props.theme.breakpoints.xs}) {
-    height: ${props => props.isOpen ? 'auto' : '0'};
   }
 `;
 
@@ -72,6 +65,15 @@ const Period = styled.span`
   margin: 0 0.5em;
 `;
 
+const ContentWrapper = styled.div`
+  overflow: hidden;
+`;
+
+const Content = posed.div({
+  closed: { height: 0 },
+  open: { height: 'auto' }
+});
+
 const WorkItem = ({period, place, role, url, description}) => {
   const initialState = false;
   const [isOpen, setOpen] = useState(initialState);
@@ -96,10 +98,10 @@ const WorkItem = ({period, place, role, url, description}) => {
           }
         </ButtonCollapse>
       </AboutText>
-      <ContentWrapper isOpen={isOpen}>
-        <AboutText>
+      <ContentWrapper>
+        <Content pose={isOpen ? 'open' : 'closed'}>
           { description }
-        </AboutText>
+        </Content>  
       </ContentWrapper>
     </AboutListItem>
   )
