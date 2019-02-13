@@ -81,8 +81,8 @@ const WorkItem = ({period, place, role, url, description}) => {
   return (
     <AboutListItem>
       <AboutText>
-        <span>{role}</span>
-        <Period>{`( ${period.from} - ${period.to} )`}</Period>
+        <span>{role} - </span>
+        <Period>{`( ${period.from} - ${period.to} ) - `}</Period>
         <BtnWork href={url}>{ place }</BtnWork>
         <ButtonCollapse onClick={() => setOpen(!isOpen)}>
           {
