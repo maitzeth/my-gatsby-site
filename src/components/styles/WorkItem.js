@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
-import { Lead } from './Layout/Framework.js'
+import { Lead } from '../Layout/Framework.js'
 import BtnExternal from './BtnExternal'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 import posed from 'react-pose';
@@ -43,7 +43,8 @@ const ButtonCollapse = styled.button`
     outline: none;
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    display: none;
+    display: block;
+    margin-top: 0.5em;
   }
 `;
 

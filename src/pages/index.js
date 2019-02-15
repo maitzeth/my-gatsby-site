@@ -32,7 +32,7 @@ export const IndexPageQuery = graphql`
       }
     }
 
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___order] }, limit: 4) {
       edges {
         node {
           frontmatter {

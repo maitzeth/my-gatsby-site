@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import styled from 'styled-components'
 
 import { ProjectWrapper, ProjectInner } from '../components/Layout/Framework'
-import ProjectItem from '../components/ProjectItem'
+import ProjectItem from '../components/styles/ProjectItem'
 import { graphql } from 'gatsby'
 
 const WorksWrapper = styled(ProjectWrapper)`
@@ -29,9 +29,10 @@ const Works = ({ data, location }) => {
 
 export const WorksPageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___order] }) {
       edges {
         node {
+
           frontmatter {
             title
             date
@@ -53,6 +54,7 @@ export const WorksPageQuery = graphql`
               }
             }
           }
+
         }
       }
     }

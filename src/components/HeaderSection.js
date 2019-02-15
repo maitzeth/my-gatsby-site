@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Spring } from 'react-spring'
-import Scroller from './Scroller'
-import { HeaderWrapper, Imagen } from './HeaderWrapper'
+import Scroller from './styles/Scroller'
+import { HeaderWrapper, Imagen } from './styles/HeaderWrapper'
 
 const HeaderTitleWrapper = styled.div`
   position: absolute;

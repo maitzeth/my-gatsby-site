@@ -7,7 +7,7 @@ import moment from 'moment'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { HeaderWrapper, Imagen } from '../components/HeaderWrapper'
+import { HeaderWrapper, Imagen } from '../components/styles/HeaderWrapper'
 import {
   Container,
   Row,
@@ -15,7 +15,7 @@ import {
   Title,
   Lead,
 } from '../components/Layout/Framework'
-import BtnExternal from '../components/BtnExternal';
+import BtnExternal from '../components/styles/BtnExternal';
 
 const ProjectInner = styled.div`
   padding-top: 2em;

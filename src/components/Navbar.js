@@ -2,8 +2,8 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { Spring } from 'react-spring';
 import styled from 'styled-components'
-import Logo from './Logo';
-import Btn from './Btn';
+import Logo from './styles/Logo';
+import Btn from './styles/Btn';
 
 const NavbarWrapper = styled.nav`
   display: flex;

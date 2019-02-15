@@ -45,7 +45,7 @@ export const ProjectWrapper = styled.div`
 
 export const ProjectInner = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: ${props => props.isFront ? '1fr 1fr 1fr 1fr' : '1fr 1fr 1fr'};
   gap: 20px;
   margin-top: 1.5rem;
 

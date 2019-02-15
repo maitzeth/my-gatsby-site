@@ -22,11 +22,11 @@ const Item = styled(Link)`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    min-height: 200px;
+    min-height: 140px;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.s}) {
-    min-height: 200px;
+    min-height: 150px;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.m}) {
@@ -34,7 +34,7 @@ const Item = styled(Link)`
   }
 
   @media (min-width: ${props => props.theme.breakpoints.l}) {
-    min-height: 350px;
+    min-height: 200px;
   }
 `
 

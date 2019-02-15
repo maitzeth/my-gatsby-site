@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Title, Lead } from './Layout/Framework'
-import SocialItem from './SocialItem'
-import Btn from './Btn'
+import SocialItem from './styles/SocialItem'
+import Btn from './styles/Btn'
 
 const AboutInner = styled.div`
   margin: 0 auto;

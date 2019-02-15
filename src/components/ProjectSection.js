@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectItem from './ProjectItem';
+import ProjectItem from './styles/ProjectItem';
 import styled from 'styled-components';
 
 import { ProjectWrapper, ProjectInner, Title } from './Layout/Framework';
@@ -11,7 +11,7 @@ const ProjectContainer = styled(ProjectWrapper)`
 const ProjectSection = ({ projects }) => (
   <ProjectContainer> 
     <Title>Latest Works</Title>
-    <ProjectInner>
+    <ProjectInner isFront={true}>
       {
         projects.map((project, index) => <ProjectItem key={index} {...project} />)
       }

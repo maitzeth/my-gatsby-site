@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { Container, Row, Col, Lead, Title } from '../components/Layout/Framework'
-import WorkItem from '../components/WorkItem'
+import WorkItem from '../components/styles/WorkItem'
 
 const AboutWrapper = styled.main`
   padding-top: 5em;

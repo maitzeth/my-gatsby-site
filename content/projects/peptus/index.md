@@ -1,12 +1,13 @@
 ---
-slug: "/amy-luo"
-cover: "./amy-luo.jpg"
-code: "./cover2.png"
-date: "29-01-2019"
-title: "Amy Luo"
-techs: ['Wordpress', 'HTML5', 'CSS3', 'Javascript', 'jQuery']
+order: 1
+slug: "/peptus"
+cover: "./header.jpg"
+code: "./screenshot.png"
+date: "18-09-2017"
+title: "Peptus"
+techs: ['Wordpress', 'HTML5', 'CSS3', 'jQuery']
 role: "Developer"
-url: "https://twitter.com/"
+url: "http://peptus.com"
 ---
 
 ## Description
