@@ -73,7 +73,7 @@ const AboutPage = ({ location, data }) => {
         <Container>
           <AboutContent align="center">
             <Col size="8">
-              <PageTitle>About</PageTitle>
+              <PageTitle>Sobre mí</PageTitle>
               <Lead>{aboutText}</Lead>
             </Col>
             <Col size="4">
@@ -82,7 +82,7 @@ const AboutPage = ({ location, data }) => {
           </AboutContent>
           <Row>
             <Col>
-              <AboutTitle>Experience</AboutTitle>
+              <AboutTitle>Experiencia</AboutTitle>
               <AboutListWrapper>
                 {experiences.map((experience, index) => (
                   <WorkItem key={index} {...experience} />
@@ -92,7 +92,7 @@ const AboutPage = ({ location, data }) => {
           </Row>
           <Row>
             <Col>
-              <AboutTitle>Skills & Tools</AboutTitle>
+              <AboutTitle>Habilidades y herramientas</AboutTitle>
               <AboutListWrapper>
                 {skills.map((skill, index) => (
                   <SkillItem key={index}>{skill}</SkillItem>

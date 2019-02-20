@@ -68,6 +68,9 @@ const Period = styled.span`
 
 const ContentWrapper = styled.div`
   overflow: hidden;
+  background-color: whitesmoke;
+  transition: all 200 ms ease;
+  padding: ${props => (props.isOpen ? '1em' : '0')};
 `
 
 const Content = posed.div({
@@ -97,7 +100,7 @@ const WorkItem = ({ period, place, role, url, description }) => {
           )}
         </ButtonCollapse>
       </AboutText>
-      <ContentWrapper>
+      <ContentWrapper isOpen={isOpen}>
         <Content pose={isOpen ? 'open' : 'closed'}>{description}</Content>
       </ContentWrapper>
     </AboutListItem>

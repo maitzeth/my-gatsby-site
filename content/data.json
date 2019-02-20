@@ -2,14 +2,57 @@
   "experience": [
     {
       "period": {
+        "from": "2018",
+        "to": "Present"
+      },
+      "role": "Front-End Developer",
+      "url": "http://www.agenciaego.com.ar",
+      "place": "Agencia EGO",
+      "description": "En el año 2018 decidí moverme para Argentina en busca de nuevos retos. Mi primera parada fue en esta Agencia de Diseño y Desarrollo, trabajando como Front-End Developer. Actualmente estoy trabajando en un proyecto utilizando AngularJS para el área de Tecnologías del 'Banco Santander Río S.A', mejorando aspectos técnicos en un sistema de gestión de apertura de cuentas para el Banco Santander Rio en Argentina siendo este sistema utilizado en todas las agencias a nivel nacional. Mi principal misión y la del equipo en la que estoy actualmente, es buscar mejorar problemas de rendimiento que existen en la aplicación y agregar nuevas características. Desde que estoy en el equipo hemos mejorado el rendimiento de la aplicación un poco mas del 25%, mejorando completamente la experiencia de usuario."
+    },
+    {
+      "period": {
+        "from": "2018",
+        "to": "Present"
+      },
+      "role": "Freelance Web Developer",
+      "url": "#",
+      "place": "Multiples Agencias",
+      "description": "En el año 2018 me dedique completamente al desarrollo web de forma freelance, vendiendo mis servicios a cualqueir agencia o persona que deseara de ello. La mayoria de los desarrollos que he realizados también estan hechos en Wordpress y PHP. Pasando desde el diseño, la maquetación y el desarrollo final del sitio."
+    },
+    {
+      "period": {
+        "from": "2016",
+        "to": "2018"
+      },
+      "country": "Miami, Florida",
+      "role": "Full Stack Developer",
+      "url": "http://glodstudio.com/",
+      "place": "GlödStudio",
+      "description": "Trabajé en GlödStudio como desarrollador web, desarrollando varias páginas web para ellos. Trabaje en forma remota estando en Venezuela para este estudio de diseño y marketing en Miami, Florida. Me dedique al desarrollo de sitios web, tanto el diseño, maquetación y logica de programación de muchos de ellos, realizados en PHP, HTML, CSS3 y JS."
+    },
+    {
+      "period": {
         "from": "2015",
         "to": "2017"
       },
-      "role": "Web Development Instructor",
+      "country": "Venezuela",
+      "role": "Instructor de Desarrollo Web",
       "url": "https://escuelaweb.net/",
       "place": "Escuela Web LLC.",
-      "description": "This was my first important job, where I started as a trainee. Later I started to teach specific topics on some of the school's classes; and then I taught some big courses like 'Basic HTML5 And CSS3', teaching about good practices when you write code, teaching some tools for faster development (GIT, SASS, GULP) and a little bit of Javascript; and about Wordpress and Wordpress Theming (PHP Theming)."
+      "description": "Este fue mi primer trabajo importante, donde comencé como aprendiz para instructor de desarrollo web. Más tarde comencé a enseñar temas específicos en algunas de las clases de la academia; y luego fui instructor de cursos grandes como 'HTML5 básico y CSS3', enseñando buenas prácticas al escribir código, enseñando algunas herramientas para un desarrollo web agiles (GIT, SASS, GULP) y un poco de JavaScript; y sobre Wordpress y Wordpress Theming (PHP Theming)."
     }
   ],
-  "skills": ["HTML5", "CSS3", "Javascript", "Wordpress Theming", "NodeJS", "NextJS", "ReactJS", "GatsbyJS", "AngularJS", "GIT"]
+  "skills": [
+    "HTML5",
+    "CSS3 (With Flexbox and Grid)",
+    "JavaScript (With New Features)",
+    "Wordpress Theming",
+    "NodeJS (Express)",
+    "ReactJS",
+    "Redux (Mid)",
+    "GatsbyJS (This is a Gatsby site <3)",
+    "AngularJS",
+    "GIT"
+  ]
 }
