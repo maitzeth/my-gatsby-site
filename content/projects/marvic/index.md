@@ -1,13 +1,13 @@
 ---
 order: 10
-slug: "/somos-femina"
-cover: "./header.jpg"
-code: "./screenshot.png"
-date: "18-09-2018"
-title: "Marvic Muebles"
+slug: '/marvic'
+cover: './header.jpg'
+code: './screenshot.png'
+date: '18-09-2018'
+title: 'Marvic Muebles'
 techs: ['Wordpress', 'HTML5', 'CSS3', 'jQuery']
-role: "Web Development"
-url: "http://marvicmuebles.com/"
+role: 'Web Development'
+url: 'http://marvicmuebles.com/'
 ---
 
 ## Description

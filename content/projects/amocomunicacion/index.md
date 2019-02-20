@@ -1,13 +1,13 @@
 ---
 order: 6
-slug: "/amo-comunicacion"
-cover: "./header.jpg"
-code: "./screenshot.png"
-date: "17-07-2018"
-title: "Amo Comunicación"
+slug: '/amocomunicacion'
+cover: './header.jpg'
+code: './screenshot.png'
+date: '17-07-2018'
+title: 'Amo Comunicación'
 techs: ['Wordpress', 'HTML5', 'CSS3', 'jQuery']
-role: "Reactoring and Best Practices Development"
-url: "http://amocomunicacion.com/"
+role: 'Reactoring and Best Practices Development'
+url: 'http://amocomunicacion.com/'
 ---
 
 ## Description

@@ -1,13 +1,13 @@
 ---
 order: 8
-slug: "/abel-hernandez"
-cover: "./header.jpg"
-code: "./screenshot.png"
-date: "26-03-2018"
-title: "Abel Hernandez"
+slug: '/abelhernandez'
+cover: './header.jpg'
+code: './screenshot.png'
+date: '26-03-2018'
+title: 'Abel Hernandez'
 techs: ['Wordpress', 'HTML5', 'CSS3', 'jQuery']
-role: "Web Development"
-url: "http://abelhernandezofficial.com/"
+role: 'Web Development'
+url: 'http://abelhernandezofficial.com/'
 ---
 
 ## Description

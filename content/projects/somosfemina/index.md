@@ -1,13 +1,13 @@
 ---
 order: 9
-slug: "/somos-femina"
-cover: "./header.jpg"
-code: "./screenshot.png"
-date: "08-08-2018"
-title: "Somos Fémina"
+slug: '/somosfemina'
+cover: './header.jpg'
+code: './screenshot.png'
+date: '08-08-2018'
+title: 'Somos Fémina'
 techs: ['Wordpress', 'HTML5', 'CSS3', 'jQuery']
-role: "Web Development"
-url: "http://somosfemina.com/"
+role: 'Web Development'
+url: 'http://somosfemina.com/'
 ---
 
 ## Description
