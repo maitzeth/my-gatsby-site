@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const ScrollerWrapper = styled.div`
   position: absolute;
@@ -17,18 +17,22 @@ const ScrollerWrapper = styled.div`
     height: 40px;
     background-color: ${props => props.theme.blackColor};
     width: 2px;
-    animation: scroller 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+    animation: scroller 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
   }
   @keyframes scroller {
-    0% {transform: translateY(-52px)}
-    100%  {transform: translateY(188px)}
+    0% {
+      transform: translateY(-52px);
+    }
+    100% {
+      transform: translateY(188px);
+    }
   }
-`;
+`
 
 const Scroller = () => (
   <ScrollerWrapper>
-    <span></span>
+    <span />
   </ScrollerWrapper>
-);
+)
 
-export default Scroller;
+export default Scroller

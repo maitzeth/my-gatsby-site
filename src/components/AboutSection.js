@@ -77,7 +77,7 @@ const AboutSection = ({ aboutText, social }) => (
         </AboutImageWrapper>
         <Lead center>{aboutText}</Lead>
         <ViewMoreWrapper>
-          <Btn to="/about">View more</Btn>
+          <Btn to="/about">Saber más</Btn>
         </ViewMoreWrapper>
         <SocialWrapper>
           {social.map(social => (

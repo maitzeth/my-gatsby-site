@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IoIosHeart } from "react-icons/io";
+import { IoIosHeart } from 'react-icons/io'
 
 const FooterWrapper = styled.footer`
   height: 60px;
@@ -25,7 +25,7 @@ const FooterText = styled.small`
 `
 
 const Heart = styled(IoIosHeart)`
-  color: ${props => props.theme.redColor}
+  color: ${props => props.theme.redColor};
 `
 
 const Footer = () => {
@@ -36,8 +36,7 @@ const Footer = () => {
     <FooterWrapper>
       <FooterGrid>
         <FooterText>
-          Made with <Heart /> by me -{' '}
-          {year}
+          Hecho con <Heart /> por mí - {year}
         </FooterText>
       </FooterGrid>
     </FooterWrapper>

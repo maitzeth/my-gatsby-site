@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa'
 
 const ItemWrapper = styled.li`
   text-align: center;
@@ -26,20 +26,19 @@ const ItemLink = styled.a`
 `
 
 const SocialItem = ({ icon, title, url }) => {
-
   const iconComponents = {
     FaFacebookF,
     FaTwitter,
     FaInstagram,
-    FaGithub
-  };
+    FaGithub,
+  }
 
-  const Icon = React.createElement(iconComponents[icon]);
+  const Icon = React.createElement(iconComponents[icon])
 
   return (
     <ItemWrapper>
       <ItemLink href={url} target="_blank" rel="nofollow noopener noreferrer">
-        { Icon }
+        {Icon}
         <h5>{title}</h5>
       </ItemLink>
     </ItemWrapper>

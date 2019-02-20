@@ -5,9 +5,9 @@ module.exports = {
   siteMetadata: {
     title: `André Iván`,
     subtitle: `Web Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Soy André Iván, ingeniero en informatica, me dedico al desarrollo web desde hace 4 años. Javascript Ninja.`,
     aboutText:
-      "I'm Andre Ivan, a Informatic Engineer doing Web Developer. I was born in Venezuela, currently living in Argentina. I love to share what I learn and I've been working on web development in almost 4 years. I spend most of my time learning about new Technologies, Methodologies, Best Practices and proficient in other languages too, like PHP and Ruby.",
+      'Hola, soy André Iván, soy Ingeniero Informático, me dedico enteramente al desarrollo web. Nací en Venezuela pero hace casi un año que vivo en Argentina. Me encanta compartir lo que aprendo y he estado trabajando en desarrollo web durante casi 4 años. Paso la mayor parte de mi tiempo aprendiendo sobre nuevas tecnologías, metodologías, paradigmas, mejores prácticas y otros aspecto del mundo de la tecnología. Obsesionado completamente con el rendimiento y las buenas practicas. React Lover <3',
     author: `@maitzeth`,
     social: config.social,
     siteUrl: config.siteUrl,
@@ -92,6 +92,6 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-catch-links',
-    'gatsby-transformer-json'
+    'gatsby-transformer-json',
   ],
 }

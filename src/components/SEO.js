@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, StaticQuery } from 'gatsby'
-import config from '../config';
+import config from '../config'
 
 const replaceTrailing = _path => _path.replace(/\/$/, ``)
 
@@ -17,15 +17,15 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
   const URL = `${config.siteUrl}${replaceTrailing(pathname) || realPrefix}`
 
   // Add except if exists
-  
+
   const postMeta = { ...postNode, excerpt }
 
   if (single) {
     const postImage = postMeta.cover.childImageSharp.fluid.src
     title = `${postMeta.title} | ${config.siteTitle}`
-    description = postMeta.excerpt && postMeta.excerpt;
+    description = postMeta.excerpt && postMeta.excerpt
     image = `${homeURL}${postImage}`
-  } else { 
+  } else {
     title = `${config.siteTitleAlt}`
     description = config.siteDescription
     image = `${homeURL}${config.siteLogo}`
@@ -65,48 +65,65 @@ const Head = ({ postNode, pathname, single, data, excerpt }) => {
     },
   }
 
-
   return (
     <Fragment>
       <Helmet>
         <html lang={config.siteLanguage} />
         <title>{title}</title>
-        
+
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
         <meta name="gatsby-starter" content="Gatsby André Iván Portfolio" />
-        <meta name='robots' content='index,follow' />
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-        
-        <link rel='fluid-icon' type='image/png' href='/logo-50x50.png' />
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+
+        <link rel="fluid-icon" type="image/png" href="/logo-50x50.png" />
         <link rel="icon" type="image/png" href="/logo-50x50.png" />
 
         <meta name="msapplication-TileColor" content="#990100" />
 
         <meta property="og:locale" content={config.ogLanguage} />
-        <meta property="og:site_name" content={config.ogSiteName ? config.ogSiteName : ''} />
+        <meta
+          property="og:site_name"
+          content={config.ogSiteName ? config.ogSiteName : ''}
+        />
         <meta property="og:url" content={URL} />
-        <meta property="og:type" content='website' />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
         <meta property="og:image:alt" content={description} />
 
         <meta property="og:see_also" content="https://github.com/maitzeth/" />
-        <meta property="og:see_also" content="https://www.instagram.com/maitzethdrummer" />
+        <meta
+          property="og:see_also"
+          content="https://www.instagram.com/maitzethdrummer"
+        />
         <meta property="og:see_also" content="https://twitter.com/maitzeth" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
+        <meta
+          name="twitter:creator"
+          content={config.userTwitter ? config.userTwitter : ''}
+        />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:url" content={URL} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
         <meta name="twitter:image:alt" content={description} />
 
-        <link type="text/plain" href={`${config.siteUrl}/humans.txt`} rel="author" />
-        <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
+        <link
+          type="text/plain"
+          href={`${config.siteUrl}/humans.txt`}
+          rel="author"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgWebPage)}
+        </script>
 
         <link rel="stylesheet" href="css/nprogress.css" />
       </Helmet>
@@ -122,6 +139,11 @@ const querySEO = graphql`
   }
 `
 
-const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
+const SEO = props => (
+  <StaticQuery
+    query={querySEO}
+    render={data => <Head {...props} data={data} />}
+  />
+)
 
 export default SEO

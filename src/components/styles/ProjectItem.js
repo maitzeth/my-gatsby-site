@@ -34,7 +34,7 @@ const Item = styled(Link)`
   }
 
   @media (min-width: ${props => props.theme.breakpoints.l}) {
-    min-height: 200px;
+    min-height: 300px;
   }
 `
 

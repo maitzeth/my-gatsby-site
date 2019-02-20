@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styled from 'styled-components'
 
@@ -17,7 +17,7 @@ const ErrorWrapper = styled.div`
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@ const ErrorWrapper = styled.div`
     background-color: ${props => props.theme.primaryColor};
     opacity: 0.6;
   }
-`;
+`
 
 const ErrorMessage = styled.div`
   position: relative;
@@ -36,10 +36,10 @@ const ErrorMessage = styled.div`
   h1 {
     font-size: 3.5em;
   }
-`;
+`
 
 const NotFoundPage = ({ data, location }) => {
-  const image = data.allFile.edges[0].node.relativePath;
+  const image = data.allFile.edges[0].node.relativePath
 
   return (
     <Layout pathname={location.pathname}>
@@ -51,11 +51,11 @@ const NotFoundPage = ({ data, location }) => {
       </ErrorWrapper>
     </Layout>
   )
-};
+}
 
 export const ErrorPageQuery = graphql`
   query {
-    allFile(filter: { name: {eq: "default-background" } } ) {
+    allFile(filter: { name: { eq: "default-background" } }) {
       edges {
         node {
           publicURL
@@ -64,6 +64,6 @@ export const ErrorPageQuery = graphql`
       }
     }
   }
-`;
+`
 
 export default NotFoundPage

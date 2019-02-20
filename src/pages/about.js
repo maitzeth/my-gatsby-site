@@ -3,7 +3,13 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { Container, Row, Col, Lead, Title } from '../components/Layout/Framework'
+import {
+  Container,
+  Row,
+  Col,
+  Lead,
+  Title,
+} from '../components/Layout/Framework'
 import WorkItem from '../components/styles/WorkItem'
 
 const AboutWrapper = styled.main`
@@ -53,7 +59,7 @@ const SkillItem = styled.li`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     text-align: center;
   }
-`;
+`
 
 const AboutPage = ({ location, data }) => {
   const { aboutText } = data.site.siteMetadata
@@ -78,9 +84,9 @@ const AboutPage = ({ location, data }) => {
             <Col>
               <AboutTitle>Experience</AboutTitle>
               <AboutListWrapper>
-                {
-                  experiences.map((experience, index) => <WorkItem key={index} {...experience} />)
-                }
+                {experiences.map((experience, index) => (
+                  <WorkItem key={index} {...experience} />
+                ))}
               </AboutListWrapper>
             </Col>
           </Row>
@@ -88,9 +94,9 @@ const AboutPage = ({ location, data }) => {
             <Col>
               <AboutTitle>Skills & Tools</AboutTitle>
               <AboutListWrapper>
-                {
-                  skills.map((skill, index) => <SkillItem key={index}>{skill}</SkillItem>)
-                }
+                {skills.map((skill, index) => (
+                  <SkillItem key={index}>{skill}</SkillItem>
+                ))}
               </AboutListWrapper>
             </Col>
           </Row>
@@ -129,12 +135,11 @@ export const AboutPageQuery = graphql`
             place
             description
           }
-          
+
           skills
         }
       }
     }
-
   }
 `
 

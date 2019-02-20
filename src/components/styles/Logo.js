@@ -1,11 +1,11 @@
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const LogoWrapper = styled.div`
   width: 50px;
-`;
+`
 
 // fluid Para imagenes que pueden modificarse con width
 // fixed para imagenes de fondo
@@ -27,7 +27,7 @@ const Logo = () => (
       <LogoWrapper>
         <Img fluid={data.file.childImageSharp.fluid} />
       </LogoWrapper>
-    ) }
+    )}
   />
 )
 export default Logo

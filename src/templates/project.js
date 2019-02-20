@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import { Spring } from 'react-spring'
 import Img from 'gatsby-image'
@@ -7,7 +7,7 @@ import moment from 'moment'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { HeaderWrapper, Imagen } from '../components/styles/HeaderWrapper'
+import { Imagen } from '../components/styles/HeaderWrapper'
 import {
   Container,
   Row,
@@ -15,10 +15,10 @@ import {
   Title,
   Lead,
 } from '../components/Layout/Framework'
-import BtnExternal from '../components/styles/BtnExternal';
+import BtnExternal from '../components/styles/BtnExternal'
 
 const ProjectInner = styled.div`
-  padding-top: 2em;
+  padding-top: 5em;
   padding-bottom: 2em;
 `
 
@@ -34,6 +34,10 @@ const SingleTitle = styled(Title)`
     margin: 0.5em auto;
     width: 50px;
     background-color: ${props => props.theme.redColor};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+    font-size: 2rem;
   }
 `
 
@@ -67,6 +71,8 @@ const Tech = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     margin: 0.1em;
     padding: 0.3em 0.5em;
+    width: 100%;
+    text-align: center;
   }
 `
 
@@ -87,7 +93,7 @@ const Bar = styled.div`
   width: 100%;
   color: #6a6a6a;
   z-index: 10;
-  top: 0;
+  top: -24px;
 `
 
 const BarTitle = styled.h2`
@@ -143,36 +149,29 @@ const Buttons = styled.i`
 
 const SiteURLWrapper = styled.div`
   text-align: center;
-`;
+`
 
 const SingleProject = ({ data, location }) => {
-
   const { title, date, techs, role, url } = data.markdownRemark.frontmatter
   const HeaderImage =
     data.markdownRemark.frontmatter.cover.childImageSharp.fluid
 
-  const convertedDate = moment(date, 'DD-MM-YYYY').format('MMM Do YY')
+  const convertedDate = moment(date, 'DD-MM-YYYY').format('LL')
 
   const codeImage = data.markdownRemark.frontmatter.code.childImageSharp.fluid
 
   const titleCode = title.split(' ').join('-')
 
-  const postNode = data.markdownRemark.frontmatter;
+  const postNode = data.markdownRemark.frontmatter
 
   return (
     <Layout pathname={location.pathname} customSEO>
-      <SEO pathname={location.pathname} postNode={postNode} excerpt={data.markdownRemark.excerpt} single />
-      <Spring
-        delay={100}
-        from={{ transform: 'translateY(-10%)', opacity: '0' }}
-        to={{ transform: 'translateY(0px)', opacity: '1' }}
-      >
-        {props => (
-          <HeaderWrapper single={true} opacity="0.3" style={props}>
-            <Imagen fluid={HeaderImage} />
-          </HeaderWrapper>
-        )}
-      </Spring>
+      <SEO
+        pathname={location.pathname}
+        postNode={postNode}
+        excerpt={data.markdownRemark.excerpt}
+        single
+      />
 
       <Container>
         <ProjectInner>
@@ -188,35 +187,36 @@ const SingleProject = ({ data, location }) => {
             </Col>
           </Row>
 
-          <Row>
-             <Spring
-              delay={500}
-              from={{ transform: 'translateY(10%)', opacity: '0' }}
-              to={{ transform: 'translateY(0px)', opacity: '1' }}
-            >
+          <Row align="center">
+            <Spring delay={500} from={{ opacity: '0' }} to={{ opacity: '1' }}>
               {props => (
-                <Col style={props}>
-                  <Row>
-                    <Col size="4">
-                      <MetaTitle>Date</MetaTitle>
-                      <MetaText>{convertedDate}</MetaText>
-                    </Col>
-                    <Col size="4">
-                      <MetaTitle>Role</MetaTitle>
-                      <MetaText>{role}</MetaText>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col size="12">
-                      <MetaTitle>Techs</MetaTitle>
-                      <TechWrapper>
-                        {techs.map(tech => (
-                          <Tech key={tech.toLowerCase()}>{tech}</Tech>
-                        ))}
-                      </TechWrapper>
-                    </Col>
-                  </Row>
-                </Col>
+                <Fragment>
+                  <Col size="6" style={props}>
+                    <Row>
+                      <Col size="6">
+                        <MetaTitle>Fecha</MetaTitle>
+                        <MetaText>{convertedDate}</MetaText>
+                      </Col>
+                      <Col size="6">
+                        <MetaTitle>Role</MetaTitle>
+                        <MetaText>{role}</MetaText>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col size="12">
+                        <MetaTitle>Tecnologías</MetaTitle>
+                        <TechWrapper>
+                          {techs.map(tech => (
+                            <Tech key={tech.toLowerCase()}>{tech}</Tech>
+                          ))}
+                        </TechWrapper>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col size="6" style={props}>
+                    <Imagen fluid={HeaderImage} />
+                  </Col>
+                </Fragment>
               )}
             </Spring>
           </Row>
@@ -243,9 +243,7 @@ const SingleProject = ({ data, location }) => {
           <Row>
             <Col>
               <SiteURLWrapper>
-                <BtnExternal href={url}>
-                  VISIT SITE
-                </BtnExternal>
+                <BtnExternal href={url}>Visitar sitio</BtnExternal>
               </SiteURLWrapper>
             </Col>
           </Row>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import styled from 'styled-components'
-
+import Fade from 'react-reveal/Fade'
 import { ProjectWrapper, ProjectInner } from '../components/Layout/Framework'
 import ProjectItem from '../components/styles/ProjectItem'
 import { graphql } from 'gatsby'
@@ -18,9 +18,11 @@ const Works = ({ data, location }) => {
     <Layout pathname={location.pathname}>
       <WorksWrapper>
         <ProjectInner>
-          {projects.map((project, index) => (
-            <ProjectItem key={index} {...project} />
-          ))}
+          <Fade cascade>
+            {projects.map((project, index) => (
+              <ProjectItem key={index} {...project} />
+            ))}
+          </Fade>
         </ProjectInner>
       </WorksWrapper>
     </Layout>
@@ -32,7 +34,6 @@ export const WorksPageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___order] }) {
       edges {
         node {
-
           frontmatter {
             title
             date
@@ -54,7 +55,6 @@ export const WorksPageQuery = graphql`
               }
             }
           }
-
         }
       }
     }

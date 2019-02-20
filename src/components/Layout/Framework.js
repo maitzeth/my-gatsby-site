@@ -29,6 +29,7 @@ export const Title = styled.h2`
   text-align: center;
   color: ${props => props.theme.secondaryColor};
   margin-bottom: 1rem;
+  font-size: 2.5rem;
 `
 
 export const Lead = styled.p`
@@ -45,7 +46,8 @@ export const ProjectWrapper = styled.div`
 
 export const ProjectInner = styled.div`
   display: grid;
-  grid-template-columns: ${props => props.isFront ? '1fr 1fr 1fr' : '1fr 1fr 1fr'};
+  grid-template-columns: ${props =>
+    props.isFront ? '1fr 1fr 1fr' : '1fr 1fr 1fr'};
   gap: 20px;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -76,33 +78,33 @@ export const Col = styled.div`
   position: relative;
 
   flex: ${props => {
-    switch(props.size) {
+    switch (props.size) {
       case '1':
-        return '0 0 8.333333%;';
+        return '0 0 8.333333%;'
       case '2':
-        return '0 0 16.666667%';
+        return '0 0 16.666667%'
       case '3':
-        return '0 0 25%';
+        return '0 0 25%'
       case '4':
-        return '0 0 33.333333%';
+        return '0 0 33.333333%'
       case '5':
-        return '0 0 41.666667%';
+        return '0 0 41.666667%'
       case '6':
-        return '0 0 50%';
+        return '0 0 50%'
       case '7':
-        return '0 0 58.333333%';
+        return '0 0 58.333333%'
       case '8':
-        return '0 0 66.666667%';
+        return '0 0 66.666667%'
       case '9':
-        return '0 0 75%';
+        return '0 0 75%'
       case '10':
-        return '0 0 83.333333%';
+        return '0 0 83.333333%'
       case '11':
-        return '0 0 91.666667%';
+        return '0 0 91.666667%'
       case '12':
-        return '0 0 100%';
+        return '0 0 100%'
       default:
-        return '0 0 100%';
+        return '0 0 100%'
     }
   }};
 
